@@ -48,6 +48,7 @@ public class PostDBHandler {
             if (cursor.getCount() > 0) {
                 while (cursor.moveToNext()) {
                     PostInfo info = new PostInfo();
+                    info.setId(cursor.getInt(cursor.getColumnIndex(Key._ID)));
                     info.setNickname(cursor.getString(cursor.getColumnIndex(Key.NICKNAME)));
                     info.setPosttime(cursor.getString(cursor.getColumnIndex(Key.POSTTIME)));
                     info.setContent(cursor.getString(cursor.getColumnIndex(Key.CONTENT)));

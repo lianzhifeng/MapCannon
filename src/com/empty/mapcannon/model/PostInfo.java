@@ -5,6 +5,11 @@ import java.io.Serializable;
 
 public class PostInfo implements Serializable {
 
+    /**
+     * 
+     */
+    private static final long serialVersionUID = 1L;
+    private int id;
     private String nickname;
     private String posttime;
     private String content;
@@ -13,6 +18,14 @@ public class PostInfo implements Serializable {
     private String departtime;
     private String commentid;
     private int withOthers;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getNickname() {
         return nickname;
