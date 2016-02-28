@@ -1,7 +1,6 @@
 package com.empty.mapcannon.activity;
 
 import android.annotation.TargetApi;
-import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -10,10 +9,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
 import com.empty.mapcannon.R;
 
 
-public class MyActivity extends Activity implements View.OnClickListener {
+public class MyActivity extends BaseActivity implements View.OnClickListener {
 
     private DiscoveryFragment mDiscoveryFragment;
     private MessageFragment mMessageFragment;
