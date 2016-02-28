@@ -39,9 +39,9 @@ public class CommentDBHandler {
         return mDataBase.insert(Key.TABLE_NAME, null, values) != -1;
     }
 
-    public List<CommentInfo> getPostInfo() {
+    public List<CommentInfo> getCommentInfo(String selection) {
         List<CommentInfo> infoList = new ArrayList<CommentInfo>();
-        Cursor cursor = mDataBase.query(Key.TABLE_NAME, null, null, null, null, null, null);
+        Cursor cursor = mDataBase.query(Key.TABLE_NAME, null, selection, null, null, null, null);
         if (cursor != null) {
             if (cursor.getCount() > 0) {
                 while (cursor.moveToNext()) {

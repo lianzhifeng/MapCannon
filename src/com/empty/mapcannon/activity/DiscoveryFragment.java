@@ -11,6 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
 import com.empty.mapcannon.R;
+import com.empty.mapcannon.db.PostDBHandler;
+import com.empty.mapcannon.model.PostInfo;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,17 +26,13 @@ public class DiscoveryFragment extends Fragment implements View.OnClickListener 
     private ListView list;
     private View root;
     private MyAdapter mAdapter;
-    private List<Object> mContentList;
+    private List<PostInfo> mContentList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.fragment_first_page, container, false);
         list = (ListView) root.findViewById(R.id.listview);
-        mContentList = new ArrayList<Object>();
-        mContentList.add(new Object());
-        mContentList.add(new Object());
-        mContentList.add(new Object());
-        mContentList.add(new Object());
+        mContentList = PostDBHandler.getInstance().getPostInfo(null);
         mAdapter = new MyAdapter(getActivity());
         list.setAdapter(mAdapter);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -90,6 +89,7 @@ public class DiscoveryFragment extends Fragment implements View.OnClickListener 
             } else {
                 holder = (Holder) convertView.getTag();
             }
+            holder.updateView(convertView, mContentList.get(holder.position));
             holder.tvComent.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -109,6 +109,20 @@ public class DiscoveryFragment extends Fragment implements View.OnClickListener 
             View tvComent;
             View tvJoin;
             int position;
+
+            void updateView(View root, PostInfo postInfo) {
+                TextView tvName = (TextView) root.findViewById(R.id.tv_name);
+                TextView tvDestination = (TextView) root.findViewById(R.id.tv_way);
+                TextView tvDeparture = (TextView) root.findViewById(R.id.tv_start);
+                TextView tvDeparttime = (TextView) root.findViewById(R.id.tv_start_time);
+                TextView tvContent = (TextView) root.findViewById(R.id.tv_introduce);
+                TextView tvPostTime = (TextView) root.findViewById(R.id.tv_date);
+                tvName.setText(postInfo.getNickname());
+                tvDestination.setText(postInfo.getDestination());
+                tvDeparture.setText(postInfo.getDeparture());
+                tvDeparttime.setText(postInfo.getDeparttime());
+                tvContent.setText(postInfo.getContent());
+            }
         }
     }
 }

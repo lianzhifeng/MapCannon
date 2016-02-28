@@ -41,9 +41,9 @@ public class PostDBHandler {
         return mDataBase.insert(Key.TABLE_NAME, null, values) != -1;
     }
 
-    public List<PostInfo> getPostInfo() {
+    public List<PostInfo> getPostInfo(String selection) {
         List<PostInfo> infoList = new ArrayList<PostInfo>();
-        Cursor cursor = mDataBase.query(Key.TABLE_NAME, null, null, null, null, null, null);
+        Cursor cursor = mDataBase.query(Key.TABLE_NAME, null, selection, null, null, null, null);
         if (cursor != null) {
             if (cursor.getCount() > 0) {
                 while (cursor.moveToNext()) {
