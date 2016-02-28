@@ -25,6 +25,7 @@ import java.util.List;
 public class DiscoveryFragment extends Fragment implements View.OnClickListener {
     private ListView list;
     private View root;
+    private View mPost;
     private MyAdapter mAdapter;
     private List<PostInfo> mContentList;
 
@@ -32,6 +33,13 @@ public class DiscoveryFragment extends Fragment implements View.OnClickListener 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.fragment_first_page, container, false);
         list = (ListView) root.findViewById(R.id.listview);
+        mPost = root.findViewById(R.id.tv_right);
+        mPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), PostActivity.class));
+            }
+        });
         mContentList = PostDBHandler.getInstance().getPostInfo(null);
         mAdapter = new MyAdapter(getActivity());
         list.setAdapter(mAdapter);
@@ -52,6 +60,13 @@ public class DiscoveryFragment extends Fragment implements View.OnClickListener 
     @Override
     public void onClick(View v) {
 
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mContentList = PostDBHandler.getInstance().getPostInfo(null);
+        mAdapter.notifyDataSetChanged();
     }
 
     public class MyAdapter extends BaseAdapter {

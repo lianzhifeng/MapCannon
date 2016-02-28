@@ -1,55 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="#fff0f0f0" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <include layout="@layout/top_bar" />
-    <ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
-            <LinearLayout android:orientation="horizontal" android:background="@drawable/bg_publish_together1" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="55.0dip" android:layout_marginLeft="15.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="15.0dip">
-                <ImageView android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:src="@drawable/icon_start_city" />
-                <EditText android:textSize="16.0sp" android:textColor="#ff333333" android:textColorHint="#ffbfbfbf" android:layout_gravity="center_vertical" android:id="@+id/et_start_city" android:background="@drawable/bg_publish_comment" android:layout_width="fill_parent" android:layout_height="40.0dip" android:hint="出发城市" android:singleLine="true" />
+<LinearLayout
+        android:orientation="vertical"
+        android:background="#fff0f0f0"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include layout="@layout/top_bar"/>
+
+    <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:background="@drawable/bg_publish_together1"
+                    android:visibility="visible"
+                    android:layout_width="fill_parent"
+                    android:layout_height="55.0dip"
+                    android:layout_marginLeft="15.0dip"
+                    android:layout_marginTop="20.0dip"
+                    android:layout_marginRight="15.0dip">
+
+                <ImageView
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10.0dip"
+                        android:layout_marginRight="10.0dip"
+                        android:src="@drawable/icon_start_city"/>
+
+                <EditText
+                        android:textSize="16.0sp"
+                        android:textColor="#ff333333"
+                        android:textColorHint="#ffbfbfbf"
+                        android:layout_gravity="center_vertical"
+                        android:id="@+id/et_start_city"
+                        android:background="@drawable/bg_publish_comment"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40.0dip"
+                        android:hint="出发位置"
+                        android:singleLine="true"/>
             </LinearLayout>
-            <LinearLayout android:orientation="horizontal" android:background="@drawable/bg_publish_together1" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="55.0dip" android:layout_marginLeft="15.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="15.0dip">
-                <ImageView android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:src="@drawable/icon_des_city" />
-                <EditText android:textSize="16.0sp" android:textColor="#ff333333" android:textColorHint="#ffbfbfbf" android:layout_gravity="center_vertical" android:id="@+id/et_des_city" android:background="@drawable/bg_publish_comment" android:layout_width="fill_parent" android:layout_height="40.0dip" android:hint="可输入多个目的地以空格键分开" android:singleLine="true" />
+
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:background="@drawable/bg_publish_together1"
+                    android:visibility="visible"
+                    android:layout_width="fill_parent"
+                    android:layout_height="55.0dip"
+                    android:layout_marginLeft="15.0dip"
+                    android:layout_marginTop="20.0dip"
+                    android:layout_marginRight="15.0dip">
+
+                <ImageView
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10.0dip"
+                        android:layout_marginRight="10.0dip"
+                        android:src="@drawable/icon_des_city"/>
+
+                <EditText
+                        android:textSize="16.0sp"
+                        android:textColor="#ff333333"
+                        android:textColorHint="#ffbfbfbf"
+                        android:layout_gravity="center_vertical"
+                        android:id="@+id/et_des_city"
+                        android:background="@drawable/bg_publish_comment"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40.0dip"
+                        android:hint="目的地"
+                        android:singleLine="true"/>
             </LinearLayout>
-            <RelativeLayout android:orientation="horizontal" android:id="@+id/rl_round_date_tip" android:background="@drawable/selector_together_shared_house" android:visibility="visible" android:clickable="true" android:layout_width="fill_parent" android:layout_height="55.0dip" android:layout_marginLeft="15.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="15.0dip">
-                <ImageView android:id="@+id/iv_chose_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:src="@drawable/icon_round_date" android:scaleType="fitCenter" android:layout_centerVertical="true" />
-                <ImageView android:id="@+id/iv_go" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:src="@drawable/icon_go" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
-                <TextView android:textSize="16.0sp" android:textColor="#ff333333" android:textColorHint="#ffbfbfbf" android:id="@+id/tv_round_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:hint="请选择往返时间" android:layout_toLeftOf="@id/iv_go" android:layout_toRightOf="@id/iv_chose_date" android:layout_centerVertical="true" />
+
+            <RelativeLayout
+                    android:orientation="horizontal"
+                    android:id="@+id/rl_round_date_tip"
+                    android:background="@drawable/selector_together_shared_house"
+                    android:visibility="visible"
+                    android:clickable="true"
+                    android:layout_width="fill_parent"
+                    android:layout_height="55.0dip"
+                    android:layout_marginLeft="15.0dip"
+                    android:layout_marginTop="20.0dip"
+                    android:layout_marginRight="15.0dip">
+
+                <ImageView
+                        android:id="@+id/iv_chose_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10.0dip"
+                        android:layout_marginRight="10.0dip"
+                        android:src="@drawable/icon_round_date"
+                        android:scaleType="fitCenter"
+                        android:layout_centerVertical="true"/>
+
+                <EditText
+                        android:background="@drawable/bg_publish_comment"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40.0dip"
+                        android:textSize="16.0sp"
+                        android:textColor="#ff333333"
+                        android:textColorHint="#ffbfbfbf"
+                        android:id="@+id/tv_round_date"
+                        android:hint="请选择出发时间"
+                        android:layout_toRightOf="@id/iv_chose_date"
+                        android:layout_centerVertical="true"/>
             </RelativeLayout>
-            <RelativeLayout android:orientation="horizontal" android:id="@+id/rl_shared_house" android:background="@drawable/bg_publish_together1" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="55.0dip" android:layout_marginLeft="15.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="15.0dip">
-                <TextView android:textSize="16.0sp" android:textColor="#ff333333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="求拼房" android:layout_centerVertical="true" />
-                <CheckBox android:id="@+id/cb_shared_house" android:background="@drawable/selector_shared_house" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:checked="false" android:button="@null" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
-            </RelativeLayout>
-            <RelativeLayout android:orientation="horizontal" android:id="@+id/rl_fee_description" android:background="@drawable/selector_publish_together1" android:visibility="visible" android:clickable="true" android:layout_width="fill_parent" android:layout_height="45.0dip" android:layout_marginTop="20.0dip">
-                <TextView android:textSize="16.0sp" android:textColor="#ff333333" android:id="@+id/tv_fee_description" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:text="费用说明" android:layout_centerVertical="true" />
-                <ImageView android:id="@+id/iv_go2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="15.0dip" android:src="@drawable/icon_go" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
-                <TextView android:textSize="16.0sp" android:textColor="#ffff6200" android:id="@+id/tv_fee_type" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="线下AA" android:layout_toLeftOf="@id/iv_go2" android:layout_centerVertical="true" />
-            </RelativeLayout>
-            <View android:background="@color/white" android:visibility="visible" android:layout_width="15.0dip" android:layout_height="1.0dip" />
-            <RelativeLayout android:orientation="horizontal" android:id="@+id/rl_people_number" android:background="@drawable/selector_publish_together1" android:visibility="visible" android:clickable="true" android:layout_width="fill_parent" android:layout_height="45.0dip">
-                <TextView android:textSize="16.0sp" android:textColor="#ff333333" android:id="@+id/tv_people_number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:text="约伴人数" android:layout_centerVertical="true" />
-                <ImageView android:id="@+id/iv_go3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="15.0dip" android:src="@drawable/icon_go" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
-                <TextView android:textSize="16.0sp" android:textColor="#ffff6200" android:id="@+id/tv_tour_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1人" android:layout_toLeftOf="@id/iv_go3" android:layout_centerVertical="true" />
-            </RelativeLayout>
-            <View android:background="@color/white" android:visibility="visible" android:layout_width="15.0dip" android:layout_height="1.0dip" />
-            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
-                <TextView android:textSize="16.0sp" android:textColor="#ff666666" android:gravity="center_vertical" android:background="@color/white" android:paddingLeft="15.0dip" android:layout_width="fill_parent" android:layout_height="45.0dip" android:text="简述对旅伴的要求" />
-                <RelativeLayout android:orientation="vertical" android:background="@color/white" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content">
-                    <EditText android:textSize="14.0sp" android:textColor="#ff333333" android:textColorHint="#ff999999" android:gravity="center|left|top" android:id="@+id/et_remark" android:background="@drawable/bg_input_edit" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="103.0dip" android:layout_marginLeft="15.0dip" android:layout_marginRight="15.0dip" android:hint="简述约伴要求或通过下面的标签快速选择" android:inputType="textMultiLine" />
-                    <TextView android:textSize="10.0sp" android:textColor="#ff666666" android:gravity="right" android:id="@+id/tv_font_count" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="5.0dip" android:text="0/30" android:layout_alignParentBottom="true" />
+
+            <View
+                    android:background="@color/white"
+                    android:visibility="visible"
+                    android:layout_width="15.0dip"
+                    android:layout_height="1.0dip"/>
+
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:textSize="16.0sp"
+                        android:textColor="#ff666666"
+                        android:gravity="center_vertical"
+                        android:background="@color/white"
+                        android:paddingLeft="15.0dip"
+                        android:layout_width="fill_parent"
+                        android:layout_height="45.0dip"
+                        android:text="简述对旅伴的要求"/>
+
+                <RelativeLayout
+                        android:orientation="vertical"
+                        android:background="@color/white"
+                        android:visibility="visible"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+                    <EditText
+                            android:textSize="14.0sp"
+                            android:textColor="#ff333333"
+                            android:textColorHint="#ff999999"
+                            android:gravity="center|left|top"
+                            android:id="@+id/et_remark"
+                            android:background="@drawable/bg_input_edit"
+                            android:padding="10.0dip"
+                            android:layout_width="fill_parent"
+                            android:layout_height="103.0dip"
+                            android:layout_marginLeft="15.0dip"
+                            android:layout_marginRight="15.0dip"
+                            android:hint="简述约伴要求或通过下面的标签快速选择"
+                            android:inputType="textMultiLine"/>
                 </RelativeLayout>
-                <com.miaotu.view.FlowLayout android:orientation="horizontal" android:id="@+id/rg_requirement" android:background="@color/white" android:paddingLeft="15.0dip" android:paddingTop="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
-                    <Button android:textSize="12.0sp" android:textColor="#ff999999" android:gravity="center" android:id="@+id/btn_beautiful" android:background="@drawable/selector_together_requirement" android:padding="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:layout_marginBottom="10.0dip" android:checked="true" android:button="@null" android:text="颜值高" />
-                    <Button android:textSize="12.0sp" android:textColor="#ff999999" android:gravity="center" android:id="@+id/btn_indoorsman" android:background="@drawable/selector_together_requirement" android:padding="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:layout_marginBottom="10.0dip" android:checked="false" android:button="@null" android:text="技术宅" />
-                    <Button android:textSize="12.0sp" android:textColor="#ff999999" android:gravity="center" android:id="@+id/btn_rich" android:background="@drawable/selector_together_requirement" android:padding="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:layout_marginBottom="10.0dip" android:checked="false" android:button="@null" android:text="土豪" />
-                    <Button android:textSize="12.0sp" android:textColor="#ff999999" android:gravity="center" android:id="@+id/btn_child" android:background="@drawable/selector_together_requirement" android:padding="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:layout_marginBottom="10.0dip" android:checked="false" android:button="@null" android:text="萝莉" />
-                    <Button android:textSize="12.0sp" android:textColor="#ff999999" android:gravity="center" android:id="@+id/btn_soft_man" android:background="@drawable/selector_together_requirement" android:padding="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:layout_marginBottom="10.0dip" android:checked="false" android:button="@null" android:text="暖男" />
-                    <Button android:textSize="12.0sp" android:textColor="#ff999999" android:gravity="center" android:id="@+id/btn_humor" android:background="@drawable/selector_together_requirement" android:padding="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:layout_marginBottom="10.0dip" android:checked="false" android:button="@null" android:text="逗逼" />
-                    <Button android:textSize="12.0sp" android:textColor="#ff999999" android:gravity="center" android:id="@+id/btn_unlimited" android:background="@drawable/selector_together_requirement" android:padding="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:layout_marginBottom="10.0dip" android:checked="false" android:button="@null" android:text="不限" />
-                    <Button android:textSize="12.0sp" android:textColor="#ff999999" android:gravity="center" android:id="@+id/btn_lady" android:background="@drawable/selector_together_requirement" android:padding="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:layout_marginBottom="10.0dip" android:checked="false" android:button="@null" android:text="御姐" />
-                    <Button android:textSize="12.0sp" android:textColor="#ff999999" android:gravity="center" android:id="@+id/btn_uncle" android:background="@drawable/selector_together_requirement" android:padding="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:layout_marginBottom="10.0dip" android:checked="false" android:button="@null" android:text="大叔" />
-                </com.miaotu.view.FlowLayout>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
