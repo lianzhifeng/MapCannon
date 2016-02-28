@@ -81,23 +81,20 @@ public abstract class BaseHttpAsyncTask<Params, Progress, Result>
     }
 
     protected final void onPostExecute(Result paramResult) {
-        if (this.onPostExcuted)
-            return;
         this.onPostExcuted = true;
         dismissDlg();
-        if ((this.throwable != null) || (paramResult == null))
-            if (this.showTip)
+        if ((this.throwable != null) || (paramResult == null)) {
+            if (this.showTip) {
                 showToast("服务器响应超时");
-        while (true) {
-            finallyRun();
+            }
+        } else {
             onCompleteTask(paramResult);
             this.success = true;
         }
+        finallyRun();
     }
 
     protected final void onPreExecute() {
-        if (this.onPreExcuted)
-            return;
         this.success = false;
         this.onPreExcuted = true;
         super.onPreExecute();

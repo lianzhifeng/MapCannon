@@ -130,7 +130,7 @@ public class UserInfoDBHandler {
                     + Key.NICKNAME + " TEXT, "
                     + Key.PROVINCE + " TEXT, "
                     + Key.CITY + " TEXT, "
-                    + Key.GENDER + " TEXT;");
+                    + Key.GENDER + " TEXT);");
         }
 
     }

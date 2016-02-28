@@ -87,7 +87,7 @@ public class CommentDBHandler {
                     + Key.COMMENTNAME + " TEXT, "
                     + Key.POSTID + " TEXT, "
                     + Key.CONTENT + " TEXT, "
-                    + Key.TIME + " TEXT;");
+                    + Key.TIME + " TEXT);");
         }
 
     }

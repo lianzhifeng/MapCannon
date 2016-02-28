@@ -94,7 +94,7 @@ public class PostDBHandler {
                     + Key.CONTENT + " TEXT, "
                     + Key.DESTNATION + " TEXT, "
                     + Key.DEPARTURE + " TEXT, "
-                    + Key.DEPARTTIME + " TEXT;");
+                    + Key.DEPARTTIME + " TEXT);");
         }
 
     }

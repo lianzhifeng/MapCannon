@@ -214,15 +214,11 @@ public class Util {
     }
 
     public static boolean isNetworkConnected(Context paramContext) {
-        try {
-            NetworkInfo localNetworkInfo = ((ConnectivityManager) paramContext
-                    .getSystemService("connectivity")).getActiveNetworkInfo();
-            if (localNetworkInfo != null) {
-                boolean bool = localNetworkInfo.isAvailable();
-                return bool;
-            }
-        } catch (Exception localException) {
-            localException.printStackTrace();
+        ConnectivityManager cm = (ConnectivityManager) paramContext
+                .getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo info = cm.getActiveNetworkInfo();
+        if (info != null && info.isConnected()) {
+            return true;
         }
         return false;
     }

@@ -40,6 +40,7 @@ public class Register2Activity extends BaseActivity implements OnClickListener {
     private void init() {
         this.tvTitle.setText("手机号注册");
         this.tvRight.setText("下一步");
+        this.registerInfo = new RegisterInfo();
     }
 
     private void bindView() {
