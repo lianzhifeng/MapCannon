@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 import com.empty.mapcannon.R;
 
 import java.util.ArrayList;
@@ -28,6 +30,7 @@ public class TogetherDetailActivity extends Activity implements View.OnClickList
     private List<Object> mCommentList;
     private List<Object> mTogetherList;
     private MyAdapter mAdapter;
+    private boolean isJoined = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -128,5 +131,15 @@ public class TogetherDetailActivity extends Activity implements View.OnClickList
     }
 
     private void joinOrLeave() {
+        TextView textView = (TextView) mBottemTogether.findViewById(R.id.tv_join);
+        if (isJoined) {
+            isJoined = false;
+            textView.setText("入伙");
+            Toast.makeText(TogetherDetailActivity.this, "已经取消入伙", Toast.LENGTH_SHORT).show();
+        } else {
+            isJoined = true;
+            Toast.makeText(TogetherDetailActivity.this, "成功入伙", Toast.LENGTH_SHORT).show();
+            textView.setText("取消入伙");
+        }
     }
 }

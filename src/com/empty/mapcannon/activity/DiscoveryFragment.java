@@ -9,9 +9,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.BaseAdapter;
-import android.widget.ListView;
+import android.widget.*;
 import com.empty.mapcannon.R;
 
 import java.util.ArrayList;
@@ -23,8 +21,6 @@ import java.util.List;
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class DiscoveryFragment extends Fragment implements View.OnClickListener {
     private ListView list;
-    private View mBtnComment;
-    private View mBtnTogether;
     private View root;
     private MyAdapter mAdapter;
     private List<Object> mContentList;
@@ -82,9 +78,37 @@ public class DiscoveryFragment extends Fragment implements View.OnClickListener 
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            View view = View.inflate(mContext, R.layout.item_together, null);
-            return view;
+        public View getView(final int position, View convertView, ViewGroup parent) {
+            Holder holder = null;
+            if (convertView == null) {
+                holder = new Holder();
+                convertView = View.inflate(mContext, R.layout.item_together, null);
+                holder.tvComent = convertView.findViewById(R.id.ll_comment);
+                holder.tvJoin = convertView.findViewById(R.id.ll_join);
+                holder.position = position;
+                convertView.setTag(holder);
+            } else {
+                holder = (Holder) convertView.getTag();
+            }
+            holder.tvComent.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(mContext, CommentActivity.class));
+                }
+            });
+            holder.tvJoin.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(mContext, "成功入伙" + position, Toast.LENGTH_SHORT).show();
+                }
+            });
+            return convertView;
+        }
+
+        class Holder {
+            View tvComent;
+            View tvJoin;
+            int position;
         }
     }
 }
