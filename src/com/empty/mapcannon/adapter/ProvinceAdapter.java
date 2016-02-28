@@ -4,6 +4,9 @@ package com.empty.mapcannon.adapter;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.empty.mapcannon.R;
+
 import kankan.wheel.widget.adapters.AbstractWheelTextAdapter;
 
 public class ProvinceAdapter extends AbstractWheelTextAdapter {
@@ -14,8 +17,8 @@ public class ProvinceAdapter extends AbstractWheelTextAdapter {
     };
 
     public ProvinceAdapter(Context paramContext) {
-        super(paramContext, 2130968714, 0);
-        setItemTextResource(2131624638);
+        super(paramContext, R.layout.dialog_word_design, 0);
+        setItemTextResource(R.id.country_name);
     }
 
     public View getItem(int paramInt, View paramView, ViewGroup paramViewGroup) {

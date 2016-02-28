@@ -89,9 +89,9 @@ public class Register2Activity extends BaseActivity implements OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_right:
-                        startActivity(new Intent(Register2Activity.this,
-                                EditUserInfoActivity.class));
-//                nextStep();
+//                        startActivity(new Intent(Register2Activity.this,
+//                                EditUserInfoActivity.class));
+                nextStep();
                 break;
             case R.id.tv_left:
                 finish();

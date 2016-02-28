@@ -2,6 +2,7 @@
 package com.empty.mapcannon.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,11 @@ import android.widget.TextView;
 import com.empty.mapcannon.R;
 import com.empty.mapcannon.adapter.DateArrayAdapter;
 import com.empty.mapcannon.adapter.ProvinceAdapter;
+import com.empty.mapcannon.async.BaseHttpAsyncTask;
+import com.empty.mapcannon.db.UserInfoDBHandler;
+import com.empty.mapcannon.db.UserInfoDBHandler.Key;
+import com.empty.mapcannon.model.RegisterInfo;
+import com.empty.mapcannon.util.StringUtil;
 import com.empty.mapcannon.view.WheelTwoColumnDialog;
 
 import kankan.wheel.widget.OnWheelChangedListener;
@@ -27,8 +33,12 @@ public class EditUserInfoActivity extends BaseActivity implements OnClickListene
     private TextView tv_gender;
     private RelativeLayout rl_home;
     private RelativeLayout rl_life;
+    private TextView tv_left;
+    private TextView tv_right;
+    private TextView tv_title;
     private boolean scrolling = false;
     private WheelTwoColumnDialog dialog;
+    private RegisterInfo info;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +50,20 @@ public class EditUserInfoActivity extends BaseActivity implements OnClickListene
     }
 
     private void initData() {
-
+        this.tv_right.setText("保存");
+        this.tv_title.setText("编辑个人资料");
+        this.info = new RegisterInfo();
+        Intent intent = getIntent();
+        RegisterInfo info = (RegisterInfo) intent.getSerializableExtra("registerInfo");
+        if (info == null) {
+            finish();
+            return;
+        }
     }
 
     private void bindView() {
+        this.tv_left.setOnClickListener(this);
+        this.tv_right.setOnClickListener(this);
         this.tv_content_home.setOnClickListener(this);
         this.tv_content_life.setOnClickListener(this);
         this.tv_gender.setOnClickListener(this);
@@ -51,11 +71,15 @@ public class EditUserInfoActivity extends BaseActivity implements OnClickListene
 
     private void findView() {
         this.tv_content_home = ((TextView) findViewById(R.id.tv_content_home));
-        this.tv_content_life = this.tv_gender = ((TextView) findViewById(R.id.tv_gender));
+        this.tv_content_life = ((TextView) findViewById(R.id.tv_content_life));
+        this.tv_gender = ((TextView) findViewById(R.id.tv_gender));
         this.et_nickname = ((EditText) findViewById(R.id.et_nickname));
         this.tv_gender = ((TextView) findViewById(R.id.tv_gender));
         this.rl_home = ((RelativeLayout) findViewById(R.id.rl_home));
         this.rl_life = ((RelativeLayout) findViewById(R.id.rl_life));
+        this.tv_left = (TextView) findViewById(R.id.tv_left);
+        this.tv_right = (TextView) findViewById(R.id.tv_right);
+        this.tv_title = (TextView) findViewById(R.id.tv_title);
     }
 
     @Override
@@ -70,7 +94,17 @@ public class EditUserInfoActivity extends BaseActivity implements OnClickListene
             case R.id.tv_gender:
                 getGenderDialog();
                 break;
+            case R.id.tv_left:
+                back();
+                break;
+            case R.id.tv_right:
+                modifyUserInfo(info);
+                break;
         }
+    }
+
+    private void back() {
+        finish();
     }
 
     private void getGenderDialog() {
@@ -186,7 +220,7 @@ public class EditUserInfoActivity extends BaseActivity implements OnClickListene
                         "武隆县", "秀山土家族苗族自治县", "永川市", " 酉阳土家族苗族自治县", "云阳县", "忠县", "潼南县", "璧山县", "綦江县"
                 }
         };
-        final WheelView localWheelView2 = (WheelView) localView.findViewById(2131624609);
+        final WheelView localWheelView2 = (WheelView) localView.findViewById(R.id.city);
         localWheelView2.setVisibleItems(5);
         localWheelView1.addChangingListener(new OnWheelChangedListener() {
             public void onChanged(WheelView paramAnonymousWheelView, int paramAnonymousInt1,
@@ -198,19 +232,15 @@ public class EditUserInfoActivity extends BaseActivity implements OnClickListene
         });
         localWheelView1.addScrollingListener(new OnWheelScrollListener() {
             public void onScrollingFinished(WheelView paramAnonymousWheelView) {
-                // EditUserInfoActivity.access$202(EditUserInfoActivity.this,
-                // false);
                 EditUserInfoActivity.this.updateCities(localWheelView2, arrayOfString,
                         localWheelView1.getCurrentItem());
             }
 
             public void onScrollingStarted(WheelView paramAnonymousWheelView) {
-                // EditUserInfoActivity.access$202(EditUserInfoActivity.this,
-                // true);
             }
         });
         localWheelView1.setCurrentItem(29);
-        this.dialog = new WheelTwoColumnDialog(this, 2131296437, localView);
+        this.dialog = new WheelTwoColumnDialog(this, R.style.Dialog_Fullscreen, localView);
         this.dialog.setOnConfirmListener(new View.OnClickListener() {
             public void onClick(View paramAnonymousView) {
                 String str = arrayOfString[localWheelView1.getCurrentItem()][localWheelView2
@@ -228,5 +258,50 @@ public class EditUserInfoActivity extends BaseActivity implements OnClickListene
         localArrayWheelAdapter.setTextSize(18);
         paramWheelView.setViewAdapter(localArrayWheelAdapter);
         paramWheelView.setCurrentItem(0);
+    }
+
+    private boolean validate() {
+        if ((StringUtil.isBlank(this.et_nickname.getText().toString().trim()))
+                || (StringUtil.isBlank(this.tv_gender.getText().toString().trim()))) {
+            showMyToast("请完善必填选项！");
+            return false;
+        }
+        return true;
+    }
+
+    private void modifyUserInfo(final RegisterInfo paramModifyPersonInfo) {
+        if (validate()) {
+            new BaseHttpAsyncTask<Void, Void, Boolean>(this) {
+                protected void onCompleteTask(Boolean paramAnonymousBaseResult) {
+                    if (paramAnonymousBaseResult) {
+                        showMyToast("填写成功");
+                        writePreference(Key.GENDER, info.getGender());
+                        if (!StringUtil.isEmpty(info.getCity())) {
+                            writePreference(Key.CITY, info.getCity());
+                        }
+                        if (!StringUtil.isEmpty(info.getProvince())) {
+                            writePreference(Key.PROVINCE, info.getProvince());
+                        }
+                        EditUserInfoActivity.this.finish();
+                    } else {
+                        showMyToast("修改信息失败, 请重试");
+                    }
+                }
+
+                protected Boolean run(Void[] paramAnonymousArrayOfVoid) {
+                    info.setNickname(et_nickname.getText().toString());
+                    info.setGender(tv_gender.getText().toString());
+                    String province = tv_content_life.getText().toString();
+                    if (!StringUtil.isEmpty(province)) {
+                        info.setProvince(province);
+                    }
+                    String city = tv_content_home.getText().toString();
+                    if (!StringUtil.isEmpty(city)) {
+                        info.setCity(city);
+                    }
+                    return UserInfoDBHandler.getInstance().editInfo(info);
+                }
+            }.execute();
+        }
     }
 }
