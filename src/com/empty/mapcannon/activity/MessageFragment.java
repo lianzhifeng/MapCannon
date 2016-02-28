@@ -1,3 +1,4 @@
+
 package com.empty.mapcannon.activity;
 
 import android.annotation.TargetApi;
@@ -15,8 +16,10 @@ import com.empty.mapcannon.R;
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class MessageFragment extends Fragment {
     private View root;
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.fragment_message, null, false);
         return root;
     }

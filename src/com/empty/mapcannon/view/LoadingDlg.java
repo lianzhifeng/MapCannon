@@ -4,13 +4,15 @@ import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 
+import com.empty.mapcannon.R;
+
 public class LoadingDlg extends Dialog
 {
   Context context;
 
   public LoadingDlg(Context paramContext)
   {
-    this(paramContext, 2131296582);
+    this(paramContext, R.style.loading_dialog);
   }
 
   public LoadingDlg(Context paramContext, int paramInt)
@@ -34,8 +36,3 @@ public class LoadingDlg extends Dialog
     setContentView(2130968706);
   }
 }
-
-/* Location:           /home/xshengh/trash/classes_dex2jar.jar
- * Qualified Name:     com.miaotu.view.LoadingDlg
- * JD-Core Version:    0.6.2
- */
