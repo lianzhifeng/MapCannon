@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="70.0dip">
+        <com.miaotu.view.CircleImageView android:id="@+id/iv_head_photo" android:layout_width="45.0dip" android:layout_height="45.0dip" android:layout_marginLeft="16.0dip" android:src="@drawable/icon_default_head_photo" app:border_width="0.0dip" app:border_color="@color/white" />
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="16.0dip" android:layout_weight="1.0">
+            <TextView android:textSize="16.0sp" android:textColor="#ff505050" android:id="@+id/tv_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="11.0dip" android:layout_marginBottom="8.0dip" android:text="米兰" />
+            <TextView android:textSize="14.0sp" android:textColor="#ff999999" android:id="@+id/tv_ps" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="QQ好友:米兰正在使用妙途" android:layout_alignParentBottom="true" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <ImageView android:layout_gravity="right" android:id="@+id/iv_control" android:background="@drawable/icon_add" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="16.0dip" android:scaleType="fitCenter" />
+        </LinearLayout>
+    </LinearLayout>
+    <View android:background="#ffdbdbdb" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_marginLeft="16.0dip" />
+</LinearLayout>

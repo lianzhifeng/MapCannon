@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.miaotu.view.CircleImageView android:id="@+id/iv_head_photo" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:src="@drawable/default_avatar" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip">
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="30.0dip">
+            <TextView android:textSize="12.0sp" android:textColor="#ff646464" android:id="@+id/tv_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="四小美" android:layout_weight="1.0" />
+            <TextView android:textSize="12.0sp" android:textColor="#ffb4b4b4" android:id="@+id/tv_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="我们一起去玩" android:singleLine="true" android:layout_weight="1.0" />
+        </LinearLayout>
+        <TextView android:textSize="10.0sp" android:textColor="#ffb4b4b4" android:id="@+id/tv_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="20:06" />
+    </LinearLayout>
+    <LinearLayout android:gravity="right" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip">
+        <ImageView android:id="@+id/iv_right" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginRight="10.0dip" android:scaleType="fitXY" />
+    </LinearLayout>
+</LinearLayout>

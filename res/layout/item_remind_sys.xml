@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="17.0dip">
+        <ImageView android:id="@+id/iv_idot" android:background="@drawable/icon_remind_msg" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginLeft="10.0dip" android:scaleType="fitCenter" android:layout_centerVertical="true" />
+        <ImageView android:id="@+id/iv_right" android:background="@drawable/icon_system_msg_right" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginRight="5.0dip" android:layout_alignBottom="@id/tv_title" android:layout_alignParentRight="true" />
+        <TextView android:textSize="12.0sp" android:textColor="#ffb4b4b4" android:id="@+id/tv_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" android:layout_toLeftOf="@id/iv_right" android:layout_alignBottom="@id/tv_title" />
+        <TextView android:textSize="16.0sp" android:textColor="#ff505050" android:id="@+id/tv_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:text="发团消息提醒" android:singleLine="true" android:layout_toLeftOf="@id/tv_date" android:layout_toRightOf="@id/iv_idot" />
+    </RelativeLayout>
+    <TextView android:textSize="14.0sp" android:textColor="#ff969696" android:id="@+id/tv_content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="31.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="15.0dip" android:text="" android:lineSpacingExtra="6.0dip" />
+</LinearLayout>

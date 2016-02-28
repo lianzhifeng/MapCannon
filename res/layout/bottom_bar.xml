@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        android:id="@+id/ly_main_tab_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip"
+        android:layout_alignParentBottom="true"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+            android:id="@+id/iv_projection"
+            android:background="@drawable/main_bottom_projection"
+            android:layout_width="fill_parent"
+            android:layout_height="3.0dip"
+            android:layout_alignParentTop="true" />
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:background="#fffafafa"
+            android:paddingLeft="7.0dip"
+            android:paddingRight="7.0dip"
+            android:layout_width="fill_parent"
+            android:layout_height="47.0dip"
+            android:layout_below="@id/iv_projection">
+
+        <LinearLayout
+                android:gravity="center"
+                android:orientation="vertical"
+                android:id="@+id/btn_discovery"
+                android:descendantFocusability="beforeDescendants"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0">
+
+            <ImageView
+                    android:id="@+id/image_discovery"
+                    android:clickable="false"
+                    android:layout_width="25.0dip"
+                    android:layout_height="25.0dip"
+                    android:src="@drawable/icon_tab_first_selected"
+                    android:scaleType="fitCenter" />
+
+            <TextView
+                    android:textSize="10.0sp"
+                    android:textColor="#ffb4b4b4"
+                    android:id="@+id/text_discovery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="发现" />
+        </LinearLayout>
+
+        <RelativeLayout
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0">
+
+            <LinearLayout
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:id="@+id/btn_message"
+                    android:descendantFocusability="beforeDescendants"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_centerInParent="true">
+
+                <ImageView
+                        android:id="@+id/image_message"
+                        android:clickable="false"
+                        android:layout_width="25.0dip"
+                        android:layout_height="25.0dip"
+                        android:src="@drawable/icon_tab_message_unselected"
+                        android:layout_centerInParent="true" />
+
+                <TextView
+                        android:textSize="10.0sp"
+                        android:textColor="#ffb4b4b4"
+                        android:id="@+id/tv_tab_message"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="消息"
+                        android:layout_below="@id/btn_tab_message"
+                        android:layout_centerHorizontal="true" />
+            </LinearLayout>
+
+            <TextView
+                    android:textSize="8.0dip"
+                    android:textColor="#ffffffff"
+                    android:gravity="center"
+                    android:id="@+id/icon_msg_flg"
+                    android:background="@drawable/icon_msg_dot"
+                    android:visibility="gone"
+                    android:layout_width="16.0dip"
+                    android:layout_height="16.0dip"
+                    android:layout_marginTop="2.0dip"
+                    android:layout_marginRight="20.0dip"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true" />
+        </RelativeLayout>
+
+        <LinearLayout
+                android:gravity="center"
+                android:orientation="vertical"
+                android:id="@+id/btn_mine"
+                android:descendantFocusability="beforeDescendants"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0">
+
+            <ImageView
+                    android:id="@+id/image_mine"
+                    android:clickable="false"
+                    android:layout_width="25.0dip"
+                    android:layout_height="25.0dip"
+                    android:src="@drawable/icon_tab_mine_unselected" />
+
+            <TextView
+                    android:textSize="10.0sp"
+                    android:textColor="#ffb4b4b4"
+                    android:id="@+id/tv_tab_mine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="我的" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

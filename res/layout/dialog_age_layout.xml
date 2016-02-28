@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:textColor="@color/white" android:layout_gravity="right" android:id="@+id/btn_confirm" android:background="#ff46b692" android:layout_width="50.0dip" android:layout_height="25.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="15.0dip" android:text="确定" />
+    <ImageView android:background="@color/line_grey" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="10.0dip" />
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="10.0dip">
+        <kankan.wheel.widget.WheelView android:id="@+id/wv_day" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

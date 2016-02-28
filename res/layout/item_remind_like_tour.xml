@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.miaotu.view.CircleImageView android:id="@+id/iv_head_photo" android:layout_width="32.0dip" android:layout_height="32.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" />
+    <LinearLayout android:orientation="vertical" android:id="@+id/ll_image" android:layout_width="wrap_content" android:layout_height="50.0dip" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:layout_alignParentRight="true">
+        <ImageView android:id="@+id/iv_right" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginRight="10.0dip" android:src="@drawable/icon_default_head_photo" android:scaleType="fitCenter" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:layout_toLeftOf="@id/ll_image" android:layout_toRightOf="@id/iv_head_photo">
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="32.0dip">
+            <TextView android:textSize="12.0sp" android:textColor="#ff646464" android:id="@+id/tv_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="四小美" />
+            <TextView android:textSize="12.0sp" android:textColor="#ffb4b4b4" android:id="@+id/tv_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="喜欢了你发起的旅行" android:singleLine="true" />
+        </LinearLayout>
+        <TextView android:textSize="10.0sp" android:textColor="#ffb4b4b4" android:id="@+id/tv_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="" />
+    </LinearLayout>
+</RelativeLayout>

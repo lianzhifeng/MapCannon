@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:orientation="vertical"
+        android:background="#fff0f0f0"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+        <include
+                android:id="@+id/top"
+                layout="@layout/top_bar" />
+
+        <RelativeLayout
+                android:id="@+id/rl_comment"
+                android:background="#ffffffff"
+                android:layout_width="fill_parent"
+                android:layout_height="60.0dip"
+                android:layout_alignParentBottom="true">
+
+            <View
+                    android:background="#ffb4b4b4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="2.0px" />
+
+            <ImageView
+                    android:id="@+id/iv_head_photo"
+                    android:layout_width="24.0dip"
+                    android:layout_height="24.0dip"
+                    android:layout_marginLeft="12.0dip"
+                    android:src="@drawable/icon_default_head_photo"
+                    android:layout_centerVertical="true" />
+
+            <ImageView
+                    android:id="@+id/iv_publish"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="12.0dip"
+                    android:src="@drawable/icon_list_comment"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true" />
+
+            <EditText
+                    android:textSize="14.0sp"
+                    android:textColor="#ff646464"
+                    android:textColorHint="#ffbfbfbf"
+                    android:id="@+id/et_comment"
+                    android:background="@drawable/bg_publish_comment"
+                    android:paddingLeft="20.0dip"
+                    android:paddingRight="20.0dip"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40.0dip"
+                    android:layout_marginLeft="5.0dip"
+                    android:layout_marginRight="5.0dip"
+                    android:hint="在这里说点什么吧"
+                    android:maxLength="140"
+                    android:layout_toLeftOf="@id/iv_publish"
+                    android:layout_toRightOf="@id/iv_head_photo"
+                    android:layout_centerVertical="true" />
+        </RelativeLayout>
+
+        <ListView
+                android:id="@+id/rv_comment"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/rl_comment"
+                android:layout_below="@id/top" />
+    </RelativeLayout>
+</LinearLayout>

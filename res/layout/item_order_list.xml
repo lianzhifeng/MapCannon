@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="44.0dip" android:layout_marginLeft="21.0dip">
+        <TextView android:textSize="12.0sp" android:textColor="#ff999999" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="订单状态：" />
+        <TextView android:textSize="12.0sp" android:textColor="#ffff8000" android:id="@+id/tv_order_state" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="成功" />
+    </LinearLayout>
+    <View android:background="#ffdcdcdc" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="21.0dip" />
+    <RelativeLayout android:id="@+id/rl_hotel" android:layout_width="fill_parent" android:layout_height="94.0dip">
+        <ImageView android:id="@+id/iv_room" android:layout_width="81.0dip" android:layout_height="56.0dip" android:layout_marginLeft="21.0dip" android:scaleType="fitXY" android:layout_centerVertical="true" />
+        <TextView android:textSize="14.0sp" android:textColor="#ff505050" android:id="@+id/tv_hotel_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="19.0dip" android:layout_marginRight="21.0dip" android:text="汉庭快捷酒店（兰州张掖路步行街店）" android:singleLine="true" android:layout_toRightOf="@id/iv_room" android:layout_alignTop="@id/iv_room" />
+        <TextView android:textSize="12.0sp" android:textColor="#ff999999" android:id="@+id/tv_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="19.0dip" android:layout_marginRight="21.0dip" android:text="入住：2015-10-26共1晚" android:singleLine="true" android:layout_toRightOf="@id/iv_room" android:layout_alignBottom="@id/iv_room" />
+    </RelativeLayout>
+    <View android:background="#ffdcdcdc" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="21.0dip" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="44.0dip">
+        <TextView android:textSize="16.0sp" android:textColor="#ff505050" android:id="@+id/tv_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="21.0dip" android:text="合计：" android:layout_centerVertical="true" />
+        <TextView android:textSize="12.0sp" android:textColor="#ffff8000" android:id="@+id/tv_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="￥" android:layout_toRightOf="@id/tv_1" android:layout_alignBottom="@id/tv_1" />
+        <TextView android:textSize="16.0sp" android:textColor="#ffff8000" android:id="@+id/tv_money" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="\ 180" android:layout_toRightOf="@id/tv_2" android:layout_centerVertical="true" />
+        <TextView android:textSize="14.0sp" android:textColor="#ff505050" android:gravity="center" android:id="@+id/tv_look_order" android:background="@drawable/selector_order_list_show_detail" android:layout_width="79.0dip" android:layout_height="29.0dip" android:layout_marginRight="21.0dip" android:text="查看订单" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</LinearLayout>

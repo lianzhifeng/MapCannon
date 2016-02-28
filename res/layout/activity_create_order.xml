@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="#fff0f0f0" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@+id/layout_top_bar" layout="@layout/top_bar" />
+    <RelativeLayout android:id="@+id/rl_pay" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_alignParentBottom="true">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/ll_order_money" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_centerVertical="true">
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:textSize="14.0sp" android:textColor="#ff333333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="订单金额：" />
+                    <TextView android:textSize="16.0sp" android:textColor="#ffff6200" android:id="@+id/tv_order_money" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="￥231" />
+                </LinearLayout>
+                <TextView android:textSize="12.0sp" android:textColor="#ff999999" android:id="@+id/tv_coupon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="已使用优惠券：9元" />
+            </LinearLayout>
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:src="@drawable/icon_order_down" android:layout_toRightOf="@id/ll_order_money" android:layout_centerVertical="true" />
+        </LinearLayout>
+        <TextView android:textSize="18.0sp" android:textColor="@color/white" android:gravity="center" android:id="@+id/tv_pay" android:background="#ffff6201" android:layout_width="120.0dip" android:layout_height="fill_parent" android:text="支付" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <View android:id="@+id/v_pay" android:background="#ffdbdbdb" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_above="@id/rl_pay" />
+    <ScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/v_pay" android:layout_below="@id/layout_top_bar">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="horizontal" android:background="#fffef1e4" android:layout_width="fill_parent" android:layout_height="75.0dip">
+                <LinearLayout android:gravity="center_horizontal" android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <ImageView android:id="@+id/iv_order_step1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_create_order_running" android:layout_centerHorizontal="true" />
+                        <View android:background="#ffff6200" android:layout_width="wrap_content" android:layout_height="1.0dip" android:layout_marginLeft="6.0dip" android:layout_toRightOf="@id/iv_order_step1" android:layout_centerVertical="true" />
+                    </RelativeLayout>
+                    <TextView android:textSize="12.0sp" android:textColor="#ffff6200" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="7.0dip" android:text="选择房间" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center_horizontal" android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <ImageView android:id="@+id/iv_order_step2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_create_order_running" android:layout_centerHorizontal="true" />
+                        <View android:background="#ffff6200" android:layout_width="wrap_content" android:layout_height="1.0dip" android:layout_marginRight="6.0dip" android:layout_toLeftOf="@id/iv_order_step2" android:layout_centerVertical="true" />
+                        <View android:background="#ffff6200" android:layout_width="wrap_content" android:layout_height="1.0dip" android:layout_marginLeft="6.0dip" android:layout_toRightOf="@id/iv_order_step2" android:layout_centerVertical="true" />
+                    </RelativeLayout>
+                    <TextView android:textSize="12.0sp" android:textColor="#ffff6200" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="7.0dip" android:text="填写订单" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center_horizontal" android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <ImageView android:id="@+id/iv_order_step3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_create_order_not" android:layout_centerHorizontal="true" />
+                        <View android:background="#ffff6200" android:layout_width="wrap_content" android:layout_height="1.0dip" android:layout_marginRight="6.0dip" android:layout_toLeftOf="@id/iv_order_step3" android:layout_centerVertical="true" />
+                        <View android:background="#ffff6200" android:layout_width="wrap_content" android:layout_height="1.0dip" android:layout_marginLeft="6.0dip" android:layout_toRightOf="@id/iv_order_step3" android:layout_centerVertical="true" />
+                    </RelativeLayout>
+                    <TextView android:textSize="12.0sp" android:textColor="#ffffc599" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="7.0dip" android:text="支付订单" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center_horizontal" android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <ImageView android:id="@+id/iv_order_step4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_create_order_not" android:layout_centerHorizontal="true" />
+                        <View android:background="#ffff6200" android:layout_width="wrap_content" android:layout_height="1.0dip" android:layout_marginRight="6.0dip" android:layout_toLeftOf="@id/iv_order_step4" android:layout_centerVertical="true" />
+                    </RelativeLayout>
+                    <TextView android:textSize="12.0sp" android:textColor="#ffffc599" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="7.0dip" android:text="支付完成" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="68.0dip">
+                <TextView android:textSize="16.0sp" android:textColor="#ff333333" android:id="@+id/tv_hotel_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginRight="16.0dip" android:text="兰州东方大酒店" android:singleLine="true" />
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginTop="10.0dip">
+                    <TextView android:textSize="14.0sp" android:textColor="#ff333333" android:id="@+id/tv_join_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="入住时间：10-26" />
+                    <TextView android:textSize="14.0sp" android:textColor="#ff333333" android:id="@+id/tv_end_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:text="离店时间：10-26" android:layout_toRightOf="@id/tv_join_date" />
+                    <TextView android:textSize="14.0sp" android:textColor="#ffff6200" android:id="@+id/tv_stay_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="16.0dip" android:text="2晚" android:layout_alignParentRight="true" />
+                </RelativeLayout>
+            </LinearLayout>
+            <View android:background="#fff0f0f0" android:layout_width="fill_parent" android:layout_height="10.0dip" />
+            <RelativeLayout android:id="@+id/rl_room_num" android:background="@drawable/selector_publish_together1" android:layout_width="fill_parent" android:layout_height="45.0dip">
+                <TextView android:textSize="16.0sp" android:textColor="#ff666666" android:id="@+id/tv_room_hint" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:text="房间数" android:layout_centerVertical="true" />
+                <TextView android:textSize="16.0sp" android:textColor="#ff333333" android:id="@+id/tv_room_num" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="50.0dip" android:text="1间" android:layout_toRightOf="@id/tv_room_hint" android:layout_centerVertical="true" />
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="16.0dip" android:src="@drawable/icon_hotel_detail_next" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                <View android:background="#ffdbdbdb" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="16.0dip" android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@+id/rl_info" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="16.0sp" android:textColor="#ff666666" android:gravity="center_vertical" android:id="@+id/tv_people_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:minHeight="44.0dip" android:text="入住人" />
+                <EditText android:textSize="16.0sp" android:textColor="#ff333333" android:textColorHint="#ffbfbfbf" android:id="@+id/et_people_name" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="44.0dip" android:layout_marginLeft="50.0dip" android:layout_marginRight="16.0dip" android:hint="入住人姓名" android:layout_toRightOf="@id/tv_people_name" />
+                <View android:id="@+id/v_line1" android:background="#ffdbdbdb" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="16.0dip" android:layout_below="@id/tv_people_name" />
+                <LinearLayout android:orientation="vertical" android:id="@+id/ll_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/v_line1" />
+                <TextView android:textSize="16.0sp" android:textColor="#ff666666" android:gravity="center_vertical" android:id="@+id/tv_phone" android:layout_width="wrap_content" android:layout_height="44.0dip" android:layout_marginLeft="16.0dip" android:text="联系手机" android:layout_below="@id/ll_name" />
+                <EditText android:textSize="16.0sp" android:textColor="#ff333333" android:textColorHint="#ffbfbfbf" android:id="@+id/et_phone" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="44.0dip" android:layout_marginRight="16.0dip" android:hint="用于接收确认短信" android:layout_toRightOf="@id/tv_phone" android:layout_alignLeft="@id/et_people_name" android:layout_alignTop="@id/tv_phone" android:layout_centerVertical="true" android:inputType="number" />
+            </RelativeLayout>
+            <View android:id="@+id/v_line2" android:background="#ffdbdbdb" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            <TextView android:textSize="14.0sp" android:textColor="#ff333333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginTop="15.0dip" android:text="温馨提示" />
+            <TextView android:textSize="14.0sp" android:textColor="#ff666666" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginTop="14.0dip" android:layout_marginRight="16.0dip" android:text="预定该房型，需要您预先支付房费。该订单确认后不可取消，若未入住我们将收取您的全额房费" android:lineSpacingExtra="7.0dip" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

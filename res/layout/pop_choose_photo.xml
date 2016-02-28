@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#fff1f3f6" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="14.0sp" android:textColor="#ff505050" android:gravity="center" android:id="@+id/tv_camera" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="40.0dip" android:text="相机" />
+    <View android:id="@+id/view1" android:background="@drawable/bg_line" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_below="@id/tv_camera" />
+    <TextView android:textSize="14.0sp" android:textColor="#ff505050" android:gravity="center" android:id="@+id/tv_picture" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="40.0dip" android:text="相册" android:layout_below="@id/view1" />
+</LinearLayout>

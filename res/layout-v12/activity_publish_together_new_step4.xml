@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/top_bar" />
+    <ScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="vertical" android:background="@drawable/bg_publish_together" android:padding="10.0dip" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="16.0dip">
+                <EditText android:textSize="14.0sp" android:textColor="#ff333333" android:gravity="center|left|top" android:id="@+id/et_content" android:background="@drawable/bg_publish_comment" android:layout_width="fill_parent" android:layout_height="130.0dip" android:hint="\#12.17丽江,求约伴#" android:inputType="textMultiLine" android:textCursorDrawable="@drawable/color_cursor" />
+                <TextView android:textSize="12.0sp" android:textColor="#ff666666" android:gravity="right" android:id="@+id/tv_font_count" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="7.0dip" android:text="0/140" />
+            </LinearLayout>
+            <ImageView android:layout_width="fill_parent" android:layout_height="10.0dip" android:src="#fff0f0f0" />
+            <RelativeLayout android:id="@+id/rl_location" android:layout_width="fill_parent" android:layout_height="44.0dip" android:layout_marginLeft="16.0dip">
+                <ImageView android:id="@+id/iv_location" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_together_publish_location" android:layout_centerVertical="true" />
+                <TextView android:textSize="14.0sp" android:textColor="#ff333333" android:id="@+id/tv_area" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:text="所在位置" android:layout_toRightOf="@id/iv_location" android:layout_centerVertical="true" />
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dip" android:src="@drawable/icon_together_publish_location_select" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                <ImageView android:layout_width="fill_parent" android:layout_height="1.0dip" android:src="#ffdbdbdb" android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+            <TextView android:textSize="16.0sp" android:textColor="#ff999999" android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:text="—分享—" />
+            <RadioGroup android:gravity="center" android:orientation="horizontal" android:id="@+id/rg_share" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:layout_centerVertical="true">
+                <CheckBox android:id="@+id/rb_share_circle" android:background="@drawable/selector_share_circle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:button="@null" />
+                <CheckBox android:id="@+id/rb_share_wechat" android:background="@drawable/selector_share_wechat" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:checked="false" android:button="@null" />
+                <CheckBox android:id="@+id/rb_share_weibo" android:background="@drawable/selector_share_weibo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:checked="false" android:button="@null" />
+                <CheckBox android:id="@+id/rb_share_zone" android:background="@drawable/selector_share_zone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:checked="false" android:button="@null" />
+                <CheckBox android:id="@+id/rb_share_qq" android:background="@drawable/selector_share_qq" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:checked="false" android:button="@null" />
+            </RadioGroup>
+            <ImageView android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="16.0dip" android:layout_marginTop="15.0dip" android:src="#ffdbdbdb" />
+            <com.miaotu.view.DraggableGridView android:id="@+id/dgv" android:layout_width="fill_parent" android:layout_height="300.0dip" android:layout_marginLeft="16.0dip" android:layout_marginTop="22.0dip" android:layout_marginRight="16.0dip" android:layout_marginBottom="12.0dip" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

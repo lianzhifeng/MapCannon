@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@+id/rl_pic" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@+id/iv_pic" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" />
+        <RelativeLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="57.0dip" android:layout_alignParentBottom="true">
+            <ImageView android:id="@+id/iv_share" android:background="@drawable/icon_day_share" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="20.0dip" android:layout_marginBottom="10.0dip" android:layout_alignParentBottom="true" />
+            <ImageView android:id="@+id/iv_download" android:background="@drawable/icon_day_download" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="74.0dip" android:layout_marginBottom="10.0dip" android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout android:background="@drawable/image_every_day_below" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <Button android:id="@+id/btn_jump" android:background="@drawable/icon_day_next" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:layout_marginBottom="20.0dip" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+</LinearLayout>

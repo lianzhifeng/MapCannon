@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/bg_not_login" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="17.0sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@+id/tv_login" android:background="@drawable/bg_circle_login" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="207.0dip" android:text="登录\nMiaotu" android:lineSpacingExtra="7.0dip" />
+    <TextView android:textSize="14.0sp" android:textColor="#ff333333" android:gravity="center" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="35.0dip" android:text="这个世界繁华、苍莽、美好，却和你没有什么关系\n因为你只有一个人" android:lineSpacingExtra="7.0dip" />
+    <TextView android:textSize="14.0sp" android:textColor="#ff333333" android:gravity="center" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="35.0dip" android:text="告别这种状态\n去结伴\n去外边看看" android:lineSpacingExtra="7.0dip" />
+    <TextView android:textSize="14.0sp" android:textColor="#ff333333" android:gravity="center" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="35.0dip" android:text="现在就登录妙途吧" />
+</LinearLayout>

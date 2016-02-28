@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="#ffdddddd" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@+id/umeng_example_update_check_update" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <Button android:id="@+id/umeng_example_update_btn_auto_update" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/auto_update" android:layout_weight="1.0" />
+        <Button android:id="@+id/umeng_example_update_btn_force_update" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/force_update" android:layout_weight="1.0" />
+        <Button android:id="@+id/umeng_example_update_btn_silent_update" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/silent_update" android:layout_weight="1.0" />
+    </LinearLayout>
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/umeng_example_update_check_update">
+        <LinearLayout android:orientation="vertical" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textColor="#ff000000" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/update_setting_text1" />
+            <TextView android:textColor="#ff000000" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/update_setting_text2" />
+            <TextView android:textColor="#ffff0000" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/default_text" />
+            <Button android:id="@+id/umeng_example_update_btn_default" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/btn_default" />
+            <TextView android:textColor="#ff000000" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/update_setting_text3" />
+            <TextView android:textColor="#ffff0000" android:id="@+id/wifi_only_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/wifi_only_text_true" />
+            <RadioGroup android:orientation="horizontal" android:id="@+id/wifi_only_radiogroup" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <RadioButton android:id="@+id/btn_wifi_only_true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/true_text" />
+                <RadioButton android:id="@+id/btn_wifi_only_false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/false_text" />
+            </RadioGroup>
+            <TextView android:textColor="#ff000000" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/update_setting_text4_1" />
+            <TextView android:textColor="#ffff0000" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/update_setting_text4_2" />
+            <TextView android:textColor="#ffff0000" android:id="@+id/delta_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/delta_text_true" />
+            <RadioGroup android:orientation="horizontal" android:id="@+id/delta_radiogroup" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <RadioButton android:id="@+id/btn_delta_true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/true_text" />
+                <RadioButton android:id="@+id/btn_delta_false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/false_text" />
+            </RadioGroup>
+            <TextView android:textColor="#ff000000" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/update_setting_text5" />
+            <TextView android:textColor="#ffff0000" android:id="@+id/auto_popup_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/auto_popup_text_true" />
+            <RadioGroup android:orientation="horizontal" android:id="@+id/auto_popup_radiogroup" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <RadioButton android:id="@+id/btn_auto_popup_true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/true_text" />
+                <RadioButton android:id="@+id/btn_auto_popup_false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/false_text" />
+            </RadioGroup>
+            <TextView android:textColor="#ff000000" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/update_setting_text7" />
+            <TextView android:textColor="#ffff0000" android:id="@+id/rich_notification_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rich_notification_text_true" />
+            <RadioGroup android:orientation="horizontal" android:id="@+id/rich_notification_radiogroup" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <RadioButton android:id="@+id/btn_rich_notification_true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/true_text" />
+                <RadioButton android:id="@+id/btn_rich_notification_false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/false_text" />
+            </RadioGroup>
+            <TextView android:textColor="#ff000000" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/update_setting_text6" />
+            <TextView android:textColor="#ffff0000" android:id="@+id/style_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/style_text_dialog" />
+            <RadioGroup android:orientation="vertical" android:id="@+id/style_radiogroup" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <RadioButton android:id="@+id/btn_style_dialog" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/dialog_text" />
+                <RadioButton android:id="@+id/btn_style_notification" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/notification_text" />
+            </RadioGroup>
+            <TextView android:textColor="#ff000000" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/update_callback_text3" />
+            <CheckBox android:textColor="#ff000000" android:id="@+id/update_listener_check" android:layout_width="fill_parent" android:layout_height="32.0dip" android:button="@drawable/umeng_update_button_check_selector" android:text="@string/update_listener_text" />
+            <TextView android:textColor="#ffff0000" android:id="@+id/update_listener_code" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/update_listener_null" />
+            <TextView android:textColor="#ff000000" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/update_callback_text4" />
+            <CheckBox android:textColor="#ff000000" android:id="@+id/dialog_listener_check" android:layout_width="fill_parent" android:layout_height="32.0dip" android:button="@drawable/umeng_update_button_check_selector" android:text="@string/dialog_listener_text" />
+            <TextView android:textColor="#ffff0000" android:id="@+id/dialog_listener_code" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/dialog_listener_null" />
+            <TextView android:textColor="#ff000000" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/update_callback_text5" />
+            <CheckBox android:textColor="#ff000000" android:id="@+id/download_listener_check" android:layout_width="fill_parent" android:layout_height="32.0dip" android:button="@drawable/umeng_update_button_check_selector" android:text="@string/download_listener_text" />
+            <TextView android:textColor="#ffff0000" android:id="@+id/download_listener_code" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/download_listener_null" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

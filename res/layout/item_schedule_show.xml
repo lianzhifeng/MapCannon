@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:gravity="center" android:id="@+id/tv_index" android:background="@drawable/icon_schedule_index" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginTop="3.0dip" android:scaleType="fitCenter" />
+    <TextView android:textSize="18.0sp" android:textColor="#ffff914c" android:id="@+id/tv_day" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="32.0dip" android:layout_marginBottom="10.0dip" android:text="Day 1" />
+    <ImageView android:id="@+id/iv_schedule" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_default_big_pic" android:scaleType="fitCenter" android:layout_below="@id/tv_day" android:layout_centerHorizontal="true" />
+    <TextView android:textSize="14.0sp" android:textColor="#ff666666" android:id="@+id/tv_content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="32.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="32.0dip" android:layout_marginBottom="22.0dip" android:text="llsafjlslvonlanglnldsfl" android:layout_below="@id/iv_schedule" android:lineSpacingExtra="8.0dip" />
+    <View android:id="@+id/verticalline" android:background="@drawable/dashed_vertical" android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_marginLeft="6.0dip" android:layout_marginTop="3.0dip" android:layout_marginBottom="9.0dip" android:layout_below="@id/tv_index" android:layout_alignLeft="@id/tv_index" android:layout_alignBottom="@id/tv_content" />
+</RelativeLayout>

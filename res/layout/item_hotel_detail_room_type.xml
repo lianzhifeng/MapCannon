@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:background="#fffafafa" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="88.0dip">
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_centerVertical="true">
+            <TextView android:textSize="15.0sp" android:textColor="#ff333333" android:id="@+id/tv_breakfast" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="无早餐" android:drawableRight="@drawable/icon_hotel_detail_next" android:drawablePadding="3.0dip" />
+            <TextView android:textSize="12.0sp" android:textColor="#ff333333" android:id="@+id/tv_coupon_type" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="限时抢购" android:singleLine="true" />
+        </LinearLayout>
+        <ImageView android:id="@+id/iv_room_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:src="@drawable/icon_hotel_detail_book" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="7.0dip" android:layout_toLeftOf="@id/iv_room_status" android:layout_centerVertical="true">
+            <TextView android:textSize="15.0sp" android:textColor="#ffff6200" android:id="@+id/tv_room_price" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="￥154" />
+            <TextView android:textSize="10.0sp" android:textColor="#ff999999" android:id="@+id/tv_room_coupon" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:text="100返50" android:singleLine="true" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@+id/layout_top" layout="@layout/top_bar" />
+    <LinearLayout android:orientation="vertical" android:id="@+id/layout_groupintroduce" android:background="@color/white" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:layout_below="@id/layout_top">
+        <EditText android:textSize="14.0sp" android:textColor="#ff888888" android:gravity="center|left|top" android:id="@+id/et_groupintroduce" android:background="@color/white" android:padding="20.0dip" android:layout_width="fill_parent" android:layout_height="200.0dip" android:hint="在这里介绍下我们这个群" android:lineSpacingExtra="4.0dip" />
+        <LinearLayout android:gravity="right" android:layout_gravity="right" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:layout_marginRight="30.0dip" android:layout_marginBottom="10.0dip">
+            <TextView android:textSize="14.0sp" android:textColor="#ff505050" android:id="@+id/tv_groupintroducecount" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="\ 140" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

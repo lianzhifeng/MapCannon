@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="68.5dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textColor="@color/dark_grey" android:gravity="center" android:id="@+id/tv_add_black_list" android:layout_width="fill_parent" android:layout_height="34.0dip" android:text="拉黑" />
+    <View android:background="#ffb4b4b4" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="12.0dip" android:layout_marginRight="12.0dip" />
+    <TextView android:textColor="@color/dark_grey" android:gravity="center" android:id="@+id/tv_and_report" android:layout_width="fill_parent" android:layout_height="34.0dip" android:text="举报" />
+</LinearLayout>

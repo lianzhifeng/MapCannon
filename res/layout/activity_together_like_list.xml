@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#fff0f0f0" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/top_bar" />
+    <android.support.v7.widget.RecyclerView android:id="@+id/rv_like" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</LinearLayout>

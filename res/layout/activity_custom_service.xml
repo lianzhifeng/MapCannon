@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/top_bar" />
+    <LinearLayout android:orientation="horizontal" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:gravity="center" android:orientation="vertical" android:id="@+id/ll_service1" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:id="@+id/iv_service1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_customer_service1" />
+            <TextView android:textSize="10.0sp" android:textColor="#ffffffff" android:gravity="center" android:id="@+id/tv_service1" android:background="@drawable/icon_msg_dot" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginLeft="-5.0dip" android:text="\ 13" android:layout_toRightOf="@id/iv_service1" />
+            <TextView android:textSize="14.0sp" android:textColor="#ff666666" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="客服1" android:layout_below="@id/iv_service1" />
+        </RelativeLayout>
+        <View android:id="@+id/line1" android:background="#ffdbdbdb" android:layout_width="2.0dip" android:layout_height="2.0dip" />
+        <RelativeLayout android:gravity="center" android:orientation="vertical" android:id="@+id/ll_service2" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:id="@+id/iv_service2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_customer_service2" />
+            <TextView android:textSize="10.0sp" android:textColor="#ffffffff" android:gravity="center" android:id="@+id/tv_service2" android:background="@drawable/icon_msg_dot" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginLeft="-5.0dip" android:text="\ 13" android:layout_toRightOf="@id/iv_service2" />
+            <TextView android:textSize="14.0sp" android:textColor="#ff666666" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="客服2" android:layout_below="@id/iv_service2" />
+        </RelativeLayout>
+        <View android:id="@+id/line2" android:background="#ffdbdbdb" android:layout_width="2.0dip" android:layout_height="2.0dip" />
+        <RelativeLayout android:gravity="center" android:orientation="vertical" android:id="@+id/ll_service3" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:id="@+id/iv_service3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_customer_service3" />
+            <TextView android:textSize="10.0sp" android:textColor="#ffffffff" android:gravity="center" android:id="@+id/tv_service3" android:background="@drawable/icon_msg_dot" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginLeft="-5.0dip" android:text="\ 13" android:layout_toRightOf="@id/iv_service3" />
+            <TextView android:textSize="14.0sp" android:textColor="#ff666666" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="客服3" android:layout_below="@id/iv_service3" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

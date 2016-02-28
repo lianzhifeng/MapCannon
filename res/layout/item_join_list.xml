@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="332.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="45.0dip">
+        <com.miaotu.view.CircleImageView android:id="@+id/iv_head_photo" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginLeft="12.0dip" android:layout_marginRight="12.0dip" android:layout_centerVertical="true" />
+        <RelativeLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="8.0dip" android:layout_toRightOf="@id/iv_head_photo" android:layout_centerVertical="true">
+            <TextView android:textSize="14.0sp" android:textColor="#ff505050" android:id="@+id/tv_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="6.0dip" android:text="后入马里奥" />
+            <TextView android:textSize="10.0sp" android:textColor="#ffbfbfbf" android:id="@+id/tv_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dip" android:text="5月30日" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            <TextView android:textSize="12.0sp" android:textColor="#ffbfbfbf" android:id="@+id/tv_nickname" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="(昵称：饭团团饭团团饭团团饭)" android:singleLine="true" android:layout_toLeftOf="@id/tv_date" android:layout_toRightOf="@id/tv_name" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <View android:background="#ffcccccc" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="54.0dip" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+    <RelativeLayout android:orientation="vertical" android:id="@+id/rl_identity" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="60.0dip" android:layout_marginLeft="54.0dip">
+        <TextView android:textSize="13.0sp" android:textColor="#ff505050" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:text="身份证" />
+        <TextView android:textSize="16.0sp" android:textColor="#ff333333" android:id="@+id/tv_identity" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="12.0dip" android:text="\ 542314646434167464" android:layout_alignParentBottom="true" />
+        <View android:background="#ffeeeeee" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+    <RelativeLayout android:orientation="vertical" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="60.0dip" android:layout_marginLeft="54.0dip">
+        <TextView android:textSize="13.0sp" android:textColor="#ff505050" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:text="联系电话" />
+        <TextView android:textSize="16.0sp" android:textColor="#ff333333" android:id="@+id/tv_phone_number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="12.0dip" android:text="\ 542314646434167464" android:layout_alignParentBottom="true" />
+        <com.miaotu.view.CircleImageView android:id="@+id/iv_callphone" android:background="@drawable/icon_callphone" android:layout_width="36.0dip" android:layout_height="36.0dip" android:layout_marginRight="15.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</LinearLayout>

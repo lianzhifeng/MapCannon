@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="18.0sp" android:textColor="#ffe55800" android:gravity="center" android:id="@+id/tv_delete_myyueyou" android:layout_width="fill_parent" android:layout_height="40.0dip" android:text="删除" />
+    <ImageView android:background="@color/line_grey" android:layout_width="fill_parent" android:layout_height="5.0dip" />
+    <TextView android:textSize="18.0sp" android:gravity="center" android:id="@+id/tv_cancel_myyueyou" android:layout_width="fill_parent" android:layout_height="40.0dip" android:text="取消" />
+</LinearLayout>

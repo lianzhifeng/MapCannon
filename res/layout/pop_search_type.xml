@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/bg_search_type" android:layout_width="120.0dip" android:layout_height="97.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:id="@+id/ll_search_people" android:layout_width="fill_parent" android:layout_height="45.0dip" android:layout_alignParentBottom="true">
+        <TextView android:textSize="14.0sp" android:textColor="@color/search_type" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="人" android:drawableLeft="@drawable/icon_search_people" android:drawablePadding="7.0dip" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@+id/ll_search_path" android:layout_width="fill_parent" android:layout_height="45.0dip" android:layout_above="@id/ll_search_people">
+        <TextView android:textSize="14.0sp" android:textColor="@color/search_type" android:gravity="center" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="线路" android:drawableLeft="@drawable/icon_search_path" android:drawablePadding="7.0dip" />
+        <View android:background="#ffbfbfbf" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    </LinearLayout>
+</RelativeLayout>

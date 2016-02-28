@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="12.0sp" android:textColor="#ffb4b4b4" android:gravity="center" android:layout_width="fill_parent" android:layout_height="40.0dip" android:text="选择举报类型，即可举报该群组" />
+    <View android:background="#ffb4b4b4" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <TextView android:textSize="14.0sp" android:textColor="#ff000000" android:gravity="center" android:layout_gravity="center" android:id="@+id/reason1" android:layout_width="fill_parent" android:layout_height="40.0dip" android:text="色情、低俗" />
+    <View android:background="#ffb4b4b4" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <TextView android:textSize="14.0sp" android:textColor="#ff000000" android:gravity="center" android:layout_gravity="center" android:id="@+id/reason2" android:layout_width="fill_parent" android:layout_height="40.0dip" android:text="广告骚扰" />
+    <View android:background="#ffb4b4b4" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <TextView android:textSize="14.0sp" android:textColor="#ff000000" android:gravity="center" android:layout_gravity="center" android:id="@+id/reason3" android:layout_width="fill_parent" android:layout_height="40.0dip" android:text="谣言" />
+    <View android:background="#ffb4b4b4" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <TextView android:textSize="14.0sp" android:textColor="#ff000000" android:gravity="center" android:layout_gravity="center" android:id="@+id/reason4" android:layout_width="fill_parent" android:layout_height="40.0dip" android:text="欺骗、诈骗" />
+    <View android:background="#ffb4b4b4" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <TextView android:textSize="14.0sp" android:textColor="#ff000000" android:gravity="center" android:layout_gravity="center" android:id="@+id/reason5" android:layout_width="fill_parent" android:layout_height="40.0dip" android:text="单纯的不爽，就是要任性的举报你" />
+    <View android:background="#ffb4b4b4" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <TextView android:textSize="12.0sp" android:textColor="#ff00aaff" android:gravity="center" android:id="@+id/tv_cancel" android:layout_width="fill_parent" android:layout_height="40.0dip" android:text="取消" />
+</LinearLayout>

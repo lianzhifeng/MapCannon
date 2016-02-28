@@ -1,7 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
-
+    <dimen name="abc_alert_dialog_button_bar_height">48.0dip</dimen>
+    <dimen name="abc_action_bar_default_height_material">56.0dip</dimen>
+    <dimen name="abc_action_bar_default_padding_material">4.0dip</dimen>
+    <dimen name="abc_action_bar_progress_bar_size">40.0dip</dimen>
+    <dimen name="abc_text_size_subtitle_material_toolbar">16.0dip</dimen>
+    <dimen name="abc_text_size_title_material_toolbar">20.0dip</dimen>
+    <dimen name="abc_config_prefDialogWidth">320.0dip</dimen>
+    <dimen name="abc_search_view_text_min_width">160.0dip</dimen>
+    <item type="dimen" name="dialog_fixed_height_major">79.99999%</item>
+    <item type="dimen" name="dialog_fixed_height_minor">100.0%</item>
+    <dimen name="dialog_fixed_width_major">320.0dip</dimen>
+    <dimen name="dialog_fixed_width_minor">320.0dip</dimen>
+    <dimen name="abc_action_bar_content_inset_material">16.0dip</dimen>
+    <dimen name="abc_action_bar_navigation_padding_start_material">0.0dip</dimen>
+    <dimen name="abc_action_bar_overflow_padding_end_material">10.0dip</dimen>
+    <dimen name="abc_switch_padding">3.0dip</dimen>
+    <dimen name="activity_horizontal_margin">16.0dip</dimen>
+    <dimen name="abc_action_bar_icon_vertical_padding_material">16.0dip</dimen>
+    <dimen name="abc_action_bar_overflow_padding_start_material">6.0dip</dimen>
+    <dimen name="abc_action_bar_stacked_max_height">48.0dip</dimen>
+    <dimen name="abc_action_bar_stacked_tab_max_width">180.0dip</dimen>
+    <dimen name="abc_action_bar_subtitle_bottom_margin_material">5.0dip</dimen>
+    <dimen name="abc_action_bar_subtitle_top_margin_material">-3.0dip</dimen>
+    <dimen name="abc_action_button_min_height_material">48.0dip</dimen>
+    <dimen name="abc_action_button_min_width_material">48.0dip</dimen>
+    <dimen name="abc_action_button_min_width_overflow_material">36.0dip</dimen>
+    <item type="dimen" name="abc_button_inset_horizontal_material">@dimen/abc_control_inset_material</item>
+    <dimen name="abc_button_inset_vertical_material">6.0dip</dimen>
+    <dimen name="abc_button_padding_horizontal_material">8.0dip</dimen>
+    <item type="dimen" name="abc_button_padding_vertical_material">@dimen/abc_control_padding_material</item>
+    <dimen name="abc_control_corner_material">2.0dip</dimen>
+    <dimen name="abc_control_inset_material">4.0dip</dimen>
+    <dimen name="abc_control_padding_material">4.0dip</dimen>
+    <dimen name="abc_dialog_list_padding_vertical_material">8.0dip</dimen>
+    <item type="dimen" name="abc_dialog_min_width_major">65.0%</item>
+    <item type="dimen" name="abc_dialog_min_width_minor">94.99999%</item>
+    <dimen name="abc_dialog_padding_material">24.0dip</dimen>
+    <dimen name="abc_dialog_padding_top_material">18.0dip</dimen>
+    <item type="dimen" name="abc_disabled_alpha_material_dark">0.3</item>
+    <item type="dimen" name="abc_disabled_alpha_material_light">0.26</item>
+    <dimen name="abc_dropdownitem_icon_width">32.0dip</dimen>
+    <dimen name="abc_dropdownitem_text_padding_left">8.0dip</dimen>
+    <dimen name="abc_dropdownitem_text_padding_right">8.0dip</dimen>
+    <dimen name="abc_edit_text_inset_bottom_material">7.0dip</dimen>
+    <dimen name="abc_edit_text_inset_horizontal_material">4.0dip</dimen>
+    <dimen name="abc_edit_text_inset_top_material">10.0dip</dimen>
+    <dimen name="abc_floating_window_z">16.0dip</dimen>
+    <item type="dimen" name="abc_list_item_padding_horizontal_material">@dimen/abc_action_bar_content_inset_material</item>
+    <dimen name="abc_panel_menu_list_width">296.0dip</dimen>
+    <dimen name="abc_search_view_preferred_width">320.0dip</dimen>
+    <dimen name="abc_text_size_body_1_material">14.0sp</dimen>
+    <dimen name="abc_text_size_body_2_material">14.0sp</dimen>
+    <dimen name="abc_text_size_button_material">14.0sp</dimen>
+    <dimen name="abc_text_size_caption_material">12.0sp</dimen>
+    <dimen name="abc_text_size_display_1_material">34.0sp</dimen>
+    <dimen name="abc_text_size_display_2_material">45.0sp</dimen>
+    <dimen name="abc_text_size_display_3_material">56.0sp</dimen>
+    <dimen name="abc_text_size_display_4_material">112.0sp</dimen>
+    <dimen name="abc_text_size_headline_material">24.0sp</dimen>
+    <dimen name="abc_text_size_large_material">22.0sp</dimen>
+    <dimen name="abc_text_size_medium_material">18.0sp</dimen>
+    <dimen name="abc_text_size_menu_material">16.0sp</dimen>
+    <dimen name="abc_text_size_small_material">14.0sp</dimen>
+    <dimen name="abc_text_size_subhead_material">16.0sp</dimen>
+    <dimen name="abc_text_size_title_material">20.0sp</dimen>
+    <dimen name="actionbar_height">45.0dip</dimen>
+    <dimen name="actionbar_item_height">45.0dip</dimen>
+    <dimen name="actionbar_item_width">45.0dip</dimen>
+    <dimen name="activity_vertical_margin">16.0dip</dimen>
+    <dimen name="albumitem_content_height">80.0dip</dimen>
+    <dimen name="albumitem_height">100.0dip</dimen>
+    <dimen name="albumitem_image_height">20.0dip</dimen>
+    <dimen name="body_padding_large">10.0dip</dimen>
+    <dimen name="body_padding_medium">10.0dip</dimen>
+    <dimen name="calendar_day_headers_paddingbottom">4.0dip</dimen>
+    <dimen name="calendar_month_title_bottommargin">4.0dip</dimen>
+    <dimen name="calendar_month_topmargin">16.0dip</dimen>
+    <dimen name="calendar_text_medium">18.0sp</dimen>
+    <dimen name="calendar_text_small">14.0sp</dimen>
+    <dimen name="call_button_padding_left">25.0dip</dimen>
+    <dimen name="call_button_padding_right">25.0dip</dimen>
+    <dimen name="call_button_padding_vertical">10.0dip</dimen>
+    <dimen name="cardview_compat_inset_shadow">1.0dip</dimen>
+    <dimen name="cardview_default_elevation">2.0dip</dimen>
+    <dimen name="cardview_default_radius">2.0dip</dimen>
+    <dimen name="checkbox_height">25.0dip</dimen>
+    <dimen name="collection_photo_toolbar_height">45.0dip</dimen>
+    <dimen name="dim56dp">56.0dip</dimen>
+    <dimen name="dim78dp">78.0dip</dimen>
+    <item type="dimen" name="disabled_alpha_material_dark">0.3</item>
+    <item type="dimen" name="disabled_alpha_material_light">0.26</item>
+    <dimen name="field_margin_right">5.0dip</dimen>
+    <dimen name="field_textsize">14.0sp</dimen>
+    <dimen name="header_footer_left_right_padding">24.0dip</dimen>
+    <dimen name="header_footer_top_bottom_padding">12.0dip</dimen>
+    <dimen name="height_row_weixin">59.0dip</dimen>
+    <dimen name="height_top_bar">46.0dip</dimen>
+    <dimen name="image_thumbnail_size">100.0dip</dimen>
+    <dimen name="image_thumbnail_spacing">1.0dip</dimen>
+    <dimen name="indicator_corner_radius">12.0dip</dimen>
+    <dimen name="indicator_internal_padding">4.0dip</dimen>
+    <dimen name="indicator_right_padding">10.0dip</dimen>
+    <dimen name="item_touch_helper_max_drag_scroll_per_frame">20.0dip</dimen>
+    <dimen name="layout_title_content_heigh">30.0dip</dimen>
+    <dimen name="layout_title_heigh">45.0dip</dimen>
+    <dimen name="layout_title_mini_textsize">16.0sp</dimen>
+    <dimen name="list_padding">10.0dip</dimen>
+    <dimen name="margin_chat_activity">5.0dip</dimen>
+    <dimen name="margin_chat_left_activity">10.0dip</dimen>
+    <dimen name="margin_chat_right_activity">7.0dip</dimen>
+    <dimen name="padding_search_bar">5.0dip</dimen>
+    <dimen name="shadow_width">5.0dip</dimen>
+    <dimen name="sidebar_text_size">10.0dip</dimen>
+    <dimen name="size_avatar">35.0dip</dimen>
+    <dimen name="slidingmenu_offset">60.0dip</dimen>
+    <dimen name="speaker_image_padding">8.0dip</dimen>
+    <dimen name="speaker_image_size">36.0dip</dimen>
+    <dimen name="sticky_item_horizontalSpacing">2.0dip</dimen>
+    <dimen name="sticky_item_verticalSpacing">2.0dip</dimen>
+    <dimen name="text_size_large">18.0sp</dimen>
+    <dimen name="text_size_medium">18.0sp</dimen>
+    <dimen name="text_size_small">14.0sp</dimen>
+    <dimen name="text_size_xlarge">18.0sp</dimen>
+    <dimen name="umeng_fb_item_content_size">14.0sp</dimen>
+    <dimen name="umeng_fb_item_height">48.0dip</dimen>
+    <dimen name="umeng_fb_item_line_height">0.8000001dip</dimen>
+    <dimen name="umeng_fb_item_time_size">12.0sp</dimen>
+    <dimen name="umeng_fb_spinner_padding_left">12.0dip</dimen>
+    <dimen name="vendor_image_size">100.0dip</dimen>
 </resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="16.0sp" android:textColor="#ffff6200" android:gravity="center_vertical" android:id="@+id/tv_order_money" android:layout_width="wrap_content" android:layout_height="50.0dip" android:layout_marginRight="16.0dip" android:text="\ 61" android:layout_alignParentRight="true" />
+    <TextView android:textSize="14.0sp" android:textColor="#ff505050" android:gravity="center_vertical" android:id="@+id/tv_order_info" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="16.0dip" android:text="2015-10-21标准间一间一晚" android:layout_toLeftOf="@id/tv_order_money" />
+</RelativeLayout>

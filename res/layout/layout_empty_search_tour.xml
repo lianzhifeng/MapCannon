@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center_horizontal" android:background="@drawable/icon_empty" android:layout_width="60.0dip" android:layout_height="60.0dip" android:layout_marginTop="140.0dip" />
+    <TextView android:textSize="16.0sp" android:textColor="#ffb4b4b4" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="30.0dip" android:text="暂时没有搜索结果！" />
+    <TextView android:textSize="12.0sp" android:textColor="#ffb4b4b4" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="尝试其他关键词，您一定会找到适合自己的线路。" />
+</LinearLayout>

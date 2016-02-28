@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <LinearLayout android:gravity="right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="15.0dip" android:layout_weight="1.0">
+            <ImageView android:id="@+id/iv_friend" android:background="@drawable/icon_share_friend" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="fitCenter" />
+        </LinearLayout>
+        <LinearLayout android:gravity="left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_weight="1.0">
+            <ImageView android:id="@+id/iv_wechat" android:background="@drawable/icon_share_wechat" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:scaleType="fitCenter" />
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView android:id="@+id/iv_close" android:background="@drawable/icon_close_share" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip" android:scaleType="fitCenter" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+</RelativeLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/icon_dialog" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="16.0sp" android:textColor="#ff646464" android:gravity="center" android:id="@+id/tv_beside" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:text="身旁" android:layout_weight="1.0" />
+    <TextView android:textSize="16.0sp" android:textColor="#ff646464" android:gravity="center" android:id="@+id/tv_hot" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip" android:text="最热" android:layout_weight="1.0" />
+</LinearLayout>

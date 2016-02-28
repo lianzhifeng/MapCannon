@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.miaotu.view.CircleImageView android:id="@+id/iv_userhead" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" />
+        <TextView android:textSize="14.0sp" android:textColor="#ff646464" android:id="@+id/tv_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="20.0dip" android:text="四小美" android:layout_toRightOf="@id/iv_userhead" />
+        <TextView android:textSize="12.0sp" android:textColor="#ffb4b4b4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="关注了你" android:layout_alignLeft="@id/tv_name" android:layout_alignBottom="@id/iv_userhead" />
+        <TextView android:textSize="12.0sp" android:textColor="#ffb4b4b4" android:id="@+id/tv_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:layout_marginRight="10.0dip" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+</LinearLayout>

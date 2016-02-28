@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/bg_hotel_device" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="18.0sp" android:textColor="@color/white" android:layout_gravity="center_horizontal" android:id="@+id/tv_hotel_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="23.0dip" android:layout_marginTop="31.0dip" android:layout_marginRight="23.0dip" android:text="" />
+            <View android:background="#ff999999" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="23.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="23.0dip" />
+            <TextView android:textSize="18.0sp" android:textColor="#ffdbdbdb" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="23.0dip" android:layout_marginTop="16.0dip" android:text="酒店设施" />
+            <com.miaotu.view.MyGridView android:id="@+id/rl_device" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="23.0dip" android:layout_marginTop="17.0dip" android:layout_marginRight="23.0dip" android:numColumns="2" />
+            <View android:background="#ff999999" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="23.0dip" android:layout_marginTop="16.0dip" android:layout_marginRight="23.0dip" />
+            <TextView android:textSize="18.0sp" android:textColor="#ffdbdbdb" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="23.0dip" android:layout_marginTop="16.0dip" android:text="酒店介绍" />
+            <LinearLayout android:orientation="horizontal" android:id="@+id/ll_hotel_phone" android:background="@drawable/bg_device_number" android:layout_width="fill_parent" android:layout_height="42.0dip" android:layout_marginLeft="23.0dip" android:layout_marginTop="13.0dip" android:layout_marginRight="23.0dip">
+                <ImageView android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="13.0dip" android:src="@drawable/icon_device_phone" />
+                <TextView android:textSize="18.0sp" android:textColor="@color/white" android:layout_gravity="center_vertical" android:id="@+id/tv_hotel_phone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="13.0dip" android:text="" />
+            </LinearLayout>
+            <TextView android:textSize="14.0sp" android:textColor="@color/white" android:id="@+id/tv_hotel_intro" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="23.0dip" android:layout_marginTop="13.0dip" android:layout_marginRight="23.0dip" android:text="" android:lineSpacingExtra="6.0dip" />
+            <View android:background="#ff999999" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="23.0dip" android:layout_marginTop="23.0dip" android:layout_marginRight="23.0dip" />
+            <TextView android:textSize="18.0sp" android:textColor="#ffdbdbdb" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="23.0dip" android:layout_marginTop="16.0dip" android:text="交通信息" />
+            <TextView android:textSize="14.0sp" android:textColor="@color/white" android:id="@+id/tv_traffic" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="23.0dip" android:layout_marginTop="12.0dip" android:layout_marginRight="23.0dip" android:text="" android:lineSpacingExtra="6.0dip" />
+            <ImageView android:layout_gravity="center_horizontal" android:id="@+id/iv_close" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="50.0dip" android:layout_marginBottom="30.0dip" android:src="@drawable/icon_device_close" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

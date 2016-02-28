@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center_vertical" android:id="@+id/list_item_layout" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="80.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center_vertical" android:id="@+id/layout_ava" android:layout_width="wrap_content" android:layout_height="80.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="20.0dip" android:layout_alignParentLeft="true">
+        <com.miaotu.view.CircleImageView android:id="@+id/avatar" android:layout_width="60.0dip" android:layout_height="60.0dip" android:src="@drawable/icon_default_head_photo" app:border_width="0.0dip" app:border_color="@color/white" />
+    </LinearLayout>
+    <RelativeLayout android:id="@+id/layout_unread_msg_num" android:background="@drawable/icon_msg_dot" android:visibility="gone" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginRight="10.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+        <TextView android:textSize="12.0sp" android:textColor="@android:color/white" android:id="@+id/unread_msg_number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="\ 7" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <LinearLayout android:id="@+id/layout_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="110.0dip" android:layout_toRightOf="@id/layout_ava">
+        <TextView android:textSize="16.0sp" android:textColor="#ff323232" android:ellipsize="end" android:id="@+id/name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="14.0dip" android:text="森林公主asfasdfasdfasdfasdfasdfasdfasdfasdf" android:singleLine="true" />
+    </LinearLayout>
+    <TextView android:textSize="13.0sp" android:textColor="#ff969696" android:id="@+id/time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_marginRight="10.0dip" android:text="12-21" android:layout_alignParentRight="true" />
+    <ImageView android:id="@+id/msg_state" android:visibility="gone" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginTop="10.0dip" android:src="@drawable/msg_state_fail_resend" android:layout_toRightOf="@id/layout_ava" android:layout_below="@id/layout_name" />
+    <TextView android:textSize="12.0sp" android:textColor="#ff969696" android:ellipsize="end" android:id="@+id/message" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginRight="50.0dip" android:text="对方答复asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf" android:singleLine="true" android:layout_toRightOf="@id/msg_state" android:layout_below="@id/layout_name" />
+</RelativeLayout>

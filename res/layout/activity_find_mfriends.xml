@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/top_bar" />
+    <ScrollView android:background="@color/background" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:background="@color/background" android:layout_width="fill_parent" android:layout_height="20.0dip" />
+            <RelativeLayout android:id="@+id/rl_wechat" android:layout_width="fill_parent" android:layout_height="44.0dip">
+                <ImageView android:id="@+id/iv_wechat" android:layout_width="28.0dip" android:layout_height="28.0dip" android:layout_marginLeft="16.0dip" android:src="@drawable/icon_wx" android:layout_centerVertical="true" />
+                <TextView android:textSize="16.0sp" android:textColor="#ff333333" android:id="@+id/tv_wx" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:text="找微信好友" android:layout_toRightOf="@id/iv_wechat" android:layout_centerVertical="true" />
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="16.0dip" android:src="@drawable/icon_go" android:scaleType="fitCenter" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <View android:background="@drawable/bg_line" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="16.0dip" />
+            <RelativeLayout android:id="@+id/rl_qq" android:layout_width="fill_parent" android:layout_height="44.0dip">
+                <ImageView android:id="@+id/iv_qq" android:layout_width="28.0dip" android:layout_height="28.0dip" android:layout_marginLeft="16.0dip" android:src="@drawable/icon_find_qq" android:layout_centerVertical="true" />
+                <TextView android:textSize="16.0sp" android:textColor="#ff333333" android:id="@+id/tv_qq" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:text="找QQ好友" android:layout_toRightOf="@id/iv_qq" android:layout_centerVertical="true" />
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="16.0dip" android:src="@drawable/icon_go" android:scaleType="fitCenter" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <View android:background="@drawable/bg_line" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="16.0dip" />
+            <RelativeLayout android:id="@+id/rl_address" android:layout_width="fill_parent" android:layout_height="44.0dip">
+                <ImageView android:id="@+id/iv_address" android:layout_width="28.0dip" android:layout_height="28.0dip" android:layout_marginLeft="16.0dip" android:src="@drawable/icon_list" android:layout_centerVertical="true" />
+                <TextView android:textSize="16.0sp" android:textColor="#ff333333" android:id="@+id/tv_address" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:text="找通讯录好友" android:layout_toRightOf="@id/iv_address" android:layout_centerVertical="true" />
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="16.0dip" android:src="@drawable/icon_go" android:scaleType="fitCenter" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <View android:background="@drawable/bg_line" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="16.0dip" />
+            <RelativeLayout android:id="@+id/rl_weibo" android:layout_width="fill_parent" android:layout_height="44.0dip">
+                <ImageView android:id="@+id/iv_weibo" android:layout_width="28.0dip" android:layout_height="28.0dip" android:layout_marginLeft="16.0dip" android:src="@drawable/icon_find_weibo" android:layout_centerVertical="true" />
+                <TextView android:textSize="16.0sp" android:textColor="#ff333333" android:id="@+id/tv_weibo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:text="找微博好友" android:layout_toRightOf="@id/iv_weibo" android:layout_centerVertical="true" />
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="16.0dip" android:src="@drawable/icon_go" android:scaleType="fitCenter" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/ll_friend" android:background="@color/background" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="44.0dip">
+                <View android:background="#ffff6200" android:layout_width="2.0dip" android:layout_height="12.0dip" android:layout_marginLeft="16.0dip" />
+                <TextView android:textSize="12.0sp" android:textColor="#ff666666" android:id="@+id/tv_friend_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="已经加入妙途好友，去关注他们" />
+            </LinearLayout>
+            <android.support.v7.widget.RecyclerView android:id="@+id/rv_friends" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/ll_attention" android:background="@color/background" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="44.0dip">
+                <View android:background="#ffff6200" android:layout_width="2.0dip" android:layout_height="12.0dip" android:layout_marginLeft="16.0dip" />
+                <TextView android:textSize="12.0sp" android:textColor="#ff666666" android:id="@+id/tv_attention" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="据说关注他们有肉吃，推荐！" />
+            </LinearLayout>
+            <android.support.v7.widget.RecyclerView android:id="@+id/rv_recommend" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" />
+            <LinearLayout android:gravity="center" android:id="@+id/ll_empty_tip" android:background="@color/background" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="14.0sp" android:textColor="#ff999999" android:gravity="center" android:paddingTop="44.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="点击上面的按钮邀请好友与你一起\n看到更大的世界" android:lineSpacingExtra="8.0dip" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

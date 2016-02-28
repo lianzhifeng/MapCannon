@@ -1,8 +1,438 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="app_name">MapCannon</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="abc_action_bar_home_description">Navigate home</string>
+    <string name="abc_action_bar_up_description">Navigate up</string>
+    <string name="abc_action_menu_overflow_description">More options</string>
+    <string name="abc_action_mode_done">Done</string>
+    <string name="abc_activity_chooser_view_see_all">See all</string>
+    <string name="abc_activitychooserview_choose_application">Choose an app</string>
+    <string name="abc_searchview_description_clear">Clear query</string>
+    <string name="abc_searchview_description_query">Search query</string>
+    <string name="abc_searchview_description_search">Search</string>
+    <string name="abc_searchview_description_submit">Submit query</string>
+    <string name="abc_searchview_description_voice">Voice search</string>
+    <string name="abc_shareactionprovider_share_with">Share with</string>
+    <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
+    <string name="pull_to_refresh_pull_label">Pull to refresh…</string>
+    <string name="pull_to_refresh_refreshing_label">Loading…</string>
+    <string name="pull_to_refresh_release_label">Release to refresh…</string>
+    <string name="invalid_date">Date must be between %1$s and %2$s.</string>
+    <string name="pull_to_refresh_from_bottom_pull_label">@string/pull_to_refresh_pull_label</string>
+    <string name="pull_to_refresh_from_bottom_refreshing_label">@string/pull_to_refresh_refreshing_label</string>
+    <string name="pull_to_refresh_from_bottom_release_label">@string/pull_to_refresh_release_label</string>
+    <string name="month_name_format">MMMM yyyy</string>
+    <string name="UMAppUpdate">App updating</string>
+    <string name="UMBreak_Network">Please make sure you are connected to internet,update failed</string>
+    <string name="UMDialog_InstallAPK">The lastest version has been downloaded, install now ?</string>
+    <string name="UMGprsCondition">(Warning: Not WIFI Condition)</string>
+    <string name="UMIgnore">Ingore this</string>
+    <string name="UMNewVersion">Latest version:</string>
+    <string name="UMNotNow">Not now</string>
+    <string name="UMTargetSize">Target size:</string>
+    <string name="UMToast_IsUpdating">Updating....</string>
+    <string name="UMUpdateContent">Update Content</string>
+    <string name="UMUpdateNow">Update now</string>
+    <string name="UMUpdateSize">Update size:</string>
+    <string name="UMUpdateTitle">New version found</string>
+    <string name="actionbar_activity_not_found">Failed to open intent…</string>
+    <string name="douban">豆瓣</string>
+    <string name="dropbox">Dropbox</string>
+    <string name="email">邮件</string>
+    <string name="evernote">印象笔记</string>
+    <string name="facebook">Facebook</string>
+    <string name="flickr">Flickr</string>
+    <string name="foursquare">FourSquare</string>
+    <string name="google_plus_client_inavailable">Google+ 版本过低或者没有安装，需要升级或安装Google+才能使用！</string>
+    <string name="googleplus">Google+</string>
+    <string name="instagram">Instagram</string>
+    <string name="instagram_client_inavailable">Instagram版本过低或者没有安装，需要升级或安装Instagram才能使用！</string>
+    <string name="intro">The webview before show js call Umeng Analytics APIs</string>
+    <string name="kaixin">开心网</string>
+    <string name="line">Line</string>
+    <string name="line_client_inavailable">目前您的Line版本过低或未安装易信，需要安装Line才能使用</string>
+    <string name="linkedin">领英</string>
+    <string name="mingdao">明道</string>
+    <string name="mingdao_share_content">网页分享</string>
+    <string name="neteasemicroblog">网易微博</string>
+    <string name="pinterest">Pinterest</string>
+    <string name="pinterest_client_inavailable">Pinterest版本过低或者没有安装，需要升级或安装Pinterest才能使用！</string>
+    <string name="qq">QQ</string>
+    <string name="qq_client_inavailable">QQ 版本过低或者没有安装，需要升级或安装QQ才能使用！</string>
+    <string name="qzone">QQ空间</string>
+    <string name="renren">人人网</string>
+    <string name="share_to_mingdao">分享到明道</string>
+    <string name="share_to_qq">分享到QQ</string>
+    <string name="share_to_qzone">分享到QQ空间</string>
+    <string name="share_to_qzone_default">来自%s的分享</string>
+    <string name="shortmessage">信息</string>
+    <string name="sinaweibo">新浪微博</string>
+    <string name="sohumicroblog">搜狐微博</string>
+    <string name="sohusuishenkan">搜狐随身看</string>
+    <string name="tencentweibo">腾讯微博</string>
+    <string name="tumblr">Tumblr</string>
+    <string name="twitter">Twitter</string>
+    <string name="umeng_common_action_cancel">Cancel</string>
+    <string name="umeng_common_action_continue">Continue</string>
+    <string name="umeng_common_action_info_exist">The app is already in downloading list.</string>
+    <string name="umeng_common_action_pause">Pause</string>
+    <string name="umeng_common_download_failed">Download Failed!</string>
+    <string name="umeng_common_download_finish">Download finished,click to install it.</string>
+    <string name="umeng_common_download_notification_prefix">Downloading:</string>
+    <string name="umeng_common_info_interrupt">dowload interrupted.</string>
+    <string name="umeng_common_network_break_alert">Please make sure you are connected to internet, download failed</string>
+    <string name="umeng_common_patch_finish">Patch finished,click to install it.</string>
+    <string name="umeng_common_pause_notification_prefix">Pause:</string>
+    <string name="umeng_common_silent_download_finish">New version is ready,click to install it.</string>
+    <string name="umeng_common_start_download_notification">Download start.</string>
+    <string name="umeng_common_start_patch_notification">Patch start.</string>
+    <string name="umeng_example_fb_home_btn_simple">Simple Demo</string>
+    <string name="umeng_example_home_btn_ad">Ads</string>
+    <string name="umeng_example_home_btn_analytics">Analytics</string>
+    <string name="umeng_example_home_btn_fb">Feedback</string>
+    <string name="umeng_example_home_btn_plus">Socialize</string>
+    <string name="umeng_example_home_btn_tools">Tools</string>
+    <string name="umeng_example_home_btn_update">Update</string>
+    <string name="umeng_example_home_btn_xp">XP</string>
+    <string name="umeng_example_home_btn_xp_ufp">Umeng For Publisher</string>
+    <string name="umeng_example_home_hint_wait">Coming soooooon</string>
+    <string name="umeng_example_xp_home_btn_banner">Banner</string>
+    <string name="umeng_example_xp_home_btn_banner_ufp">"Banner
+(UFP)"</string>
+    <string name="umeng_example_xp_home_btn_container">Container</string>
+    <string name="umeng_example_xp_home_btn_container_header">LargeImage</string>
+    <string name="umeng_example_xp_home_btn_custom">Custom</string>
+    <string name="umeng_example_xp_home_btn_handler">Handler</string>
+    <string name="umeng_example_xp_home_btn_handler_ufp">"Handler
+(UFP)"</string>
+    <string name="umeng_example_xp_home_btn_push_header">"Push AD
+(UFP)"</string>
+    <string name="umeng_example_xp_home_btn_tab">Multi-Pages</string>
+    <string name="umeng_example_xp_home_btn_textlink">Text Link</string>
+    <string name="umeng_example_xp_home_btn_wap">WebView</string>
+    <string name="umeng_example_xp_home_btn_wap_ufp">"WebView
+(UFP)"</string>
+    <string name="umeng_example_xp_home_handler_icons">"Icons 
+(UFP)"</string>
+    <string name="umeng_fb_back">Back</string>
+    <string name="umeng_fb_change_contact_title">Change contact Info</string>
+    <string name="umeng_fb_contact_email">Email</string>
+    <string name="umeng_fb_contact_info">Contact Info</string>
+    <string name="umeng_fb_contact_info_hint">Email, MSN, Gtalk, or whatever we can find you.</string>
+    <string name="umeng_fb_contact_key_email">email</string>
+    <string name="umeng_fb_contact_key_other">plain</string>
+    <string name="umeng_fb_contact_key_phone">phone</string>
+    <string name="umeng_fb_contact_key_qq">qq</string>
+    <string name="umeng_fb_contact_other">Other</string>
+    <string name="umeng_fb_contact_phone">Phone</string>
+    <string name="umeng_fb_contact_qq">QQ</string>
+    <string name="umeng_fb_contact_save">Save</string>
+    <string name="umeng_fb_feedback">Feedback</string>
+    <string name="umeng_fb_notification_content_formatter_multiple_msg">You received %d new replies from the app developer.</string>
+    <string name="umeng_fb_notification_content_formatter_single_msg">New reply: %s</string>
+    <string name="umeng_fb_notification_ticker_text">Got new reply</string>
+    <string name="umeng_fb_reply_content_default">Your precious feedback are appriciated.</string>
+    <string name="umeng_fb_send">Send</string>
+    <string name="umeng_fb_send_fail">Send fail</string>
+    <string name="umeng_fb_sending">Sending…</string>
+    <string name="umeng_fb_time_minutes_ago">%d minutes ago</string>
+    <string name="umeng_fb_time_pre_year_format">yy/MM/dd HH:mm:ss</string>
+    <string name="umeng_fb_time_right_now">Just now</string>
+    <string name="umeng_fb_time_this_year_format">MM/dd HH:mm:ss</string>
+    <string name="umeng_fb_title">Feedback</string>
+    <string name="umeng_fb_write_contact_title">Write contact Info</string>
+    <string name="use_login_button">请改用“登录”按钮</string>
+    <string name="vkontakte">VK</string>
+    <string name="website">http://www.mob.com</string>
+    <string name="wechat">微信好友</string>
+    <string name="wechat_client_inavailable">目前您的微信版本过低或未安装微信，需要安装微信才能使用</string>
+    <string name="wechatfavorite">微信收藏</string>
+    <string name="wechatmoments">微信朋友圈</string>
+    <string name="weibo_oauth_regiseter">应用授权</string>
+    <string name="weibo_upload_content">分享图片</string>
+    <string name="yixin">易信</string>
+    <string name="yixin_client_inavailable">目前您的易信版本过低或未安装易信，需要安装易信才能使用</string>
+    <string name="yixinmoments">易信朋友圈</string>
+    <string name="youdao">有道云笔记</string>
+    <string name="SettingActivity">SettingActivity</string>
+    <string name="UMUpdateCheck">2.6.0.1.20150312</string>
+    <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
+    <string name="abc_action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
+    <string name="abc_search_hint">Search…</string>
+    <string name="abc_toolbar_collapse_description">Collapse</string>
+    <string name="about_update_text1">该应用示例像您展示了自动更新SDK的各种功能，三种主要的应用场景：自动更新，手动更新，静默下载。以及自动更新各种参数的作用，最后向您展示了完全自定义流程的更新如何完成。</string>
+    <string name="about_update_text2">点击左上角打开导航列表，右上角的删除按钮用来删除已经下载好的文件和取消忽略更新，您可能会需要这个功能。</string>
     <string name="action_settings">Settings</string>
+    <string name="app_name">妙途</string>
+    <string name="attach_file">文件</string>
+    <string name="attach_location">位置</string>
+    <string name="attach_picture">图片</string>
+    <string name="attach_smile">表情</string>
+    <string name="attach_take_pic">拍照</string>
+    <string name="attach_voice_call">语音电话</string>
+    <string name="auto_popup_text_false">UmengUpdateAgent.setUpdateAutoPopup(false);</string>
+    <string name="auto_popup_text_true">UmengUpdateAgent.setUpdateAutoPopup(true);</string>
+    <string name="auto_update">自动更新</string>
+    <string name="auto_update_code">UmengUpdateAgent.update(context);</string>
+    <string name="auto_update_text1">自动更新示例，该情景模式下，如果处于wifi环境，会在进入页面时检测更新，并弹出对话框提示更新，只需要一行代码就可以实现:</string>
+    <string name="back">返回</string>
+    <string name="btn_check">检测更新</string>
+    <string name="btn_default">恢复默认</string>
+    <string name="btn_download_file">查找已下载文件</string>
+    <string name="btn_ignore_update">忽略更新</string>
+    <string name="btn_is_ignore">确认忽略版本</string>
+    <string name="btn_show_dialog">显示对话框</string>
+    <string name="btn_show_notification">显示通知栏</string>
+    <string name="btn_show_ui">自定义提示</string>
+    <string name="btn_start_download">开始下载</string>
+    <string name="btn_start_install">开始安装</string>
+    <string name="button_add">添加</string>
+    <string name="button_cancel">取消</string>
+    <string name="button_logout">退出登录</string>
+    <string name="button_pushtotalk">按住说话</string>
+    <string name="button_save">保存</string>
+    <string name="button_search">查找</string>
+    <string name="button_send">发送</string>
+    <string name="button_uploadlog">上传运行日志</string>
+    <string name="cancel">取消</string>
+    <string name="clear_all_records">是否清空所有聊天记录？</string>
+    <string name="clear_records">清空记录</string>
+    <string name="code_space">\u0009</string>
+    <string name="confirm_forward_to">确定转发到：%1$s ?</string>
+    <string name="confirm_resend">确认重发该信息？</string>
+    <string name="connect_conflict">同一帐号已在其他设备登录</string>
+    <string name="connect_failuer_toast">请检查网络或稍候重试</string>
+    <string name="copy">复制</string>
+    <string name="copy_message">复制消息</string>
+    <string name="customtournotice">"欢迎报名这次旅行，妙途君希望您玩的愉快！
 
+ 本次旅行是妙途用户通过妙途平台发起的妙途定制旅行，妙途君对每位旅行发起人都进行了详细的身份认证， 尽我们所能最大程度保证旅行发起人的身份的真实性；并且对线路进行了精心规划、安排；尽最大努力让您 拥有一次安全、愉悦的旅行。
+
+ 妙途君希望您在开始旅行之前，能与旅行线路的发起人（团长）进行详细和妥善的沟通。当您报名付款成功 后，妙途将为您购买旅行相关保险。所有旅行过程中出现的人身或财产损失，妙途将不承担任何责任。
+
+ 当你完成报名流程后，团长依然有权拒绝你的报名，所以请尽量与团长通过私聊、团聊等方式详细沟通后再 进行报名。
+ 如果您在报名付款后依然被团长拒绝，妙途将退返给您所有已支付的费用。
+
+"</string>
+    <string name="day_name_format">EEE</string>
+    <string name="default_text">UmengUpdateAgent.setDefault();</string>
+    <string name="delete">删除</string>
+    <string name="delete_message">删除消息</string>
+    <string name="delete_video">删除视频</string>
+    <string name="delete_voice">删除语音</string>
+    <string name="delta_text_false">UmengUpdateAgent.setDeltaUpdate(false);</string>
+    <string name="delta_text_true">UmengUpdateAgent.setDeltaUpdate(true);</string>
+    <string name="dialog_listener_not_null">UmengUpdateAgent.setDialogListener(listener);</string>
+    <string name="dialog_listener_null">UmengUpdateAgent.setDialogListener(null);</string>
+    <string name="dialog_listener_text">设置对话框按键回调</string>
+    <string name="dialog_text">UpdateStatus.STYLE_DIALOG</string>
+    <string name="dissolution_group_hint">退出后，此群将被解散</string>
+    <string name="download_file_code">UmengUpdateAgent.downloadedFile(context, response);</string>
+    <string name="download_listener_not_null">UmengUpdateAgent.setDownloadListener(listener);</string>
+    <string name="download_listener_null">UmengUpdateAgent.setDownloadListener(null);</string>
+    <string name="download_listener_text">设置下载回调</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="exit_group">退出</string>
+    <string name="exit_group_hint">退出后，将不再接收此群聊信息</string>
+    <string name="false_text">false</string>
+    <string name="file">[文件]</string>
+    <string name="finish">完成</string>
+    <string name="force_update">手动更新</string>
+    <string name="forward">转发</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="icon_like_flg">likeFlg</string>
+    <string name="icon_user_id">userId</string>
+    <string name="ignore_update_code">UmengUpdateAgent.ignoreUpdate(context, response);</string>
+    <string name="imageview_bottom_height">bottom</string>
+    <string name="imageview_top_height">top</string>
+    <string name="imageview_url">url</string>
+    <string name="instruction">"1.建议旅客购买旅游人身意外险，18至65周岁间保额30万，18周岁以下及65周岁以上者保额5万，保费30元。
+ 2.团队人数达16人以上成行，如不成行提前五天通知，建议调整出团时间。
+ 3.此为参考行程，以最终签订合同时出团通知书行程为准。如遇不可抗拒因素或航班变更，团队行程会有所调整。
+ 4.旅客必须随团游览，不得擅自离团，如离团需支付违约金1800元/人。
+ 5.通行证如本人保管需带至机场。请自行检查港澳通行证及香港、澳门签注是否齐全及有效期，若由于证件原因导致无法出入境，责任由客人自行承担
+ 6. 请所有客户留意：港澳购物刷卡退货有5%的手续费损失，并须附有刷卡单才可退货。
+ 7.行程中所列门票用餐等项目若由于个人或不可抗力原因未使用恕不退款。
+ 8.由于近期国际油价不断上升，我公司保留由于航空公司上调燃油附加费的原因，调整卖价的权力！
+ 【报名及支付方式】：
+ 报名请添加微信13082835661（妙途小二），或电话：0571-87756997，13858059810（小丸子）。
+ 支付方式：支付宝：liuyongna123@hotmail.com 刘永娜，请注明姓名+手机号码
+ 完成支付即视为报名成功。
+ 【备注】：
+ 1.违约责任提示：出发前7天至4天（含7天）改期、换线或退团，需按合同支付旅游费用总额50%%；出发前3天至1天（含3天）改期、换线或退团，需按合同支付旅游费用总额60%%；
+ 2.本次旅行只针对单身人士；
+ 3.如遇恶劣天气（雷暴/台风），领押队有权决定顺延或取消行程；
+ 4.本次行程最低出团人数为16人，如至报名截止时间，报名人数不满最低出团人数的，我们将取消行程，全额退还报名费用；
+ 5.鉴于报名人数众多，原则上以收最终缴费成功为报名成功。"</string>
+    <string name="is_ignore_code">UmengUpdateAgent.isIgnore(context, response);</string>
+    <string name="joinlist"><u>查看报名列表</u></string>
+    <string name="like_fans">关注&amp;粉丝</string>
+    <string name="list_friends">%s的朋友</string>
+    <string name="location_message">位置信息</string>
+    <string name="location_prefix">[我的位置]</string>
+    <string name="location_recv">[%1$s的位置]</string>
+    <string name="logout">退出登录</string>
+    <string name="logout_hint">退出后不会删除任何历史数据，下次登录依然可以使用本账号</string>
+    <string name="manual_update_code">UmengUpdateAgent.forceUpdate(context);</string>
+    <string name="manual_update_text1">手动更新示例，该情景模式下，无论处于wifi环境还是移动网络环境，都会去检测更新，并且即使用户忽略了该版本也会弹出对话框提示更新，只需要一行代码就可以实现:</string>
+    <string name="move_up_to_cancel">手指上滑，取消发送</string>
+    <string name="multi_share">图文分享</string>
+    <string name="network_isnot_available">网络不可用</string>
+    <string name="network_unavailable">网络连接不可用，请检查网络</string>
+    <string name="notification_text">UpdateStatus.STYLE_NOTIFICATION</string>
+    <string name="ok">确定</string>
+    <string name="picture">[图片]</string>
+    <string name="prompt">提示</string>
+    <string name="pull_to_refresh">下拉刷新</string>
+    <string name="recoding_fail">录音失败，请重试！</string>
+    <string name="recording_video">录制视频</string>
+    <string name="refreshing">刷新中…</string>
+    <string name="register_protocol">《<u>妙途用户注册协议</u>》</string>
+    <string name="release_to_cancel">松开手指，取消发送</string>
+    <string name="release_to_refresh">松开刷新</string>
+    <string name="resend">重发</string>
+    <string name="rich_notification_text_false">UmengUpdateAgent.setRichNotification(false);</string>
+    <string name="rich_notification_text_true">UmengUpdateAgent.setRichNotification(true);</string>
+    <string name="save">保存</string>
+    <string name="search_header">搜</string>
+    <string name="select_a_friend">请选择一个朋友</string>
+    <string name="select_contacts">选择联系人</string>
+    <string name="select_one_plat_at_least">请选择一个目标平台</string>
+    <string name="send_fail">发送消息失败,</string>
+    <string name="shake2share">摇晃手机！</string>
+    <string name="share">分享</string>
+    <string name="share_canceled">分享已取消</string>
+    <string name="share_completed">分享成功</string>
+    <string name="share_failed">分享失败</string>
+    <string name="share_to">分享到</string>
+    <string name="sharing">分享操作正在后台进行…</string>
+    <string name="show_dialog_code">UmengUpdateAgent.showUpdateDialog(context, response);</string>
+    <string name="show_notification_code">UmengUpdateAgent.showUpdateNotification(context, response);</string>
+    <string name="silent_update">静默下载</string>
+    <string name="silent_update_code">UmengUpdateAgent.silentUpdate(context);</string>
+    <string name="silent_update_text1">静默下载更新示例，该情景模式下，只有当wifi环境时才会去检测更新，发现更新后会在后台静默下载，下载成功时会弹出通知栏提示更新，只需要一行代码就可以实现:</string>
+    <string name="start_download_code">UmengUpdateAgent.startDownload(context, response);</string>
+    <string name="start_install_code">UmengUpdateAgent.startInstall(context, file);</string>
+    <string name="style_text_dialog">UmengUpdateAgent.setUpdateUIStyle(UpdateStatus.STYLE_DIALOG);</string>
+    <string name="style_text_notification">UmengUpdateAgent.setUpdateUIStyle(UpdateStatus.STYLE_NOTIFICATION);</string>
+    <string name="tb_munion_tip_download_prefix">正在下载:</string>
+    <string name="text_ack_msg">已读</string>
+    <string name="text_delivered_msg">送达</string>
+    <string name="title_activity_black_list">BlackListActivity</string>
+    <string name="title_activity_choose_login">ChooseLoginActivity</string>
+    <string name="title_activity_custom_service">CustomServiceActivity</string>
+    <string name="title_activity_custom_tour">CustomTour</string>
+    <string name="title_activity_custom_tour_notice">CustomTourNoticeActivity</string>
+    <string name="title_activity_destination_hotel_list">DestinationHotelListActivity</string>
+    <string name="title_activity_edit_user_info">EditUserInfoActivity</string>
+    <string name="title_activity_every_day_pic">EveryDayPicActivity</string>
+    <string name="title_activity_feed_back">FeedBackActivity</string>
+    <string name="title_activity_find_mfriends">FindMFriendsActivity</string>
+    <string name="title_activity_find_password">FindPasswordActivity</string>
+    <string name="title_activity_function_introduce">FunctionIntroduceActivity</string>
+    <string name="title_activity_gift_money_introduce">GiftMoneyIntroduceActivity</string>
+    <string name="title_activity_grid_image_wall">GridImageWallActivity</string>
+    <string name="title_activity_home_banner_web">HomeBannerWebActivity</string>
+    <string name="title_activity_home_share">HomeShareActivity</string>
+    <string name="title_activity_hotel_detail">HotelDetailActivity</string>
+    <string name="title_activity_hotel_device">HotelDeviceActivity</string>
+    <string name="title_activity_hotel_equipment">HotelEquipmentActivity</string>
+    <string name="title_activity_hotel_filter">HotelFilterActivity</string>
+    <string name="title_activity_hotel_search">HotelSearchActivity</string>
+    <string name="title_activity_introduce">IntroduceActivity</string>
+    <string name="title_activity_join_finished_acticity">JoinFinishedActicity</string>
+    <string name="title_activity_join_together_step1">JoinTogetherStep1</string>
+    <string name="title_activity_join_together_step2">JoinTogetherStep2</string>
+    <string name="title_activity_joined_list">JoinedListActivity</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_map_web">MapWebActivity</string>
+    <string name="title_activity_my_calendar">MyCalendarActivity</string>
+    <string name="title_activity_my_custom_tour">MyCustomTourActivity</string>
+    <string name="title_activity_my_dating_tour">MyDatingTourActivity</string>
+    <string name="title_activity_new_message_remind">NewMessageRemind</string>
+    <string name="title_activity_order_list">OrderListActivity</string>
+    <string name="title_activity_person_center">PersonCenterActivity</string>
+    <string name="title_activity_phone_address">PhoneAddressActivity</string>
+    <string name="title_activity_protocol">ProtocolActivity</string>
+    <string name="title_activity_publish_all">PublishAllActivity</string>
+    <string name="title_activity_publish_state">PublishStateActivity</string>
+    <string name="title_activity_publish_together_new_step1">PublishTogetherNewStep1</string>
+    <string name="title_activity_publish_together_new_step2">PublishTogetherNewStep2Activity</string>
+    <string name="title_activity_publish_together_new_step3">PublishTogetherNewStep3Activity</string>
+    <string name="title_activity_publish_together_new_step4">PublishTogetherNewStep4Activity</string>
+    <string name="title_activity_publish_together_step1">PublishTogetherStep1Activity</string>
+    <string name="title_activity_publish_together_step2">PublishTogetherStep2Activity</string>
+    <string name="title_activity_register1">Register1Activity</string>
+    <string name="title_activity_register2">Register2Activity</string>
+    <string name="title_activity_register3">妙途</string>
+    <string name="title_activity_remind_like">RemindLikeActivity</string>
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="title_activity_search_result_custom_tour_acticity">SearchResultCustomTourActicity</string>
+    <string name="title_activity_search_result_together">SearchResultTogetherActivity</string>
+    <string name="title_activity_sign_notice">SignNoticeActivity</string>
+    <string name="title_activity_special_topic_detail">SpecialTopicDetailActivity</string>
+    <string name="title_activity_system_msg_detail">SystemMsgDetailActivity</string>
+    <string name="title_activity_system_msg_list">SystemMsgListActivity</string>
+    <string name="title_activity_times_square">TimesSquareActivity</string>
+    <string name="title_activity_together">TogetherActivity</string>
+    <string name="title_activity_together_customer_tour">TogetherCustomerTourActivity</string>
+    <string name="title_activity_together_detail">TogetherDetailActivity</string>
+    <string name="title_activity_together_like_list">TogetherLikeListActivity</string>
+    <string name="title_activity_together_success">TogetherSuccessActivity</string>
+    <string name="togethernotice">"欢迎报名这次旅行，妙途君希望您玩的愉快！
+
+ 本次旅行是妙途用户通过妙途平台发起的，妙途君希望您在开始旅行之前，能与旅行线路的发起人进行详细 和妥善的沟通，并且购买相应的旅行保险。所有旅行参与者在旅行过程中出现的人身或者财产损失，妙途将 不担负任何责任。
+
+ 当你完成报名流程后，旅行发起人依然有权拒绝你的报名。因此，请尽量与线路发起人通过私聊、团聊等方 式详细沟通后再进行报名。
+
+ 如您有其他疑惑请拨打妙途官方服务热线 4008-030-085。"</string>
+    <string name="true_text">true</string>
+    <string name="umeng_common_icon">icon</string>
+    <string name="update_callback_text1">您可以通过下面的方法设置回调监听，来自主处理更新检测结果，用户按键选择结果，下载状态。</string>
+    <string name="update_callback_text2">因为以下这些回调监听是静态的，如果在应用中不止一次调用了检测更新的方法，而每次的设置都不一样，请在每次检测更新的函数之前先恢复默认设置再设置回调监听，避免在其他地方设置的回调监听影响到这次更新。</string>
+    <string name="update_callback_text3">您可以设置更新回调来监听到检测更新的返回结果，自己处理检测更新的结果。</string>
+    <string name="update_callback_text4">您可以设置对话框按键回调接口来监听用户的按键操作，对于选择使用通知栏提醒用户更新的方式，该回调函数监听点击通知栏后弹出的对话框按键操作。</string>
+    <string name="update_callback_text5">您可以设置下载回调接口，这样在自动更新下载APK开始，进行，结束或者失败的时候，可以使用该接口来做出相应的反应。</string>
+    <string name="update_code_end">}</string>
+    <string name="update_custom">自定义UI</string>
+    <string name="update_default">默认UI</string>
+    <string name="update_listener_not_null">UmengUpdateAgent.setUpdateListener(listener);</string>
+    <string name="update_listener_null">UmengUpdateAgent.setUpdateListener(null);</string>
+    <string name="update_listener_text">设置更新回调</string>
+    <string name="update_process_text1">您可以自定义提醒更新的UI交互，通过设置更新回调和我们提供的功能函数也可以完成全部更新功能。下面展示完全自定义的更新流程：</string>
+    <string name="update_process_text2">首先您需要关闭自动弹窗，避免重复弹出提示。</string>
+    <string name="update_process_text3">您需要设置更新回调，来监听检测更新返回的结果，进行相应的处理。</string>
+    <string name="update_process_text4">现在检测更新，来检测是否有新版本。</string>
+    <string name="update_process_text5">检测更新返回的结果:</string>
+    <string name="update_process_text6">现在您可以使用我们默认的UI展现方式来提示更新，并自动完成后续所有相应，也可以完全自己来处理更新提示和更新流程。</string>
+    <string name="update_process_text7">默认提供了两种方式来展示更新提示：</string>
+    <string name="update_process_text8">您也可以通过这些方法来获取到展示更新信息需要的信息来自定义更新提示界面：</string>
+    <string name="update_process_text9">您可以根据这些信息构建自己的通知提示。</string>
+    <string name="update_result_no">if (updateStatus == UpdateStatus.No) {</string>
+    <string name="update_result_nonewifi">if (updateStatus == UpdateStatus.NoneWifi) {</string>
+    <string name="update_result_timeout">if (updateStatus == UpdateStatus.Timeout) {</string>
+    <string name="update_result_yes">if (updateStatus == UpdateStatus.Yes) {</string>
+    <string name="update_return_code">"\@Override
+public void onUpdateReturned(int updateStatus, UpdateResponse response) {"</string>
+    <string name="update_setting_text1">通过这些设置函数，您可以自定义更新参数，实现不一样的更新方式。</string>
+    <string name="update_setting_text2">因为以下这些设置是静态的参数，如果在应用中不止一次调用了检测更新的方法，而每次的设置都不一样，请在每次检测更新的函数之前先恢复默认设置再设置参数，避免在其他地方设置的参数影响到这次更新。</string>
+    <string name="update_setting_text3">设置进行更新的网络环境， true(默认)只在wifi环境下检测更新， false在所有网络环境中均检测更新。</string>
+    <string name="update_setting_text4_1">设置增量/全量更新， true(默认)使用增量更新， false使用全量更新。</string>
+    <string name="update_setting_text4_2">注意：如果旧版本的apk和线上上传过的apk不完全一样，则会请求全量更新。</string>
+    <string name="update_setting_text5">设置自动弹出更新提示，如果您要自己处理更新回调，选择自己对用户进行更新提示，请关闭自动弹出提示，避免重复弹出提示。</string>
+    <string name="update_setting_text6">"设置更新提示方式，我们默认的更新提示方式有两种：对话框提示和通知栏提示，通过该方法设置更新提示的样式。
+UpdateStatus.STYLE_DIALOG(默认)使用对话框进行更新提示，
+UpdateStatus.STYLE_NOTIFICATION使用通知栏进行更新提示。"</string>
+    <string name="update_setting_text7">设置更新下载通知栏是否启动高级样式，高级样式在4.1及以上系统中会显示暂停/继续，取消按钮。</string>
+    <string name="update_toast_no">Toast.makeText(context, 没有更新, Toast.LENGTH_SHORT).show();</string>
+    <string name="update_toast_nonewifi">Toast.makeText(context, 没有wifi, Toast.LENGTH_SHORT).show();</string>
+    <string name="update_toast_timeout">Toast.makeText(context, 超时, Toast.LENGTH_SHORT).show();</string>
+    <string name="update_toast_yes">Toast.makeText(context, 发现更新, Toast.LENGTH_SHORT).show();</string>
+    <string name="user_card">名片</string>
+    <string name="video">[视频]</string>
+    <string name="voice">[语音]</string>
+    <string name="voice_call">[语音通话]</string>
+    <string name="wifi_only_text_false">UmengUpdateAgent.setUpdateOnlyWifi(false);</string>
+    <string name="wifi_only_text_true">UmengUpdateAgent.setUpdateOnlyWifi(true);</string>
 </resources>

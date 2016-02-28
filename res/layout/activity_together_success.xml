@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@+id/top_bar" layout="@layout/together_detail_top_bar" />
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/top_bar">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="vertical" android:id="@+id/ll_success" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:background="#fffef9f1" android:layout_width="fill_parent" android:layout_height="116.0dip">
+                    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15.0dip">
+                        <ImageView android:layout_width="43.0dip" android:layout_height="40.0dip" android:src="@drawable/icon_publish_together_success" android:scaleType="fitCenter" />
+                        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                            <TextView android:textSize="18.0sp" android:textStyle="bold" android:textColor="#ff333333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="发布成功！" />
+                            <TextView android:textSize="14.0sp" android:textColor="#ff808080" android:id="@+id/tv_browse" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="4.0dip" android:text="马上去浏览>>" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <TextView android:textSize="12.0dip" android:textColor="#ff808080" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="您获得一张旅行基金券，在“我的-优惠券”查看！" />
+                    <TextView android:textSize="12.0dip" android:textColor="#ffff6200" android:id="@+id/tv_set_hit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="13.0dip" android:text="" />
+                </LinearLayout>
+                <ImageView android:id="@+id/iv_line" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="1.0dip" android:src="#ffdbdbdb" />
+                <include android:id="@+id/view_stay" layout="@layout/layout_recommend_hotel" />
+                <TextView android:textSize="12.0sp" android:textColor="#ff00aaff" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@+id/tv_tip" android:background="#ffe4f9ff" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="44.0dip" android:layout_marginTop="10.0dip" android:text="这个地方他们也想去!" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@+id/ll_empty" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="60.0dip">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_together_success_empty" />
+                <TextView android:textSize="14.0sp" android:textColor="#ff999999" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="你是第一个想去这个地方的人哦!" />
+            </LinearLayout>
+            <com.miaotu.view.MyGridView android:id="@+id/gv_user" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="34.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="34.0dip" android:numColumns="2" />
+            <TextView android:textSize="16.0sp" android:textColor="#ff00aaff" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@+id/tv_key_invite" android:background="@drawable/bg_hottag" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="44.0dip" android:layout_marginLeft="30.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="30.0dip" android:layout_marginBottom="10.0dip" android:text="一键邀请" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

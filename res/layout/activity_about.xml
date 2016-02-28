@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#fff1f3f6" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <include android:id="@+id/layout_top_bar" layout="@layout/top_bar" />
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="5.0">
+                <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <ImageView android:layout_width="100.0dip" android:layout_height="100.0dip" android:layout_marginTop="40.0dip" android:src="@drawable/logo_loading_bg" />
+                    <TextView android:textColor="#ffb4b4b4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="17.0dip" android:text="妙途 3.4.4" />
+                </LinearLayout>
+                <RelativeLayout android:id="@+id/layout_dial" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginTop="40.0dip">
+                    <TextView android:textSize="14.0sp" android:textColor="#ffb4b4b4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="电话" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                    <TextView android:textSize="14.0sp" android:textColor="#ffff8000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="4008-030-085" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <ImageView android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:src="#ffc3c3c3" />
+                <RelativeLayout android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="40.0dip">
+                    <TextView android:textSize="14.0sp" android:textColor="#ffb4b4b4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="微博" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                    <TextView android:textSize="14.0sp" android:textColor="#ff646464" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="妙途旅行" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <ImageView android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:src="#ffc3c3c3" />
+                <RelativeLayout android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="40.0dip">
+                    <TextView android:textSize="14.0sp" android:textColor="#ffb4b4b4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="微信" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                    <TextView android:textSize="14.0sp" android:textColor="#ff646464" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="miaotu520" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <ImageView android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:src="#ffc3c3c3" />
+                <RelativeLayout android:id="@+id/layout_add_qq_group" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="40.0dip">
+                    <TextView android:textSize="14.0sp" android:textColor="#ffb4b4b4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="妙途官方QQ群" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                    <TextView android:textSize="14.0sp" android:textColor="#ff646464" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="\ 463301192" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                </RelativeLayout>
+            </LinearLayout>
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="40.0dip" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
+                    <TextView android:textSize="12.0sp" android:textColor="#ff969696" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="杭州妙妙网络科技有限公司" />
+                    <TextView android:textSize="12.0sp" android:textColor="#ff969696" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="版权所有" />
+                    <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <TextView android:textSize="12.0sp" android:textColor="#ff969696" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Copyright" />
+                        <ImageView android:layout_gravity="center_vertical" android:layout_width="11.0sp" android:layout_height="11.0sp" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:src="@drawable/icon_copyright" />
+                        <TextView android:textSize="12.0sp" android:textColor="#ff969696" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2014-2015 Miaotu." />
+                        <TextView android:textSize="12.0sp" android:textColor="#ff969696" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="All Rights Reserved" />
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

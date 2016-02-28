@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:paddingTop="13.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:id="@+id/timestamp" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/chat_text_date_style" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.miaotu.view.CircleImageView android:id="@+id/iv_userhead" android:layout_width="@dimen/size_avatar" android:layout_height="@dimen/size_avatar" android:layout_marginRight="@dimen/margin_chat_activity" android:src="@drawable/icon_default_head_photo" android:layout_alignParentTop="true" android:layout_alignParentRight="true" app:border_width="0.0dip" />
+        <RelativeLayout android:id="@+id/rl_picture" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_chat_activity" android:layout_toLeftOf="@id/iv_userhead">
+            <ImageView android:id="@+id/iv_sendPicture" android:background="@drawable/chatto_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="fitCenter" />
+        </RelativeLayout>
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@+id/ll_loading" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toLeftOf="@id/rl_picture" android:layout_centerInParent="true">
+            <ProgressBar android:id="@+id/progressBar" android:visibility="visible" android:layout_width="28.0dip" android:layout_height="28.0dip" style="?android:attr/progressBarStyleSmall" />
+            <TextView android:textColor="@android:color/black" android:id="@+id/percentage" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0%" />
+        </LinearLayout>
+        <ImageView android:id="@+id/msg_status" android:visibility="gone" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/msg_state_failed_resend" android:layout_toLeftOf="@id/rl_picture" android:layout_centerVertical="true" />
+        <TextView android:textSize="12.0sp" android:id="@+id/tv_ack" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/text_ack_msg" android:layout_toLeftOf="@id/rl_picture" android:layout_centerVertical="true" style="@style/chat_text_name_style" />
+        <TextView android:textSize="12.0sp" android:id="@+id/tv_delivered" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/text_delivered_msg" android:layout_toLeftOf="@id/tv_chatcontent" android:layout_centerVertical="true" style="@style/chat_text_name_style" />
+    </RelativeLayout>
+</LinearLayout>

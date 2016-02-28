@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="16.0sp" android:textColor="#ff666666" android:gravity="center_vertical" android:id="@+id/tv_people_name" android:layout_width="wrap_content" android:layout_height="44.0dip" android:layout_marginLeft="16.0dip" android:text="入住人" />
+        <EditText android:textSize="16.0sp" android:textColor="#ff333333" android:textColorHint="#ffbfbfbf" android:id="@+id/et_people_name" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="44.0dip" android:layout_marginLeft="50.0dip" android:layout_marginRight="16.0dip" android:hint="入住人姓名" android:layout_toRightOf="@id/tv_people_name" />
+    </LinearLayout>
+    <View android:background="#ffdbdbdb" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="16.0dip" />
+</LinearLayout>

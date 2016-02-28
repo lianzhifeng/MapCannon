@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#fff0f0f0" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@+id/layout_top_bar" layout="@layout/top_bar" />
+    <TextView android:gravity="center" android:layout_gravity="right" android:id="@+id/tv_rule" android:layout_width="wrap_content" android:layout_height="40.0dip" android:layout_marginRight="21.0dip" android:text="使用规则" android:drawableLeft="@drawable/icon_coupon_rules" android:drawablePadding="7.0dip" />
+    <android.support.v4.widget.SwipeRefreshLayout android:id="@+id/refresh" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="19.0dip" android:layout_marginRight="19.0dip">
+        <android.support.v7.widget.RecyclerView android:id="@+id/recyclerview" android:layout_width="fill_parent" android:layout_height="fill_parent" android:overScrollMode="never" />
+    </android.support.v4.widget.SwipeRefreshLayout>
+</LinearLayout>

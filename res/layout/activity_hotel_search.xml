@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:background="#fff7f7f7" android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:layout_gravity="center_vertical" android:id="@+id/iv_left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:src="@drawable/icon_hotel_search_back" />
+        <TextView android:textSize="16.0sp" android:textColor="#ff666666" android:layout_gravity="center_vertical" android:id="@+id/tv_city_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:text="杭州" android:singleLine="true" android:maxLength="5" />
+        <RelativeLayout android:background="@drawable/bg_hotel_search" android:layout_width="fill_parent" android:layout_height="28.0dip" android:layout_marginLeft="8.0dip" android:layout_marginRight="10.0dip">
+            <TextView android:textSize="10.0sp" android:textColor="#ff666666" android:id="@+id/tv_in_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:layout_marginTop="1.0dip" android:text="住 10-23" />
+            <TextView android:textSize="10.0sp" android:textColor="#ff666666" android:id="@+id/tv_out_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:layout_marginBottom="1.0dip" android:text="离 10-24" android:layout_alignParentBottom="true" />
+            <ImageView android:id="@+id/iv_pull" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:src="@drawable/icon_hotel_search_pull" android:layout_toRightOf="@id/tv_in_date" android:layout_centerVertical="true" />
+            <EditText android:textSize="16.0sp" android:textColor="#ff666666" android:id="@+id/et_content" android:background="@drawable/bg_hotel_search" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="6.0dip" android:hint="输入关键字" android:singleLine="true" android:layout_toRightOf="@id/iv_pull" android:imeOptions="actionSearch" />
+        </RelativeLayout>
+    </LinearLayout>
+    <View android:background="#ffdbdbdb" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <RelativeLayout android:background="@color/white" android:layout_width="fill_parent" android:layout_height="38.0dip">
+        <View android:id="@+id/line" android:background="#ffcccccc" android:layout_width="1.0dip" android:layout_height="16.0dip" android:layout_centerInParent="true" />
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@+id/ll_filter" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_toLeftOf="@id/line" android:layout_alignParentLeft="true">
+            <TextView android:textSize="14.0sp" android:textColor="#ff666666" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="筛选" android:drawableLeft="@drawable/icon_hotel_search_filter" android:drawablePadding="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@+id/ll_sort" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_toRightOf="@id/line" android:layout_alignParentRight="true">
+            <TextView android:textSize="14.0sp" android:textColor="#ff666666" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="排序" android:drawableLeft="@drawable/icon_hotel_search_sort" android:drawablePadding="5.0dip" />
+        </LinearLayout>
+    </RelativeLayout>
+    <View android:background="#ffdbdbdb" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <LinearLayout android:orientation="vertical" android:id="@+id/ll_empty" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <android.support.v4.widget.SwipeRefreshLayout android:id="@+id/swipe_refresh" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.miaotu.view.WrapRecyclerView android:id="@+id/recycler" android:background="#fffafafa" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </android.support.v4.widget.SwipeRefreshLayout>
+</LinearLayout>

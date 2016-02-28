@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="#fff1f3f6" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include android:id="@+id/title" layout="@layout/top_bar" />
+    <RelativeLayout android:id="@+id/rl_bottom" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="49.0dip" android:layout_alignParentBottom="true">
+        <View android:id="@+id/view8" android:background="#ffdcdcdc" android:layout_width="1.0dip" android:layout_height="40.0dip" android:layout_centerInParent="true" />
+        <RelativeLayout android:id="@+id/rl_follow" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_toLeftOf="@id/view8">
+            <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+                <ImageView android:layout_gravity="center_vertical" android:id="@+id/iv_follow" android:layout_width="24.0dip" android:layout_height="24.0dip" android:src="@drawable/mine_guanzhu" android:scaleType="fitCenter" />
+                <TextView android:textSize="14.0sp" android:textColor="#ffff8000" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@+id/tv_follow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="关注" />
+            </LinearLayout>
+        </RelativeLayout>
+        <RelativeLayout android:id="@+id/rl_chating" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_toRightOf="@id/view8">
+            <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+                <ImageView android:layout_gravity="center_vertical" android:layout_width="24.0dip" android:layout_height="24.0dip" android:src="@drawable/mine_chat" android:scaleType="fitCenter" />
+                <TextView android:textSize="14.0sp" android:textColor="#ff646464" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="聊天" />
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+    <ScrollView android:id="@+id/sv_conent" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/rl_bottom" android:layout_below="@id/title">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <RelativeLayout android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <ImageView android:id="@+id/iv_background" android:background="@drawable/icon_default_background1" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="100.0dip" android:scaleType="fitXY" />
+                <com.miaotu.view.CircleImageView android:id="@+id/iv_head_photo" android:layout_width="60.0dip" android:layout_height="60.0dip" android:layout_marginTop="43.0dip" android:src="@drawable/default_avatar" android:layout_centerHorizontal="true" app:border_width="2.0dip" app:border_color="#fff1f3f6" />
+                <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@+id/ll_sexandage" android:background="@drawable/bg_sexandagetag" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="-20.0dip" android:layout_toRightOf="@id/iv_head_photo" android:layout_alignBottom="@id/iv_head_photo">
+                    <ImageView android:id="@+id/iv_gender" android:background="@drawable/icon_boy" android:layout_width="10.0dip" android:layout_height="10.0dip" android:layout_marginLeft="3.0dip" android:scaleType="fitCenter" />
+                    <TextView android:textSize="10.0sp" android:textColor="@color/white" android:id="@+id/tv_age" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="3.0dip" android:text="\ 18" />
+                </LinearLayout>
+                <TextView android:textSize="14.0sp" android:textColor="@color/white" android:id="@+id/tv_username" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:text="妙途" android:layout_below="@id/iv_head_photo" android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+            <LinearLayout android:orientation="horizontal" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="50.0dip">
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@+id/ll_follow" android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                    <TextView android:textSize="12.0sp" android:textColor="#ffe0bb95" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="关注" />
+                    <TextView android:textSize="10.0sp" android:textColor="#ff505050" android:id="@+id/tv_follow_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="\ 0" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@+id/ll_fans" android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                    <TextView android:textSize="12.0sp" android:textColor="#ffe0bb95" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="粉丝" />
+                    <TextView android:textSize="10.0sp" android:textColor="#ff505050" android:id="@+id/tv_fans_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="\ 0" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                    <TextView android:textSize="12.0sp" android:textColor="#ffe0bb95" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="情感" />
+                    <TextView android:textSize="10.0sp" android:textColor="#ff505050" android:id="@+id/tv_emotion_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="" android:singleLine="true" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                    <TextView android:textSize="12.0sp" android:textColor="#ffe0bb95" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="想去" />
+                    <TextView android:textSize="10.0sp" android:textColor="#ff505050" android:id="@+id/tv_budget" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="" android:singleLine="true" />
+                </LinearLayout>
+            </LinearLayout>
+            <View android:background="@drawable/bg_line" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip">
+                <TextView android:textSize="12.0sp" android:textColor="#ffb5b5b5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="图片墙" android:layout_weight="1.0" />
+                <TextView android:textSize="12.0sp" android:textColor="#ffff8000" android:gravity="right" android:id="@+id/tv_more" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:text="查看全部>>" android:layout_weight="1.0" />
+            </LinearLayout>
+            <View android:background="@drawable/bg_line" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="10.0dip" />
+            <android.support.v7.widget.RecyclerView android:id="@+id/rv_imagewall" android:background="@color/white" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="120.0dip" />
+            <ViewStub android:id="@+id/viewstub" android:layout="@layout/empty_viewstub" android:layout_width="fill_parent" android:layout_height="120.0dip" />
+            <View android:id="@+id/belowimagewall" android:background="@drawable/bg_line" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            <TextView android:textSize="12.0sp" android:textColor="#ffb5b5b5" android:id="@+id/tv_title_tour" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:text="TA的约游" android:layout_weight="1.0" />
+            <View android:background="@drawable/bg_line" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="10.0dip" />
+            <RelativeLayout android:id="@+id/rl_start" android:background="@android:color/white" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="40.0dip">
+                <ImageView android:id="@+id/iv_start" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="10.0dip" android:src="@drawable/mine_faqide" android:scaleType="fitCenter" android:layout_centerVertical="true" />
+                <TextView android:textSize="14.0sp" android:textColor="#ff646464" android:id="@+id/tv_start" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="TA发起的约游" android:layout_toRightOf="@id/iv_start" android:layout_centerVertical="true" />
+                <ImageView android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginRight="10.0dip" android:src="@drawable/icon_go" android:scaleType="fitCenter" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <View android:background="@drawable/bg_line" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            <RelativeLayout android:id="@+id/rl_join" android:background="@android:color/white" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="40.0dip">
+                <ImageView android:id="@+id/iv_join" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="10.0dip" android:src="@drawable/mine_yibaomingde" android:scaleType="fitCenter" android:layout_centerVertical="true" />
+                <TextView android:textSize="14.0sp" android:textColor="#ff646464" android:id="@+id/tv_sign" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="TA报名的约游" android:layout_toRightOf="@id/iv_join" android:layout_centerVertical="true" />
+                <ImageView android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginRight="10.0dip" android:src="@drawable/icon_go" android:scaleType="fitCenter" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <View android:id="@+id/v_line1" android:background="@drawable/bg_line" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            <RelativeLayout android:id="@+id/rl_like" android:background="@android:color/white" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="40.0dip">
+                <ImageView android:id="@+id/iv_like" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="10.0dip" android:src="@drawable/mine_xihuande" android:scaleType="fitCenter" android:layout_centerVertical="true" />
+                <TextView android:textSize="14.0sp" android:textColor="#ff646464" android:id="@+id/tv_like" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="TA喜欢的约游" android:layout_toRightOf="@id/iv_like" android:layout_centerVertical="true" />
+                <ImageView android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginRight="10.0dip" android:src="@drawable/icon_go" android:scaleType="fitCenter" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <View android:id="@+id/v_line2" android:background="@drawable/bg_line" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            <TextView android:textSize="12.0sp" android:textColor="#ffb4b4b4" android:id="@+id/tv_tip_trends" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="动态" />
+            <View android:id="@+id/v_line3" android:background="@drawable/bg_line" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            <RelativeLayout android:id="@+id/rl_state" android:background="@android:color/white" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="40.0dip">
+                <ImageView android:id="@+id/iv_state" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="10.0dip" android:src="@drawable/mine_dongtai" android:scaleType="fitCenter" android:layout_centerVertical="true" />
+                <TextView android:textSize="14.0sp" android:textColor="#ff646464" android:id="@+id/tv_trends" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="TA的动态" android:layout_toRightOf="@id/iv_state" android:layout_centerVertical="true" />
+                <ImageView android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginRight="10.0dip" android:src="@drawable/icon_go" android:scaleType="fitCenter" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <View android:background="@drawable/bg_line" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            <TextView android:textSize="12.0sp" android:textColor="#ffb4b4b4" android:id="@+id/tv_tip_info" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="个人资料" />
+            <RelativeLayout android:id="@+id/rl_home" android:background="@android:color/white" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="34.0dip">
+                <View android:background="@drawable/bg_line" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+                <TextView android:textSize="14.0sp" android:textColor="#ff646464" android:gravity="center" android:id="@+id/tv_home" android:layout_width="77.0dip" android:layout_height="34.0dip" android:text="家乡" />
+                <View android:id="@+id/view1" android:background="#ffdcdcdc" android:layout_width="1.0dip" android:layout_height="20.0dip" android:layout_toRightOf="@id/tv_home" android:layout_centerVertical="true" />
+                <TextView android:textSize="14.0sp" android:textColor="#ff646464" android:gravity="center_vertical" android:id="@+id/tv_content_home" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:text="杭州" android:layout_toRightOf="@id/view1" />
+                <View android:background="@drawable/bg_line" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@+id/rl_job" android:background="@android:color/white" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="34.0dip">
+                <TextView android:textSize="14.0sp" android:textColor="#ff646464" android:gravity="center" android:id="@+id/tv_job" android:layout_width="77.0dip" android:layout_height="34.0dip" android:text="职业" />
+                <View android:id="@+id/view5" android:background="#ffdcdcdc" android:layout_width="1.0dip" android:layout_height="20.0dip" android:layout_toRightOf="@id/tv_job" android:layout_centerVertical="true" />
+                <TextView android:textSize="14.0sp" android:textColor="#ff646464" android:gravity="center_vertical" android:id="@+id/tv_content_job" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="企业管理者" android:layout_toRightOf="@id/view5" android:layout_centerVertical="true" />
+                <View android:background="@drawable/bg_line" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@+id/rl_school" android:background="@android:color/white" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="34.0dip">
+                <TextView android:textSize="14.0sp" android:textColor="#ff646464" android:gravity="center" android:id="@+id/tv_school" android:layout_width="77.0dip" android:layout_height="34.0dip" android:text="学校" />
+                <View android:id="@+id/view2" android:background="#ffdcdcdc" android:layout_width="1.0dip" android:layout_height="20.0dip" android:layout_toRightOf="@id/tv_school" android:layout_centerVertical="true" />
+                <TextView android:textSize="14.0sp" android:textColor="#ff646464" android:gravity="center_vertical" android:id="@+id/tv_content_school" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:text="27岁" android:layout_toRightOf="@id/view2" />
+                <View android:background="@drawable/bg_line" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@+id/rl_lifearea" android:background="@android:color/white" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="34.0dip">
+                <TextView android:textSize="14.0sp" android:textColor="#ff646464" android:gravity="center" android:id="@+id/tv_lifearea" android:layout_width="77.0dip" android:layout_height="34.0dip" android:text="生活在" />
+                <View android:id="@+id/view3" android:background="#ffdcdcdc" android:layout_width="1.0dip" android:layout_height="20.0dip" android:layout_toRightOf="@id/tv_lifearea" android:layout_centerVertical="true" />
+                <TextView android:textSize="14.0sp" android:textColor="#ff646464" android:gravity="center_vertical" android:id="@+id/tv_content_lifearea" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:text="北京" android:layout_toRightOf="@id/view3" />
+                <View android:background="@drawable/bg_line" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@+id/rl_workarea" android:background="@android:color/white" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="34.0dip">
+                <TextView android:textSize="14.0sp" android:textColor="#ff646464" android:gravity="center" android:id="@+id/tv_workarea" android:layout_width="77.0dip" android:layout_height="34.0dip" android:text="工作在" />
+                <View android:id="@+id/view4" android:background="#ffdcdcdc" android:layout_width="1.0dip" android:layout_height="20.0dip" android:layout_toRightOf="@id/tv_workarea" android:layout_centerVertical="true" />
+                <TextView android:textSize="14.0sp" android:textColor="#ff646464" android:gravity="center_vertical" android:id="@+id/tv_content_workarea" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:text="国家大学科技园" android:layout_toRightOf="@id/view4" />
+                <View android:background="@drawable/bg_line" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@+id/rl_freetime" android:background="@android:color/white" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="34.0dip">
+                <TextView android:textSize="14.0sp" android:textColor="#ff646464" android:gravity="center" android:id="@+id/tv_freetime" android:layout_width="77.0dip" android:layout_height="34.0dip" android:text="有闲" />
+                <View android:id="@+id/view6" android:background="#ffdcdcdc" android:layout_width="1.0dip" android:layout_height="20.0dip" android:layout_toRightOf="@id/tv_freetime" android:layout_centerVertical="true" />
+                <TextView android:textSize="14.0sp" android:textColor="#ff646464" android:gravity="center_vertical" android:id="@+id/tv_content_freetime" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:text="周日" android:layout_toRightOf="@id/view6" />
+                <View android:background="@drawable/bg_line" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+            <LinearLayout android:id="@+id/ll_tag" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="14.0sp" android:textColor="#ff646464" android:gravity="center" android:id="@+id/tv_tag" android:layout_width="77.0dip" android:layout_height="34.0dip" android:text="个人标签" />
+                <View android:id="@+id/view7" android:background="#ffdcdcdc" android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_marginTop="9.0dip" android:layout_marginBottom="9.0dip" android:layout_toRightOf="@id/tv_tag" />
+                <com.miaotu.view.FlowLayout android:id="@+id/fl_tag" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="9.0dip" android:layout_toRightOf="@id/view7" />
+            </LinearLayout>
+            <View android:id="@+id/view_bottom" android:background="@drawable/bg_line" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

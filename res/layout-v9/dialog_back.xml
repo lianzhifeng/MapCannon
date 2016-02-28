@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:background="@drawable/bg_edit_userinfo" android:layout_width="fill_parent" android:layout_height="170.0dip" android:layout_marginLeft="48.0dip" android:layout_marginRight="48.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="17.0sp" android:textColor="#ff333333" android:gravity="center" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="110.0dip" android:text="您只差最后一步就完成了约游，确定要离开吗？" />
+    <View android:background="#ffdbdbdb" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="60.0dip">
+        <TextView android:textSize="20.0sp" android:textColor="#ff00aaff" android:gravity="center" android:id="@+id/tv_leave" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="果断离开" android:layout_weight="1.0" />
+        <View android:background="#ffdbdbdb" android:layout_width="1.0dip" android:layout_height="fill_parent" />
+        <TextView android:textSize="20.0sp" android:textColor="#ff00aaff" android:gravity="center" android:id="@+id/tv_close" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="继续编写" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

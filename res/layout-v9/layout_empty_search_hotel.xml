@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center_horizontal" android:background="@drawable/icon_hotel_empty" android:layout_width="60.0dip" android:layout_height="60.0dip" android:layout_marginTop="140.0dip" />
+    <TextView android:textSize="14.0sp" android:textColor="#ff999999" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="30.0dip" android:text="暂时没有搜索结果！" />
+    <TextView android:textSize="14.0sp" android:textColor="#ff999999" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="您可以尝试删除筛选条件再试试" />
+</merge>

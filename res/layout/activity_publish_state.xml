@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/top_bar" />
+    <com.handmark.pulltorefresh.library.PullToRefreshListView android:id="@+id/lv_topics" android:scrollbars="none" android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@android:color/transparent" android:divider="@null" ptr:ptrMode="pullDownFromTop" ptr:ptrShowIndicator="false" ptr:ptrOverScroll="false" ptr:ptrAnimationStyle="flip" xmlns:ptr="http://schemas.android.com/apk/res-auto" />
+</LinearLayout>

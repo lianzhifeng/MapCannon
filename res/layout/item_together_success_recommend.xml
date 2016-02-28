@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="60.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.miaotu.view.CircleImageView android:id="@+id/iv_userhead" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:src="@drawable/location_msg" />
+    <TextView android:textSize="14.0sp" android:textColor="#ff646464" android:id="@+id/tv_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="15.0dip" android:text="四小美" android:singleLine="true" android:layout_toRightOf="@id/iv_userhead" />
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@+id/ll_sexandage" android:background="@drawable/bg_sexandagetag" android:paddingLeft="3.0dip" android:paddingRight="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignLeft="@id/tv_name" android:layout_alignBottom="@id/iv_userhead">
+        <ImageView android:layout_gravity="center_vertical" android:id="@+id/iv_gender" android:background="@drawable/icon_boy" android:layout_width="10.0dip" android:layout_height="10.0dip" android:scaleType="fitCenter" />
+        <TextView android:textSize="10.0sp" android:textColor="#ffffffff" android:layout_gravity="center_vertical" android:id="@+id/tv_age" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="\ 26" />
+    </LinearLayout>
+</RelativeLayout>

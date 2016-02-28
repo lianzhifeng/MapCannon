@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/bg_popup_above" android:layout_width="85.0dip" android:layout_height="100.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@+id/line_center" android:layout_width="wrap_content" android:layout_height="1.0dip" android:src="@drawable/line_hor" android:layout_centerInParent="true" />
+    <TextView android:textSize="12.0sp" android:textColor="#ff646464" android:gravity="center" android:id="@+id/tv_chat" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="5.0dip" android:text="私信" android:layout_above="@id/line_center" />
+    <TextView android:textSize="12.0sp" android:textColor="#ff646464" android:gravity="center" android:id="@+id/tv_group" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginBottom="10.0dip" android:text="群聊" android:layout_below="@id/line_center" />
+</RelativeLayout>

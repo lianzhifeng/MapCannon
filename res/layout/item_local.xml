@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="279.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@+id/iv_background" android:layout_width="fill_parent" android:layout_height="279.0dip" android:src="@drawable/bg_local_header" android:scaleType="fitXY" />
+    <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView android:textSize="25.0sp" android:textColor="@color/white" android:layout_gravity="center_horizontal" android:id="@+id/tv_place" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="丽江" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:textSize="16.0sp" android:textColor="@color/white" android:id="@+id/tv_man_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="19.0dip" android:layout_marginRight="16.0dip" android:text="355人在此结伴" android:layout_below="@id/tv_place" />
+            <TextView android:textSize="16.0sp" android:textColor="@color/white" android:id="@+id/tv_hotel_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="19.0dip" android:text="78特惠家酒店" android:layout_below="@id/tv_place" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

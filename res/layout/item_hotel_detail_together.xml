@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+            android:background="@android:color/white"
+            android:paddingBottom="10.0dip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+        <RelativeLayout
+                android:id="@+id/rl_delete_myyueyou"
+                android:visibility="gone"
+                android:layout_width="25.0dip"
+                android:layout_height="25.0dip"
+                android:layout_marginTop="14.0dip"
+                android:layout_marginRight="12.0dip"
+                android:layout_alignParentRight="true">
+
+            <ImageView
+                    android:background="@drawable/delete_myyueyou"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true" />
+        </RelativeLayout>
+
+        <ImageView
+                android:id="@+id/iv_head_photo"
+                android:layout_width="36.0dip"
+                android:layout_height="36.0dip"
+                android:layout_marginLeft="12.0dip"
+                android:layout_marginTop="7.0dip"
+                android:src="@drawable/default_avatar"
+                app:border_width="0.0dip" />
+
+        <TextView
+                android:textSize="16.0sp"
+                android:textColor="#ff505050"
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16.0dip"
+                android:layout_marginTop="8.0dip"
+                android:text="四小美"
+                android:singleLine="true"
+                android:layout_toRightOf="@id/iv_head_photo" />
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="64.0dip"
+                android:layout_marginTop="3.0dip"
+                android:layout_below="@id/tv_name">
+
+            <TextView
+                    android:textSize="10.0sp"
+                    android:textColor="#ffb4b4b4"
+                    android:id="@+id/tv_status"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="进行中"
+                    android:layout_alignParentLeft="true" />
+
+            <View
+                    android:id="@+id/v_vertical1"
+                    android:background="#ffb4b4b4"
+                    android:visibility="gone"
+                    android:layout_width="1.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="5.0dip"
+                    android:layout_marginTop="3.0dip"
+                    android:layout_marginBottom="3.0dip" />
+
+            <TextView
+                    android:textSize="10.0sp"
+                    android:textColor="#ffb4b4b4"
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="刚刚" />
+
+        </LinearLayout>
+
+        <TextView
+                android:textSize="16.0sp"
+                android:textColor="#ff666666"
+                android:id="@+id/tv_introduce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12.0dip"
+                android:layout_marginTop="7.0dip"
+                android:layout_marginRight="10.0dip"
+                android:text="\#想去西湖，求约伴1人#所提出的具体愿望或条件达到质量要求提出领土要求"
+                android:layout_below="@id/iv_head_photo"
+                android:lineSpacingExtra="6.0dip" />
+    </RelativeLayout>
+
+    <View
+            android:background="#ffdbdbdb"
+            android:layout_width="fill_parent"
+            android:layout_height="1.0dip" />
+</LinearLayout>

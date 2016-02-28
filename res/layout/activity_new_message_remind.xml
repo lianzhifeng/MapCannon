@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#fff1f3f6" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/top_bar" />
+    <View android:background="@drawable/bg_line" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <RelativeLayout android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="60.0dip">
+        <TextView android:textSize="14.0sp" android:textColor="#ff646464" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="接收新消息通知" android:layout_centerVertical="true" />
+        <ImageView android:id="@+id/iv_receptmsg" android:background="@drawable/icon_close" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:scaleType="fitCenter" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        <TextView android:textSize="14.0sp" android:textColor="#ffb5b5b5" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:text="已开启" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <View android:background="@drawable/bg_line" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <TextView android:textSize="12.0sp" android:textColor="#ffb5b5b5" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:text="如果你要关闭或开启妙途的新消息通知，请在iPhone的“设置”-“通知”功能中，找到应用程序“妙途”更改。" android:lineSpacingExtra="5.0dip" />
+    <View android:background="@drawable/bg_line" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <RelativeLayout android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="60.0dip" android:layout_marginTop="10.0dip">
+        <TextView android:textSize="14.0sp" android:textColor="#ff646464" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="通知显示消息详情" android:layout_centerVertical="true" />
+        <ImageView android:id="@+id/iv_msgremind" android:background="@drawable/icon_close" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:scaleType="fitCenter" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <View android:background="@drawable/bg_line" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <TextView android:textSize="12.0sp" android:textColor="#ffb5b5b5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:text="若关闭，当收到妙途消息时，通知提示将不显示发信人和内容摘要。" android:lineSpacingExtra="5.0dip" />
+</LinearLayout>

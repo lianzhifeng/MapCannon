@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@+id/ll_assembling_place" android:background="@drawable/bg_assembling_place" android:layout_width="fill_parent" android:layout_height="70.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@+id/iv_photo" android:layout_width="70.0dip" android:layout_height="69.0dip" android:scaleType="fitXY" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip">
+        <TextView android:textSize="16.0sp" android:textColor="#ff4c4c4c" android:id="@+id/tv_assembling_place" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="20.0dip" android:text="集合地：凯瑞大酒店" android:singleLine="true" />
+        <TextView android:textSize="12.0sp" android:textColor="#ff666666" android:id="@+id/tv_location" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:layout_marginRight="20.0dip" android:text="位于：中国，浙江省，杭州市，江干区" android:singleLine="true" android:drawableRight="@drawable/icon_assembling_place" />
+        <TextView android:textSize="12.0sp" android:textColor="#ff999999" android:id="@+id/tv_much_people" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="25人在此结伴" />
+    </LinearLayout>
+</LinearLayout>

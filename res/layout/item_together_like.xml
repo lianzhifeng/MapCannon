@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@+id/ll_content" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.miaotu.view.CircleImageView android:layout_gravity="center_vertical" android:id="@+id/iv_head_photo" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginLeft="12.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="15.0dip" android:src="@drawable/default_avatar" />
+        <TextView android:textSize="14.0sp" android:textColor="#ff333333" android:layout_gravity="center_vertical" android:id="@+id/tv_nickname" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="小张" />
+        <TextView android:textSize="14.0sp" android:textColor="#ff999999" android:layout_gravity="center_vertical" android:id="@+id/tv_info" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="喜欢了这个行程" />
+    </LinearLayout>
+    <View android:background="#ffdedede" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="50.0dip" android:layout_alignParentBottom="true" />
+</RelativeLayout>
