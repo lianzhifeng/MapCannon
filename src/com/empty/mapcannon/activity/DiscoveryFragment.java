@@ -11,7 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
 import com.empty.mapcannon.R;
+import com.empty.mapcannon.db.CommentDBHandler;
 import com.empty.mapcannon.db.PostDBHandler;
+import com.empty.mapcannon.model.CommentInfo;
 import com.empty.mapcannon.model.PostInfo;
 import org.w3c.dom.Text;
 
@@ -46,7 +48,9 @@ public class DiscoveryFragment extends Fragment implements View.OnClickListener 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(getActivity(), TogetherDetailActivity.class));
+                Intent intent = new Intent(getActivity(), TogetherDetailActivity.class);
+                intent.putExtra("POSTID", mContentList.get(position).getId());
+                startActivity(intent);
             }
         });
         return root;
@@ -108,7 +112,9 @@ public class DiscoveryFragment extends Fragment implements View.OnClickListener 
             holder.tvComent.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startActivity(new Intent(mContext, CommentActivity.class));
+                    Intent intent = new Intent(mContext, CommentActivity.class);
+                    intent.putExtra("POSTID", mContentList.get(position).getId());
+                    startActivity(intent);
                 }
             });
             holder.tvJoin.setOnClickListener(new View.OnClickListener() {
@@ -132,11 +138,14 @@ public class DiscoveryFragment extends Fragment implements View.OnClickListener 
                 TextView tvDeparttime = (TextView) root.findViewById(R.id.tv_start_time);
                 TextView tvContent = (TextView) root.findViewById(R.id.tv_introduce);
                 TextView tvPostTime = (TextView) root.findViewById(R.id.tv_date);
+                TextView tvCount = (TextView) root.findViewById(R.id.tv_comment_count);
                 tvName.setText(postInfo.getNickname());
                 tvDestination.setText(postInfo.getDestination());
                 tvDeparture.setText(postInfo.getDeparture());
                 tvDeparttime.setText(postInfo.getDeparttime());
                 tvContent.setText(postInfo.getContent());
+                int comentCount = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_COMMENT + "'").size();
+                tvCount.setText(comentCount + "");
             }
         }
     }

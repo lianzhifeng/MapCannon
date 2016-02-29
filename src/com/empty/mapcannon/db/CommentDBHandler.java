@@ -32,11 +32,16 @@ public class CommentDBHandler {
 
     public boolean comment(CommentInfo info) {
         ContentValues values = new ContentValues();
+        values.put(Key.TYPE, info.getType());
         values.put(Key.POSTID, info.getPostId());
         values.put(Key.TIME, info.getTime());
         values.put(Key.CONTENT, info.getContent());
         values.put(Key.COMMENTNAME, info.getCommentName());
         return mDataBase.insert(Key.TABLE_NAME, null, values) != -1;
+    }
+
+    public void deleteComment(String selction) {
+        mDataBase.delete(Key.TABLE_NAME, selction, null);
     }
 
     public List<CommentInfo> getCommentInfo(String selection) {
@@ -46,7 +51,8 @@ public class CommentDBHandler {
             if (cursor.getCount() > 0) {
                 while (cursor.moveToNext()) {
                     CommentInfo info = new CommentInfo();
-                    info.setPostId(cursor.getString(cursor.getColumnIndex(Key.POSTID)));
+                    info.setType(cursor.getString(cursor.getColumnIndex(Key.TYPE)));
+                    info.setPostId(cursor.getInt(cursor.getColumnIndex(Key.POSTID)));
                     info.setContent(cursor.getString(cursor.getColumnIndex(Key.CONTENT)));
                     info.setTime(cursor.getString(cursor.getColumnIndex(Key.TIME)));
                     info.setCommentName(cursor.getString(cursor.getColumnIndex(Key.COMMENTNAME)));
@@ -59,7 +65,7 @@ public class CommentDBHandler {
     }
 
     private static class DbOpenHelper extends SQLiteOpenHelper {
-        private static final String DATABASE_NAME = "userinfo.db";
+        private static final String DATABASE_NAME = "commentinfo.db";
         private static final int DATABASE_VERSION = 1;
 
         public DbOpenHelper(Context context) {
@@ -85,8 +91,9 @@ public class CommentDBHandler {
             db.execSQL("CREATE TABLE " + Key.TABLE_NAME + " ("
                     + Key._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                     + Key.COMMENTNAME + " TEXT, "
-                    + Key.POSTID + " TEXT, "
+                    + Key.POSTID + " INTEGER, "
                     + Key.CONTENT + " TEXT, "
+                    + Key.TYPE + " TEXT, "
                     + Key.TIME + " TEXT);");
         }
 
@@ -98,5 +105,6 @@ public class CommentDBHandler {
         public static final String POSTID = "postid";
         public static final String TIME = "time";
         public static final String CONTENT = "content";
+        public static final String TYPE = "type";
     }
 }

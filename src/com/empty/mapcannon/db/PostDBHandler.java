@@ -64,7 +64,7 @@ public class PostDBHandler {
     }
 
     private static class DbOpenHelper extends SQLiteOpenHelper {
-        private static final String DATABASE_NAME = "userinfo.db";
+        private static final String DATABASE_NAME = "postinfo.db";
         private static final int DATABASE_VERSION = 1;
 
         public DbOpenHelper(Context context) {

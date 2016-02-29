@@ -183,7 +183,7 @@
             <TextView
                     android:textSize="13.0sp"
                     android:textColor="#ff507daf"
-                    android:id="@+id/tv_require"
+                    android:id="@+id/tv_start"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="我在：西单"
@@ -210,7 +210,7 @@
             <TextView
                     android:textSize="13.0sp"
                     android:textColor="#ff507daf"
-                    android:id="@+id/tv_money_type"
+                    android:id="@+id/tv_start_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="出发时间: 2016.5.15 10:00"

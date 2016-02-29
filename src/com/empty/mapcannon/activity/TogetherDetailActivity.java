@@ -11,8 +11,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.empty.mapcannon.R;
+import com.empty.mapcannon.db.CommentDBHandler;
+import com.empty.mapcannon.db.PostDBHandler;
+import com.empty.mapcannon.model.CommentInfo;
+import com.empty.mapcannon.model.PostInfo;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -25,12 +28,38 @@ public class TogetherDetailActivity extends Activity implements View.OnClickList
     private View mBottemChat;
     private View mBottemTogether;
     private View mBack;
+    private TextView mCommentCount;
     private boolean mIsBtnTogether;
     private ListView mListView;
-    private List<Object> mCommentList;
-    private List<Object> mTogetherList;
+    private List<CommentInfo> mCommentList;
+    private List<CommentInfo> mTogetherList;
     private MyAdapter mAdapter;
-    private boolean isJoined = false;
+    private int mPostId;
+
+    private void setContent() {
+        PostInfo postInfo = PostDBHandler.getInstance().getPostInfo(CommentDBHandler.Key._ID + "=" + mPostId).get(0);
+        TextView tvName = (TextView) findViewById(R.id.tv_name);
+        TextView tvDestination = (TextView) findViewById(R.id.tv_way);
+        TextView tvDeparture = (TextView) findViewById(R.id.tv_start);
+        TextView tvDeparttime = (TextView) findViewById(R.id.tv_start_time);
+        TextView tvContent = (TextView) findViewById(R.id.tv_introduce);
+        TextView tvPostTime = (TextView) findViewById(R.id.tv_date);
+        tvName.setText(postInfo.getNickname());
+        tvDestination.setText(postInfo.getDestination());
+        tvDeparture.setText(postInfo.getDeparture());
+        tvDeparttime.setText(postInfo.getDeparttime());
+        tvContent.setText(postInfo.getContent());
+        showIsJoin();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mCommentList = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_COMMENT + "'");
+        mTogetherList = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_JOINED + "'");
+        mCommentCount.setText(mCommentList.size() + "");
+        mAdapter.notifyDataSetChanged();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,15 +70,13 @@ public class TogetherDetailActivity extends Activity implements View.OnClickList
         mBottemComment = findViewById(R.id.layout_comment);
         mBottemChat = findViewById(R.id.layout_chat);
         mBottemTogether = findViewById(R.id.layout_join);
+        mCommentCount = (TextView) findViewById(R.id.tv_com_count);
         mBack = findViewById(R.id.tv_left);
+        mPostId = getIntent().getIntExtra("POSTID", 0);
 
-        mCommentList = new ArrayList<Object>();
-        mTogetherList = new ArrayList<Object>();
-        mCommentList.add(null);
-        mCommentList.add(null);
-        mCommentList.add(null);
-        mTogetherList.add(null);
-        mTogetherList.add(null);
+        mCommentList = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_COMMENT + "'");
+        mTogetherList = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_JOINED + "'");
+        mCommentCount.setText(mCommentList.size() + "");
 
         mListView = (ListView) findViewById(R.id.listview);
         mAdapter = new MyAdapter(this);
@@ -61,6 +88,7 @@ public class TogetherDetailActivity extends Activity implements View.OnClickList
         mBottemTogether.setOnClickListener(this);
         mBack.setOnClickListener(this);
         mIsBtnTogether = false;
+        setContent();
     }
 
     private void resetBtnColor() {
@@ -92,11 +120,36 @@ public class TogetherDetailActivity extends Activity implements View.OnClickList
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            View view = View.inflate(mContext, R.layout.item_topic_comment, null);
-            if (mIsBtnTogether) {
-                view.findViewById(R.id.tv_content).setVisibility(View.GONE);
+            Holder holder = null;
+            if (convertView == null) {
+                convertView = View.inflate(mContext, R.layout.item_topic_comment, null);
+                holder = new Holder();
+                holder.position = position;
+                if (mIsBtnTogether) {
+                    holder.commentInfo = mTogetherList.get(position);
+                    convertView.findViewById(R.id.tv_content).setVisibility(View.GONE);
+                } else {
+                    holder.commentInfo = mCommentList.get(position);
+                }
+                convertView.setTag(holder);
+            } else {
+                holder = (Holder) convertView.getTag();
             }
-            return view;
+            holder.updateView(convertView);
+            return convertView;
+        }
+
+        class Holder {
+            int position;
+            CommentInfo commentInfo;
+            void updateView(View root) {
+                TextView tvName = (TextView) root.findViewById(R.id.tv_nickname);
+                TextView tvDate = (TextView) root.findViewById(R.id.tv_date);
+                TextView tvContent = (TextView) root.findViewById(R.id.tv_content);
+                tvName.setText(commentInfo.getCommentName());
+                tvDate.setText(commentInfo.getTime());
+                tvContent.setText(commentInfo.getContent());
+            }
         }
     }
 
@@ -104,13 +157,19 @@ public class TogetherDetailActivity extends Activity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.layout_comment_count:
+                mCommentList = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_COMMENT + "'");
+                mTogetherList = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_JOINED + "'");
                 resetBtnColor();
+                mCommentCount.setText(mCommentList.size() + "");
                 mBtnComment.setBackgroundColor(0xffffffff);
                 mIsBtnTogether = false;
                 mAdapter.notifyDataSetChanged();
                 break;
             case R.id.layout_joined:
+                mCommentList = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_COMMENT + "'");
+                mTogetherList = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_JOINED + "'");
                 resetBtnColor();
+                mCommentCount.setText(mCommentList.size() + "");
                 mBtnTogether.setBackgroundColor(0xffffffff);
                 mIsBtnTogether = true;
                 mAdapter.notifyDataSetChanged();
@@ -120,26 +179,65 @@ public class TogetherDetailActivity extends Activity implements View.OnClickList
                 break;
             case R.id.layout_join:
                 joinOrLeave();
+                showIsJoin();
                 break;
             case R.id.layout_chat:
-                startActivity(new Intent(this, ChatActivity.class));
+                Intent intent_chat = new Intent(this, ChatActivity.class);
+                intent_chat.putExtra("POSTID", mPostId);
+                startActivity(intent_chat);
                 break;
             case R.id.layout_comment:
-                startActivity(new Intent(this, CommentActivity.class));
+                Intent intent_comment = new Intent(this, CommentActivity.class);
+                intent_comment.putExtra("POSTID", mPostId);
+                startActivity(intent_comment);
                 break;
         }
     }
 
+    private String selectIsJoinString() {
+        return CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_JOINED +
+                "' AND " + CommentDBHandler.Key.COMMENTNAME + "='" + getNickName() + "'" +
+                " AND " + CommentDBHandler.Key.POSTID + "=" + mPostId;
+    }
+
+    private boolean isJoined() {
+        return CommentDBHandler.getInstance().getCommentInfo(selectIsJoinString()).size() > 0;
+    }
+
+    private String getNickName() {
+        return "Nick";
+    }
+
     private void joinOrLeave() {
-        TextView textView = (TextView) mBottemTogether.findViewById(R.id.tv_join);
-        if (isJoined) {
-            isJoined = false;
-            textView.setText("入伙");
+        if (isJoined()) {
+            CommentDBHandler.getInstance().deleteComment(selectIsJoinString());
             Toast.makeText(TogetherDetailActivity.this, "已经取消入伙", Toast.LENGTH_SHORT).show();
         } else {
-            isJoined = true;
+            CommentInfo commentInfo = new CommentInfo();
+            commentInfo.setContent("");
+            commentInfo.setType(CommentInfo.TYPE_JOINED);
+            commentInfo.setCommentName(getNickName());
+            commentInfo.setPostId(mPostId);
+            commentInfo.setTime(getCurrentTime());
+            CommentDBHandler.getInstance().comment(commentInfo);
             Toast.makeText(TogetherDetailActivity.this, "成功入伙", Toast.LENGTH_SHORT).show();
+        }
+        mCommentList = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_COMMENT + "'");
+        mTogetherList = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_JOINED + "'");
+        mCommentCount.setText(mCommentList.size() + "");
+        mAdapter.notifyDataSetChanged();
+    }
+
+    private String getCurrentTime() {
+        return System.currentTimeMillis() + "";
+    }
+
+    private void showIsJoin() {
+        TextView textView = (TextView) mBottemTogether.findViewById(R.id.tv_join);
+        if (isJoined()) {
             textView.setText("取消入伙");
+        } else {
+            textView.setText("入伙");
         }
     }
 }

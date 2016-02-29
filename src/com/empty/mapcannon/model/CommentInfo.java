@@ -3,16 +3,24 @@ package com.empty.mapcannon.model;
 
 public class CommentInfo {
 
-    private String postId;
+    public static final String TYPE_COMMENT = "comment";
+    public static final String TYPE_MESSAGE = "message";
+    public static final String TYPE_JOINED = "joined";
+    private int postId;
     private String commentName;
     private String time;
     private String content;
+    private String type;
 
-    public String getPostId() {
+    public String getType() {return type; }
+
+    public void setType(String type) { this.type = type;}
+
+    public int getPostId() {
         return postId;
     }
 
-    public void setPostId(String postId) {
+    public void setPostId(int postId) {
         this.postId = postId;
     }
 
