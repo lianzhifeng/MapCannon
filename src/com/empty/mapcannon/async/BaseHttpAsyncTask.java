@@ -83,7 +83,7 @@ public abstract class BaseHttpAsyncTask<Params, Progress, Result>
     protected final void onPostExecute(Result paramResult) {
         this.onPostExcuted = true;
         dismissDlg();
-        if ((this.throwable != null) || (paramResult == null)) {
+        if ((this.throwable != null)) {
             if (this.showTip) {
                 showToast("服务器响应超时");
             }

@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -29,7 +28,7 @@ import com.empty.mapcannon.util.StringUtil;
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class MineFragment extends Fragment implements OnClickListener {
     private Button btnLogin;
-    private AutoCompleteTextView tvAuto;
+    private EditText tvAuto;
     private EditText etPassword;
     private TextView tvRegister;
     private TextView tvFindPassword;
@@ -59,7 +58,7 @@ public class MineFragment extends Fragment implements OnClickListener {
 
     private void findView(View root) {
         this.btnLogin = (Button) root.findViewById(R.id.btn_login);
-        this.tvAuto = ((AutoCompleteTextView) root.findViewById(R.id.et_tel));
+        this.tvAuto = ((EditText) root.findViewById(R.id.tv_auto));
         this.tvRegister = ((TextView) root.findViewById(R.id.tv_register));
         this.etPassword = ((EditText) root.findViewById(R.id.et_password));
         this.tvFindPassword = ((TextView) root.findViewById(R.id.tv_find_password));
@@ -104,7 +103,7 @@ public class MineFragment extends Fragment implements OnClickListener {
     }
 
     private void login() {
-        if (!validate()) {
+        if (validate()) {
             final RegisterInfo info = new RegisterInfo();
             info.setPhone(this.tvAuto.getText().toString());
             info.setPassword(this.etPassword.getText().toString());

@@ -37,7 +37,7 @@
                     android:textColor="#ffffffff"
                     android:textSize="16.0sp" />
 
-                <AutoCompleteTextView
+                <EditText
                     android:id="@+id/tv_auto"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"

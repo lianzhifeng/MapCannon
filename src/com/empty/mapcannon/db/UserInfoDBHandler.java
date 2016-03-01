@@ -28,29 +28,22 @@ public class UserInfoDBHandler {
         return sDBHandler;
     }
 
-    public RegisterInfo login(RegisterInfo info) {
-        Cursor cursor = mDataBase.query(Key.TABLE_NAME, null, "username=? and password=?",
+    public RegisterInfo login(RegisterInfo i) {
+        Cursor cursor = mDataBase.query(Key.TABLE_NAME, null, "phone=? and password=?",
                 new String[] {
-                        info.getPhone(), info.getPassword()
+                        i.getPhone(), i.getPassword()
                 }, null, null, null);
-        if (cursor != null) {
-            return generateInfo(cursor);
-        }
-        return null;
-    }
-
-    private static RegisterInfo generateInfo(Cursor cursor) {
-        RegisterInfo info = null;
-        if (cursor != null) {
-            info = new RegisterInfo();
+        if (cursor != null && cursor.moveToFirst()) {
+            RegisterInfo info = new RegisterInfo();
             info.setCity(cursor.getString(cursor.getColumnIndex(Key.CITY)));
             info.setNickname(cursor.getString(cursor.getColumnIndex(Key.NICKNAME)));
             info.setPhone(cursor.getString(cursor.getColumnIndex(Key.PHONE)));
             info.setPassword(cursor.getString(cursor.getColumnIndex(Key.PASSWORD)));
             info.setProvince(cursor.getString(cursor.getColumnIndex(Key.PROVINCE)));
             info.setGender(cursor.getString(cursor.getColumnIndex(Key.GENDER)));
+            return info;
         }
-        return info;
+        return null;
     }
 
     public boolean register(RegisterInfo info) {

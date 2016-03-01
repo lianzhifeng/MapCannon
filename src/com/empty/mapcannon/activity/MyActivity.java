@@ -56,7 +56,7 @@ public class MyActivity extends BaseActivity implements View.OnClickListener {
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-    private void setFragment(Fragment fragment) {
+    protected void setFragment(Fragment fragment) {
         FragmentManager fm = getFragmentManager();
         FragmentTransaction transaction = fm.beginTransaction();
         transaction.replace(R.id.id_content, fragment);
