@@ -111,6 +111,7 @@ public class Register2Activity extends BaseActivity implements OnClickListener {
                         Intent intent = new Intent(Register2Activity.this,
                                 EditUserInfoActivity.class);
                         startActivity(intent);
+                        finish();
                     } else {
                         showMyToast("注册失败, 用户已存在");
                     }

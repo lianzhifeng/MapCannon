@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.empty.mapcannon.Constants;
 import com.empty.mapcannon.R;
 
 public class MyActivity extends BaseActivity implements View.OnClickListener {
@@ -89,7 +90,7 @@ public class MyActivity extends BaseActivity implements View.OnClickListener {
                 mImageMessage.setImageResource(R.drawable.icon_tab_message_selected);
                 break;
             case R.id.btn_mine:
-                String login = readPreference("login");
+                String login = readPreference(Constants.STR_LOGIN);
                 if (TextUtils.isEmpty(login) || !login.equals("true")) {
                     startActivity(new Intent(this, LoginActivity.class));
                 } else {

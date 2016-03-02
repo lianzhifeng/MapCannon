@@ -97,7 +97,7 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
                     if (paramResult != null) {
                         RegisterInfo info = (RegisterInfo) paramResult;
                         deleteAllPreference(NAME_USERINFO);
-                        writePreference(NAME_USERINFO, Constants.STR_LOGIN, "true");
+                        writePreference(Constants.STR_LOGIN, "true");
                         writePreference(NAME_USERINFO, Key.GENDER, info.getGender());
                         writePreference(NAME_USERINFO, Key.PHONE, info.getPhone());
                         writePreference(NAME_USERINFO, Key.PROVINCE, info.getProvince());
