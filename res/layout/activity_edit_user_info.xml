@@ -44,15 +44,6 @@
                 android:layout_centerHorizontal="true"
                 android:src="@drawable/default_avatar" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/iv_head_photo"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="10.0dip"
-                android:text="添加头像（必填）"
-                android:textColor="#ff505050"
-                android:textSize="12.0sp" />
         </RelativeLayout>
 
         <RelativeLayout

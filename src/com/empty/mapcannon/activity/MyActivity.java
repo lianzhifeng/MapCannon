@@ -76,20 +76,19 @@ public class MyActivity extends BaseActivity implements View.OnClickListener {
         mImageMine.setImageResource(R.drawable.icon_tab_mine_unselected);
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btn_discovery:
+    protected void selectTab(int tab) {
+        switch(tab) {
+            case 0:
                 setFragment(mDiscoveryFragment);
                 resetImageView();
                 mImageDiscovery.setImageResource(R.drawable.icon_tab_first_selected);
                 break;
-            case R.id.btn_message:
+            case 1 :
                 setFragment(mMessageFragment);
                 resetImageView();
                 mImageMessage.setImageResource(R.drawable.icon_tab_message_selected);
                 break;
-            case R.id.btn_mine:
+            case 2 :
                 String login = readPreference(Constants.STR_LOGIN);
                 if (TextUtils.isEmpty(login) || !login.equals("true")) {
                     startActivity(new Intent(this, LoginActivity.class));
@@ -99,8 +98,24 @@ public class MyActivity extends BaseActivity implements View.OnClickListener {
                     mImageMine.setImageResource(R.drawable.icon_tab_mine_selected);
                 }
                 break;
+        }
+    }
+    @Override
+    public void onClick(View v) {
+        int tab = 0;
+        switch (v.getId()) {
+            case R.id.btn_discovery:
+                tab = 0;
+                break;
+            case R.id.btn_message:
+                tab = 1;
+                break;
+            case R.id.btn_mine:
+                tab = 2;
+                break;
             default:
                 break;
         }
+        selectTab(tab);
     }
 }

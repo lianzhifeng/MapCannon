@@ -67,6 +67,7 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
 
     private void register() {
         startActivity(new Intent(this, Register2Activity.class));
+        finish();
     }
 
     private boolean validate() {

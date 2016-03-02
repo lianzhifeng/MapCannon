@@ -31,13 +31,13 @@ public class MineFragment extends Fragment implements OnClickListener {
     private TextView tv_title;
     private TextView tv_nickname;
     private TextView tv_city;
-    private BaseActivity activity;
+    private MyActivity activity;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.fragment_fourth_page, null, false);
-        activity = (BaseActivity) getActivity();
+        activity = (MyActivity) getActivity();
         findView();
         bindView();
         return root;
@@ -64,13 +64,18 @@ public class MineFragment extends Fragment implements OnClickListener {
     @Override
     public void onResume() {
         super.onResume();
-        String nickname = activity.readPreference(BaseActivity.NAME_USERINFO, Key.NICKNAME);
-        String city = activity.readPreference(BaseActivity.NAME_USERINFO, Key.CITY);
-        if (!TextUtils.isEmpty(nickname)) {
-            tv_nickname.setText(nickname);
-        }
-        if (!TextUtils.isEmpty(city)) {
-            tv_city.setText(city);
+        String login = activity.readPreference("login");
+        if ("true".equals(login)) {
+            String nickname = activity.readPreference(BaseActivity.NAME_USERINFO, Key.NICKNAME);
+            String city = activity.readPreference(BaseActivity.NAME_USERINFO, Key.CITY);
+            if (!TextUtils.isEmpty(nickname)) {
+                tv_nickname.setText(nickname);
+            }
+            if (!TextUtils.isEmpty(city)) {
+                tv_city.setText(city);
+            }
+        } else {
+            activity.selectTab(0);
         }
     }
 
