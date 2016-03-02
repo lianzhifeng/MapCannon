@@ -18,6 +18,7 @@ import com.empty.mapcannon.db.CommentDBHandler;
 import com.empty.mapcannon.db.PostDBHandler;
 import com.empty.mapcannon.model.CommentInfo;
 import com.empty.mapcannon.model.PostInfo;
+import com.empty.mapcannon.util.Util;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
@@ -44,7 +45,11 @@ public class DiscoveryFragment extends Fragment implements View.OnClickListener 
         mPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), PostActivity.class));
+                if (Util.getNickName(getActivity()).isEmpty()) {
+                    Toast.makeText(getActivity(), "请先登陆", Toast.LENGTH_SHORT);
+                } else {
+                    startActivity(new Intent(getActivity(), PostActivity.class));
+                }
             }
         });
         mContentList = PostDBHandler.getInstance().getPostInfo(null);
@@ -153,7 +158,11 @@ public class DiscoveryFragment extends Fragment implements View.OnClickListener 
             holder.tvJoin.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    joinOrLeave(mContentList.get(position).getId());
+                    if (!TextUtils.isEmpty(Util.getNickName(getActivity()))) {
+                        joinOrLeave(mContentList.get(position).getId());
+                    } else {
+                        Toast.makeText(getActivity(), "请先登陆", Toast.LENGTH_SHORT).show();
+                    }
                 }
             });
             return convertView;
@@ -161,7 +170,7 @@ public class DiscoveryFragment extends Fragment implements View.OnClickListener 
 
         private String selectIsJoinString(int postId) {
             return CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_JOINED +
-                    "' AND " + CommentDBHandler.Key.COMMENTNAME + "='" + "Nick" + "'" +
+                    "' AND " + CommentDBHandler.Key.COMMENTNAME + "='" + Util.getNickName(getActivity()) + "'" +
                     " AND " + CommentDBHandler.Key.POSTID + "=" + postId;
         }
 
@@ -177,7 +186,7 @@ public class DiscoveryFragment extends Fragment implements View.OnClickListener 
                 CommentInfo commentInfo = new CommentInfo();
                 commentInfo.setContent("");
                 commentInfo.setType(CommentInfo.TYPE_JOINED);
-                commentInfo.setCommentName("Nick");
+                commentInfo.setCommentName(Util.getNickName(getActivity()));
                 commentInfo.setPostId(postId);
                 commentInfo.setTime(System.currentTimeMillis() + "");
                 CommentDBHandler.getInstance().comment(commentInfo);

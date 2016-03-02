@@ -10,6 +10,7 @@ import android.widget.Toast;
 import com.empty.mapcannon.R;
 import com.empty.mapcannon.db.PostDBHandler;
 import com.empty.mapcannon.model.PostInfo;
+import com.empty.mapcannon.util.Util;
 
 /**
  * Created by Nick on 16/2/28.
@@ -63,7 +64,7 @@ public class PostActivity extends Activity implements View.OnClickListener {
         String end = mEndView.getText().toString();
         String startTime = mStartTimeView.getText().toString();
         String content = mContentView.getText().toString();
-        String nickNmae = "Nick";
+        String nickNmae = Util.getNickName(this);
 
         if (!TextUtils.isEmpty(start) && !TextUtils.isEmpty(end) && !TextUtils.isEmpty(startTime) && !TextUtils.isEmpty(content)) {
             PostInfo postInfo = new PostInfo();

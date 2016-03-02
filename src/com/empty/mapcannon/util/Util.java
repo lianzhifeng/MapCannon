@@ -342,6 +342,10 @@ public class Util {
             return paramSize1.width - paramSize2.width;
         }
     }
+
+    public static String getNickName(Context context) {
+        return "Nick";
+    }
 }
 
 /*

@@ -13,6 +13,7 @@ import android.widget.*;
 import com.empty.mapcannon.R;
 import com.empty.mapcannon.db.CommentDBHandler;
 import com.empty.mapcannon.model.CommentInfo;
+import com.empty.mapcannon.util.Util;
 
 import java.util.List;
 
@@ -45,6 +46,7 @@ public class CommentActivity extends Activity implements View.OnClickListener{
         listView.setAdapter(mAdapter);
     }
 
+    @TargetApi(Build.VERSION_CODES.GINGERBREAD)
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -53,8 +55,12 @@ public class CommentActivity extends Activity implements View.OnClickListener{
                 if (TextUtils.isEmpty(comment)) {
                     Toast.makeText(this, "评论不能为空", Toast.LENGTH_SHORT).show();
                 } else {
-                    postComment(comment);
-                    Toast.makeText(this, "评论成功", Toast.LENGTH_SHORT).show();
+                    if (getNickName().isEmpty()) {
+                        Toast.makeText(this, "请先登陆", Toast.LENGTH_SHORT).show();
+                    } else {
+                        postComment(comment);
+                        Toast.makeText(this, "评论成功", Toast.LENGTH_SHORT).show();
+                    }
                 }
                 break;
             case R.id.tv_left:
@@ -68,7 +74,7 @@ public class CommentActivity extends Activity implements View.OnClickListener{
     }
 
     private String getNickName() {
-        return "Nick";
+        return Util.getNickName(this);
     }
 
     private void postComment(String comment) {

@@ -1,8 +1,10 @@
 package com.empty.mapcannon.activity;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +17,7 @@ import com.empty.mapcannon.db.CommentDBHandler;
 import com.empty.mapcannon.db.PostDBHandler;
 import com.empty.mapcannon.model.CommentInfo;
 import com.empty.mapcannon.model.PostInfo;
+import com.empty.mapcannon.util.Util;
 
 import java.util.List;
 
@@ -153,6 +156,7 @@ public class TogetherDetailActivity extends Activity implements View.OnClickList
         }
     }
 
+    @TargetApi(Build.VERSION_CODES.GINGERBREAD)
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -178,8 +182,12 @@ public class TogetherDetailActivity extends Activity implements View.OnClickList
                 finish();
                 break;
             case R.id.layout_join:
-                joinOrLeave();
-                showIsJoin();
+                if (getNickName().isEmpty()) {
+                    Toast.makeText(this, "请先登陆", Toast.LENGTH_SHORT).show();
+                } else {
+                    joinOrLeave();
+                    showIsJoin();
+                }
                 break;
             case R.id.layout_chat:
                 Intent intent_chat = new Intent(this, ChatActivity.class);
@@ -205,7 +213,7 @@ public class TogetherDetailActivity extends Activity implements View.OnClickList
     }
 
     private String getNickName() {
-        return "Nick";
+        return Util.getNickName(this);
     }
 
     private void joinOrLeave() {
