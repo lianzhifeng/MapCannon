@@ -44,7 +44,7 @@
                         android:background="@drawable/bg_publish_comment"
                         android:layout_width="fill_parent"
                         android:layout_height="40.0dip"
-                        android:hint="出发位置"
+                        android:hint="出发地"
                         android:singleLine="true"/>
             </LinearLayout>
 
@@ -133,7 +133,7 @@
                         android:paddingLeft="15.0dip"
                         android:layout_width="fill_parent"
                         android:layout_height="45.0dip"
-                        android:text="简述对旅伴的要求"/>
+                        android:text="想跟你的同伴说些什么"/>
 
                 <RelativeLayout
                         android:orientation="vertical"
@@ -154,7 +154,7 @@
                             android:layout_height="103.0dip"
                             android:layout_marginLeft="15.0dip"
                             android:layout_marginRight="15.0dip"
-                            android:hint="简述约伴要求或通过下面的标签快速选择"
+                            android:hint="我想对你说......"
                             android:inputType="textMultiLine"/>
                 </RelativeLayout>
             </LinearLayout>

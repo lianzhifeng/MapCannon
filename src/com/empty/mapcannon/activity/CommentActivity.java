@@ -39,7 +39,7 @@ public class CommentActivity extends Activity implements View.OnClickListener{
         mEditView = (EditText) findViewById(R.id.et_comment);
         findViewById(R.id.tv_left).setOnClickListener(this);
         mPostId = getIntent().getIntExtra("POSTID", 0);
-        mList = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_COMMENT + "'");;
+        mList = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_COMMENT + "'" + " AND " + CommentDBHandler.Key.POSTID + "=" + mPostId);
 
         findViewById(R.id.iv_publish).setOnClickListener(this);
         mAdapter = new MyAdapter(this);
@@ -85,7 +85,7 @@ public class CommentActivity extends Activity implements View.OnClickListener{
         commentInfo.setType(CommentInfo.TYPE_COMMENT);
         commentInfo.setPostId(mPostId);
         CommentDBHandler.getInstance().comment(commentInfo);
-        mList = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_COMMENT + "'");
+        mList = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_COMMENT + "'" + " AND " + CommentDBHandler.Key.POSTID + "=" + mPostId);
         mEditView.setText("");
         mEditView.clearFocus();
         mAdapter.notifyDataSetChanged();

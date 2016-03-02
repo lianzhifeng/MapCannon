@@ -61,7 +61,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="7.0dip"
-                    android:hint="搜索目的地或人" />
+                    android:hint="搜索目的地" />
         </LinearLayout>
     </RelativeLayout>
 

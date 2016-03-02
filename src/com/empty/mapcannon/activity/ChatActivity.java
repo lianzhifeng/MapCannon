@@ -38,7 +38,7 @@ public class ChatActivity extends Activity implements View.OnClickListener{
         mTitleView.setText("聊天");
         mEditView = (EditText) findViewById(R.id.et_comment);
         mPostId = getIntent().getIntExtra("POSTID", 0);
-        mList = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_MESSAGE + "'");;
+        mList = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_MESSAGE + "'" + " AND " + CommentDBHandler.Key.POSTID + "=" + mPostId);
 
         findViewById(R.id.iv_publish).setOnClickListener(this);
         findViewById(R.id.tv_left).setOnClickListener(this);
@@ -85,7 +85,7 @@ public class ChatActivity extends Activity implements View.OnClickListener{
         commentInfo.setType(CommentInfo.TYPE_MESSAGE);
         commentInfo.setPostId(mPostId);
         CommentDBHandler.getInstance().comment(commentInfo);
-        mList = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_MESSAGE + "'");
+        mList = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_MESSAGE + "'" + " AND " + CommentDBHandler.Key.POSTID + "=" + mPostId);
         mEditView.setText("");
         mEditView.clearFocus();
         mAdapter.notifyDataSetChanged();

@@ -215,7 +215,8 @@ public class DiscoveryFragment extends Fragment implements View.OnClickListener 
                 tvDeparture.setText("出发地 : " + postInfo.getDeparture());
                 tvDeparttime.setText("出发时间: " + postInfo.getDeparttime());
                 tvContent.setText(postInfo.getContent());
-                int comentCount = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_COMMENT + "'").size();
+                int comentCount = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" +
+                        CommentInfo.TYPE_COMMENT + "' AND " + CommentDBHandler.Key.POSTID + "=" + mContentList.get(position).getId()).size();
                 tvCount.setText(comentCount + "");
             }
 
