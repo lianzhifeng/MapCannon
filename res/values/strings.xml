@@ -162,7 +162,7 @@
     <string name="about_update_text1">该应用示例像您展示了自动更新SDK的各种功能，三种主要的应用场景：自动更新，手动更新，静默下载。以及自动更新各种参数的作用，最后向您展示了完全自定义流程的更新如何完成。</string>
     <string name="about_update_text2">点击左上角打开导航列表，右上角的删除按钮用来删除已经下载好的文件和取消忽略更新，您可能会需要这个功能。</string>
     <string name="action_settings">Settings</string>
-    <string name="app_name">交友同游</string>
+    <string name="app_name">伴游</string>
     <string name="attach_file">文件</string>
     <string name="attach_location">位置</string>
     <string name="attach_picture">图片</string>
