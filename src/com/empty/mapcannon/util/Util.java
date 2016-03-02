@@ -20,6 +20,8 @@ import android.view.ViewGroup;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
+import com.empty.mapcannon.db.PostDBHandler.Key;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -344,11 +346,6 @@ public class Util {
     }
 
     public static String getNickName(Context context) {
-        return "Nick";
+        return context.getSharedPreferences("USERINFO", 0).getString(Key.NICKNAME, "");
     }
 }
-
-/*
- * Location: /home/xshengh/trash/classes_dex2jar.jar Qualified Name:
- * com.miaotu.util.Util JD-Core Version: 0.6.2
- */

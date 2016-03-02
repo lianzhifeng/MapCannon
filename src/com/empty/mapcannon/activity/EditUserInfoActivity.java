@@ -290,6 +290,7 @@ public class EditUserInfoActivity extends BaseActivity implements OnClickListene
                 protected void onCompleteTask(Boolean paramAnonymousBaseResult) {
                     if (paramAnonymousBaseResult) {
                         showMyToast("填写成功");
+                        writePreference(BaseActivity.NAME_USERINFO, Key.NICKNAME, info.getNickname());
                         writePreference(BaseActivity.NAME_USERINFO, Key.GENDER, info.getGender()); 
                         if (!StringUtil.isEmpty(info.getCity())) {
                             writePreference(BaseActivity.NAME_USERINFO, Key.CITY, info.getCity());

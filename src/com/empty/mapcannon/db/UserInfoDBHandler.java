@@ -32,28 +32,50 @@ public class UserInfoDBHandler {
         Cursor cursor = mDataBase.query(Key.TABLE_NAME, null, "phone=? and password=?",
                 new String[] {
                         i.getPhone(), i.getPassword()
-                }, null, null, null);
-        if (cursor != null && cursor.moveToFirst()) {
-            RegisterInfo info = new RegisterInfo();
-            info.setCity(cursor.getString(cursor.getColumnIndex(Key.CITY)));
-            info.setNickname(cursor.getString(cursor.getColumnIndex(Key.NICKNAME)));
-            info.setPhone(cursor.getString(cursor.getColumnIndex(Key.PHONE)));
-            info.setPassword(cursor.getString(cursor.getColumnIndex(Key.PASSWORD)));
-            info.setProvince(cursor.getString(cursor.getColumnIndex(Key.PROVINCE)));
-            info.setGender(cursor.getString(cursor.getColumnIndex(Key.GENDER)));
-            return info;
+        }, null, null, null);
+        try {
+            if (cursor != null && cursor.moveToFirst()) {
+                RegisterInfo info = new RegisterInfo();
+                info.setCity(cursor.getString(cursor.getColumnIndex(Key.CITY)));
+                info.setNickname(cursor.getString(cursor.getColumnIndex(Key.NICKNAME)));
+                info.setPhone(cursor.getString(cursor.getColumnIndex(Key.PHONE)));
+                info.setPassword(cursor.getString(cursor.getColumnIndex(Key.PASSWORD)));
+                info.setProvince(cursor.getString(cursor.getColumnIndex(Key.PROVINCE)));
+                info.setGender(cursor.getString(cursor.getColumnIndex(Key.GENDER)));
+                return info;
+            }
+        } finally {
+            cursor.close();
         }
         return null;
     }
 
     public boolean register(RegisterInfo info) {
-        ContentValues values = new ContentValues();
-        String phone = info.getPhone();
-        String password = info.getPassword();
-        if (!TextUtils.isEmpty(phone) && !TextUtils.isEmpty(password)) {
-            values.put(Key.PHONE, phone);
-            values.put(Key.PASSWORD, password);
-            return mDataBase.insert(Key.TABLE_NAME, null, values) != -1;
+
+        if (isRegistered(info)) {
+            ContentValues values = new ContentValues();
+            String phone = info.getPhone();
+            String password = info.getPassword();
+            if (!TextUtils.isEmpty(phone) && !TextUtils.isEmpty(password)) {
+                values.put(Key.PHONE, phone);
+                values.put(Key.PASSWORD, password);
+                return mDataBase.insert(Key.TABLE_NAME, null, values) != -1;
+            }
+        }
+        return false;
+    }
+
+    public boolean isRegistered(RegisterInfo i) {
+        Cursor cursor = mDataBase.query(Key.TABLE_NAME, null, "phone=?",
+                new String[] {
+                        i.getPhone()
+        }, null, null, null);
+        try {
+            if (cursor != null && cursor.getCount() == 0) {
+                return true;
+            }
+        } finally {
+            cursor.close();
         }
         return false;
     }

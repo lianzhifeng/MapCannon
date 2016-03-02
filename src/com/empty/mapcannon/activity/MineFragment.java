@@ -6,24 +6,17 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.BaseColumns;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.empty.mapcannon.Constants;
 import com.empty.mapcannon.R;
-import com.empty.mapcannon.async.BaseHttpAsyncTask;
-import com.empty.mapcannon.db.UserInfoDBHandler;
 import com.empty.mapcannon.db.UserInfoDBHandler.Key;
-import com.empty.mapcannon.model.RegisterInfo;
-import com.empty.mapcannon.util.StringUtil;
 
 /**
  * Created by Nick on 16/2/27.
@@ -94,7 +87,8 @@ public class MineFragment extends Fragment implements OnClickListener {
     }
 
     private void logout() {
-        ((BaseActivity) getActivity()).deleteAllPreference(BaseActivity.NAME_USERINFO);
+        activity.deleteAllPreference(BaseActivity.NAME_USERINFO);
+        activity.writePreference("login", "false");
         startActivity(new Intent(getActivity(), LoginActivity.class));
     }
 
