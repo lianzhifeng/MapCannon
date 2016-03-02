@@ -6,6 +6,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,6 +31,7 @@ public class DiscoveryFragment extends Fragment implements View.OnClickListener 
     private ListView list;
     private View root;
     private View mPost;
+    private EditText mEditView;
     private MyAdapter mAdapter;
     private List<PostInfo> mContentList;
 
@@ -36,6 +40,7 @@ public class DiscoveryFragment extends Fragment implements View.OnClickListener 
         root = inflater.inflate(R.layout.fragment_first_page, container, false);
         list = (ListView) root.findViewById(R.id.listview);
         mPost = root.findViewById(R.id.tv_right);
+        mEditView = (EditText) root.findViewById(R.id.search_text);
         mPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,6 +56,32 @@ public class DiscoveryFragment extends Fragment implements View.OnClickListener 
                 Intent intent = new Intent(getActivity(), TogetherDetailActivity.class);
                 intent.putExtra("POSTID", mContentList.get(position).getId());
                 startActivity(intent);
+            }
+        });
+        mEditView.clearFocus();
+        mEditView.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (TextUtils.isEmpty(s)) {
+                    mContentList = PostDBHandler.getInstance().getPostInfo(null);
+                } else {
+                    List<PostInfo> contentList = PostDBHandler.getInstance().getPostInfo(null);
+                    mContentList.clear();
+                    for (PostInfo info : contentList)
+                        if (info.getDestination().contains(s)) {
+                            mContentList.add(info);
+                        }
+                }
+                mAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
             }
         });
         return root;
@@ -71,6 +102,8 @@ public class DiscoveryFragment extends Fragment implements View.OnClickListener 
         super.onResume();
         mContentList = PostDBHandler.getInstance().getPostInfo(null);
         mAdapter.notifyDataSetChanged();
+        mEditView.setText("");
+        mEditView.clearFocus();
     }
 
     public class MyAdapter extends BaseAdapter {
@@ -120,10 +153,37 @@ public class DiscoveryFragment extends Fragment implements View.OnClickListener 
             holder.tvJoin.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(mContext, "成功入伙" + position, Toast.LENGTH_SHORT).show();
+                    joinOrLeave(mContentList.get(position).getId());
                 }
             });
             return convertView;
+        }
+
+        private String selectIsJoinString(int postId) {
+            return CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_JOINED +
+                    "' AND " + CommentDBHandler.Key.COMMENTNAME + "='" + "Nick" + "'" +
+                    " AND " + CommentDBHandler.Key.POSTID + "=" + postId;
+        }
+
+        private boolean isJoined(int postId) {
+            return CommentDBHandler.getInstance().getCommentInfo(selectIsJoinString(postId)).size() > 0;
+        }
+
+        private void joinOrLeave(int postId) {
+            if (isJoined(postId)) {
+                CommentDBHandler.getInstance().deleteComment(selectIsJoinString(postId));
+                Toast.makeText(getActivity(), "已经取消入伙", Toast.LENGTH_SHORT).show();
+            } else {
+                CommentInfo commentInfo = new CommentInfo();
+                commentInfo.setContent("");
+                commentInfo.setType(CommentInfo.TYPE_JOINED);
+                commentInfo.setCommentName("Nick");
+                commentInfo.setPostId(postId);
+                commentInfo.setTime(System.currentTimeMillis() + "");
+                CommentDBHandler.getInstance().comment(commentInfo);
+                Toast.makeText(getActivity(), "成功入伙", Toast.LENGTH_SHORT).show();
+            }
+            mAdapter.notifyDataSetChanged();
         }
 
         class Holder {
@@ -139,13 +199,19 @@ public class DiscoveryFragment extends Fragment implements View.OnClickListener 
                 TextView tvContent = (TextView) root.findViewById(R.id.tv_introduce);
                 TextView tvPostTime = (TextView) root.findViewById(R.id.tv_date);
                 TextView tvCount = (TextView) root.findViewById(R.id.tv_comment_count);
+                TextView joinedTextView = (TextView) root.findViewById(R.id.tv_join_count);
+                joinedTextView.setText(isJoinedString());
                 tvName.setText(postInfo.getNickname());
-                tvDestination.setText(postInfo.getDestination());
-                tvDeparture.setText(postInfo.getDeparture());
-                tvDeparttime.setText(postInfo.getDeparttime());
+                tvDestination.setText("目的地 : " + postInfo.getDestination());
+                tvDeparture.setText("出发地 : " + postInfo.getDeparture());
+                tvDeparttime.setText("出发时间: " + postInfo.getDeparttime());
                 tvContent.setText(postInfo.getContent());
                 int comentCount = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_COMMENT + "'").size();
                 tvCount.setText(comentCount + "");
+            }
+
+            String isJoinedString() {
+                return isJoined(mContentList.get(position).getId()) ? "取消入伙" : "入伙";
             }
         }
     }

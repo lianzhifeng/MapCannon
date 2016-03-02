@@ -54,13 +54,14 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/travel_icon_search_default" />
 
-            <TextView
+            <EditText
                     android:textSize="14.0sp"
-                    android:textColor="@color/index_actionbar_search_tip"
+                    android:id="@+id/search_text"
+                    android:background="@drawable/bg_actionbar_search"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="7.0dip"
-                    android:text="搜索目的地或人" />
+                    android:hint="搜索目的地或人" />
         </LinearLayout>
     </RelativeLayout>
 

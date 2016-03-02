@@ -45,9 +45,9 @@ public class TogetherDetailActivity extends Activity implements View.OnClickList
         TextView tvContent = (TextView) findViewById(R.id.tv_introduce);
         TextView tvPostTime = (TextView) findViewById(R.id.tv_date);
         tvName.setText(postInfo.getNickname());
-        tvDestination.setText(postInfo.getDestination());
-        tvDeparture.setText(postInfo.getDeparture());
-        tvDeparttime.setText(postInfo.getDeparttime());
+        tvDestination.setText("目的地 : " + postInfo.getDestination());
+        tvDeparture.setText("出发地  : " + postInfo.getDeparture());
+        tvDeparttime.setText("出发时间: " + postInfo.getDeparttime());
         tvContent.setText(postInfo.getContent());
         showIsJoin();
     }
