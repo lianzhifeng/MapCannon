@@ -6,12 +6,15 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.BaseColumns;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.empty.mapcannon.Constants;
@@ -27,112 +30,77 @@ import com.empty.mapcannon.util.StringUtil;
  */
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class MineFragment extends Fragment implements OnClickListener {
-    private Button btnLogin;
-    private EditText tvAuto;
-    private EditText etPassword;
-    private TextView tvRegister;
-    private TextView tvFindPassword;
     private View root;
+    private RelativeLayout rl_userinfo;
+    private Button btn_exit;
+    private TextView tv_left;
+    private TextView tv_right;
+    private TextView tv_title;
+    private TextView tv_nickname;
+    private TextView tv_city;
     private BaseActivity activity;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-        root = inflater.inflate(R.layout.activity_login, null, false);
+        root = inflater.inflate(R.layout.fragment_fourth_page, null, false);
         activity = (BaseActivity) getActivity();
-        findView(root);
+        findView();
         bindView();
         return root;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
     private void bindView() {
-        this.btnLogin.setOnClickListener(this);
-        this.tvRegister.setOnClickListener(this);
-        this.tvFindPassword.setOnClickListener(this);
+        rl_userinfo.setOnClickListener(this);
+        btn_exit.setOnClickListener(this);
+        tv_left.setVisibility(View.GONE);
+        tv_right.setVisibility(View.GONE);
+        tv_title.setText("我的");
     }
 
-    private void findView(View root) {
-        this.btnLogin = (Button) root.findViewById(R.id.btn_login);
-        this.tvAuto = ((EditText) root.findViewById(R.id.tv_auto));
-        this.tvRegister = ((TextView) root.findViewById(R.id.tv_register));
-        this.etPassword = ((EditText) root.findViewById(R.id.et_password));
-        this.tvFindPassword = ((TextView) root.findViewById(R.id.tv_find_password));
+    private void findView() {
+        rl_userinfo = (RelativeLayout) root.findViewById(R.id.rl_userinfo);
+        btn_exit = (Button) root.findViewById(R.id.btn_exit);
+        tv_left = (TextView) root.findViewById(R.id.tv_left);
+        tv_right = (TextView) root.findViewById(R.id.tv_right);
+        tv_title = (TextView) root.findViewById(R.id.tv_title);
+        tv_nickname = (TextView) root.findViewById(R.id.tv_nickname);
+        tv_city = (TextView) root.findViewById(R.id.tv_city);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        String nickname = activity.readPreference(BaseActivity.NAME_USERINFO, Key.NICKNAME);
+        String city = activity.readPreference(BaseActivity.NAME_USERINFO, Key.CITY);
+        if (!TextUtils.isEmpty(nickname)) {
+            tv_nickname.setText(nickname);
+        }
+        if (!TextUtils.isEmpty(city)) {
+            tv_city.setText(city);
+        }
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btn_login:
-                login();
+            case R.id.btn_exit:
+                logout();
                 break;
-            case R.id.tv_register:
-                register();
+            case R.id.rl_userinfo:
+                editUserInfo();
                 break;
-            case R.id.tv_find_password:
-                findPassword();
         }
     }
 
-    private void findPassword() {
-        startActivity(new Intent(getActivity(), FindPasswordActivity.class));
+    private void logout() {
+        ((BaseActivity) getActivity()).deleteAllPreference(BaseActivity.NAME_USERINFO);
+        startActivity(new Intent(getActivity(), LoginActivity.class));
     }
 
-    private void register() {
-        startActivity(new Intent(getActivity(), Register2Activity.class));
+    private void editUserInfo() {
+        Intent intent = new Intent(getActivity(), EditUserInfoActivity.class);
+        startActivity(intent);
     }
 
-    private boolean validate() {
-        if (StringUtil.isBlank(tvAuto.getText().toString())) {
-            activity.showMyToast("请输入您的手机号");
-            return false;
-        }
-        if (!StringUtil.isPhoneNumber(this.tvAuto.getText().toString())) {
-            activity.showMyToast("账号填写有误，请检查后重新填写");
-            return false;
-        }
-        if (StringUtil.isBlank(this.etPassword.getText().toString())) {
-            activity.showMyToast("请输入您的登录密码！");
-            return false;
-        }
-        return true;
-    }
-
-    private void login() {
-        if (validate()) {
-            final RegisterInfo info = new RegisterInfo();
-            info.setPhone(this.tvAuto.getText().toString());
-            info.setPassword(this.etPassword.getText().toString());
-            new BaseHttpAsyncTask<Object, Object, Object>(getActivity(), false) {
-
-                @Override
-                protected void onCompleteTask(Object paramResult) {
-                    if (paramResult != null) {
-                        RegisterInfo info = (RegisterInfo) paramResult;
-                        MineFragment.this.activity.deleteAllPreference("COMMON");
-                        MineFragment.this.activity.writePreference(Constants.STR_LOGIN, "true");
-                        MineFragment.this.activity.writePreference(Key.GENDER, info.getGender());
-                        MineFragment.this.activity.writePreference(Key.PHONE, info.getPhone());
-                        MineFragment.this.activity.writePreference(Key.PROVINCE,
-                                info.getProvince());
-                        MineFragment.this.activity.writePreference(Key.CITY, info.getCity());
-                        MineFragment.this.activity.writePreference(Key.NICKNAME,
-                                info.getNickname());
-                        MineFragment.this.activity.showMyToast("登录成功");
-                    } else {
-                        MineFragment.this.activity.showMyToast("账号填写有误,请检查后重新填写");
-                    }
-                }
-
-                @Override
-                protected Object run(Object[] paramArrayOfParams) {
-                    return UserInfoDBHandler.getInstance().login(info);
-                }
-            }.execute();
-        }
-    }
 }

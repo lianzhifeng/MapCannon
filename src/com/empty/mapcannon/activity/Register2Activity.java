@@ -89,8 +89,6 @@ public class Register2Activity extends BaseActivity implements OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_right:
-//                        startActivity(new Intent(Register2Activity.this,
-//                                EditUserInfoActivity.class));
                 nextStep();
                 break;
             case R.id.tv_left:
@@ -109,9 +107,9 @@ public class Register2Activity extends BaseActivity implements OnClickListener {
                 protected void onCompleteTask(Boolean paramResult) {
                     if (paramResult) {
                         writePreference(Constants.STR_LOGIN, "true");
+                        writePreference(NAME_USERINFO, Key.PHONE, registerInfo.getPhone());
                         Intent intent = new Intent(Register2Activity.this,
                                 EditUserInfoActivity.class);
-                        intent.putExtra("registerInfo", registerInfo);
                         startActivity(intent);
                     }
                 }

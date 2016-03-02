@@ -4,6 +4,7 @@ package com.empty.mapcannon.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -52,12 +53,26 @@ public class EditUserInfoActivity extends BaseActivity implements OnClickListene
     private void initData() {
         this.tv_right.setText("保存");
         this.tv_title.setText("编辑个人资料");
-        this.info = new RegisterInfo();
-        Intent intent = getIntent();
-        RegisterInfo info = (RegisterInfo) intent.getSerializableExtra("registerInfo");
-        if (info == null) {
-            finish();
-            return;
+        info = new RegisterInfo();
+        String nickname = readPreference(BaseActivity.NAME_USERINFO, Key.NICKNAME);
+        String gender = readPreference(BaseActivity.NAME_USERINFO, Key.GENDER);
+        String province = readPreference(BaseActivity.NAME_USERINFO, Key.PROVINCE);
+        String city = readPreference(BaseActivity.NAME_USERINFO, Key.CITY);
+        String phone = readPreference(BaseActivity.NAME_USERINFO, Key.PHONE);
+        if (!TextUtils.isEmpty(nickname)) {
+            et_nickname.setText(nickname);
+        }
+        if (!TextUtils.isEmpty(gender)) {
+            tv_gender.setText(gender);
+        }
+        if (!TextUtils.isEmpty(city)) {
+            tv_content_life.setText(city);
+        }
+        if (!TextUtils.isEmpty(province)) {
+            tv_content_home.setText(province);
+        }
+        if (!TextUtils.isEmpty(phone)) {
+            info.setPhone(phone);
         }
     }
 
@@ -275,12 +290,12 @@ public class EditUserInfoActivity extends BaseActivity implements OnClickListene
                 protected void onCompleteTask(Boolean paramAnonymousBaseResult) {
                     if (paramAnonymousBaseResult) {
                         showMyToast("填写成功");
-                        writePreference(Key.GENDER, info.getGender());
+                        writePreference(BaseActivity.NAME_USERINFO, Key.GENDER, info.getGender()); 
                         if (!StringUtil.isEmpty(info.getCity())) {
-                            writePreference(Key.CITY, info.getCity());
+                            writePreference(BaseActivity.NAME_USERINFO, Key.CITY, info.getCity());
                         }
                         if (!StringUtil.isEmpty(info.getProvince())) {
-                            writePreference(Key.PROVINCE, info.getProvince());
+                            writePreference(BaseActivity.NAME_USERINFO, Key.PROVINCE, info.getProvince());
                         }
                         EditUserInfoActivity.this.finish();
                     } else {

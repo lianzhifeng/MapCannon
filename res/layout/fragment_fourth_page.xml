@@ -1,91 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="#fff1f3f6" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#fff1f3f6"
+    android:orientation="vertical" >
+
     <include layout="@layout/top_bar" />
-    <ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
-            <RelativeLayout android:id="@+id/rl_info_tip" android:background="#ffff8000" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
-                <TextView android:textSize="14.0sp" android:textColor="@color/white" android:id="@+id/tv_tip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="8.0dip" android:text="您还没有完成个人资料，请完善。" android:drawableLeft="@drawable/icon_info_tip" android:drawablePadding="5.0dip" />
-                <TextView android:textSize="10.0sp" android:textColor="@color/white" android:paddingBottom="7.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="35.0dip" android:text="描述真实的自己才能找到对的人" android:layout_below="@id/tv_tip" />
-                <ImageView android:background="@drawable/icon_edit" android:layout_width="44.0dip" android:layout_height="44.0dip" android:layout_alignParentRight="true" />
-            </RelativeLayout>
-            <View android:id="@+id/view1" android:background="@drawable/bg_line" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="10.0dip" />
-            <RelativeLayout android:id="@+id/rl_userinfo" android:background="@drawable/selector_publish_together1" android:layout_width="fill_parent" android:layout_height="80.0dip">
-                <com.miaotu.view.CircleImageView android:id="@+id/iv_userhead" android:layout_width="57.0dip" android:layout_height="57.0dip" android:layout_marginLeft="18.0dip" android:layout_centerVertical="true" />
-                <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@+id/ll_sexandage" android:background="@drawable/bg_man" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="-20.0dip" android:layout_toRightOf="@id/iv_userhead" android:layout_alignBottom="@id/iv_userhead">
-                    <ImageView android:layout_gravity="center" android:id="@+id/iv_gender" android:background="@drawable/icon_boy" android:layout_width="10.0dip" android:layout_height="10.0dip" android:layout_marginLeft="3.0dip" android:scaleType="fitCenter" />
-                    <TextView android:textSize="10.0sp" android:textColor="@color/white" android:layout_gravity="center" android:id="@+id/tv_age" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="3.0dip" android:text="\ 18" />
-                </LinearLayout>
-                <RelativeLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="12.0dip" android:layout_toRightOf="@id/iv_userhead">
-                    <TextView android:textSize="16.0sp" android:textColor="#ff505050" android:id="@+id/tv_username" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="海瑞那" />
-                    <TextView android:textSize="12.0sp" android:textColor="#ff666666" android:id="@+id/tv_id" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="ID:123456" android:layout_below="@id/tv_username" android:layout_alignLeft="@id/tv_username" />
-                    <TextView android:textSize="12.0sp" android:textColor="#ffb4b4b4" android:id="@+id/tv_wantgo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="想去米兰" android:layout_below="@id/tv_id" android:layout_alignLeft="@id/tv_id" />
-                </RelativeLayout>
-                <ImageView android:id="@+id/iv_gouserinfo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="18.0dip" android:src="@drawable/icon_edit_info" android:scaleType="fitCenter" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
-                <TextView android:textSize="12.0sp" android:textColor="#ff666666" android:id="@+id/tv_edit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:text="编辑资料" android:layout_toLeftOf="@id/iv_gouserinfo" android:layout_centerVertical="true" />
-            </RelativeLayout>
-            <View android:background="@drawable/bg_line" android:layout_width="fill_parent" android:layout_height="1.0dip" />
-            <LinearLayout android:orientation="horizontal" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="52.0dip">
-                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@+id/ll_follow" android:background="@drawable/selector_publish_together1" android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
-                    <TextView android:textSize="14.0sp" android:textColor="#ff505050" android:id="@+id/tv_follow_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="\ 0" />
-                    <TextView android:textSize="12.0sp" android:textColor="#ff505050" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:text="关注" />
-                </LinearLayout>
-                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@+id/ll_fans" android:background="@drawable/selector_publish_together1" android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
-                    <TextView android:textSize="14.0sp" android:textColor="#ff505050" android:id="@+id/tv_fans_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="\ 0" />
-                    <TextView android:textSize="12.0sp" android:textColor="#ff505050" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:text="粉丝" />
-                </LinearLayout>
-                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@+id/ll_search" android:background="@drawable/selector_publish_together1" android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
-                    <ImageView android:background="@drawable/icon_searchfriend" android:layout_width="30.0dip" android:layout_height="30.0dip" android:scaleType="fitCenter" />
-                    <TextView android:textSize="12.0sp" android:textColor="#ff505050" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="寻找妙友" />
-                </LinearLayout>
-            </LinearLayout>
-            <View android:background="@drawable/bg_line" android:layout_width="fill_parent" android:layout_height="1.0dip" />
-            <View android:background="@drawable/bg_line" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="10.0dip" />
-            <RelativeLayout android:id="@+id/rl_homepage" android:background="@drawable/selector_publish_together1" android:layout_width="fill_parent" android:layout_height="44.0dip">
-                <ImageView android:id="@+id/iv_homepage" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="12.0dip" android:src="@drawable/icon_home" android:scaleType="fitCenter" android:layout_centerVertical="true" />
-                <TextView android:textSize="14.0sp" android:textColor="#ff646464" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:text="个人主页" android:layout_toRightOf="@id/iv_homepage" android:layout_centerVertical="true" />
-                <ImageView android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginRight="10.0dip" android:src="@drawable/icon_go" android:scaleType="fitCenter" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
-            </RelativeLayout>
-            <View android:background="@drawable/bg_line" android:layout_width="fill_parent" android:layout_height="1.0dip" />
-            <RelativeLayout android:id="@+id/rl_start" android:background="@android:color/white" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="40.0dip">
-                <ImageView android:id="@+id/iv_start" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="10.0dip" android:src="@drawable/mine_faqide" android:scaleType="fitCenter" android:layout_centerVertical="true" />
-                <TextView android:textSize="14.0sp" android:textColor="#ff646464" android:id="@+id/tv_start" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="我发起的约游" android:layout_toRightOf="@id/iv_start" android:layout_centerVertical="true" />
-                <ImageView android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginRight="10.0dip" android:src="@drawable/icon_go" android:scaleType="fitCenter" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
-            </RelativeLayout>
-            <RelativeLayout android:id="@+id/rl_state" android:background="@drawable/selector_publish_together1" android:layout_width="fill_parent" android:layout_height="44.0dip">
-                <ImageView android:id="@+id/iv_state" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="12.0dip" android:src="@drawable/mine_dongtai" android:scaleType="fitCenter" android:layout_centerVertical="true" />
-                <TextView android:textSize="14.0sp" android:textColor="#ff646464" android:id="@+id/tv_trends" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:text="我发起的约游" android:layout_toRightOf="@id/iv_state" android:layout_centerVertical="true" />
-                <ImageView android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginRight="10.0dip" android:src="@drawable/icon_go" android:scaleType="fitCenter" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
-            </RelativeLayout>
-            <View android:background="@drawable/bg_line" android:layout_width="fill_parent" android:layout_height="1.0dip" />
-            <View android:background="@drawable/bg_line" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="10.0dip" />
-            <View android:id="@+id/line_order" android:background="@drawable/bg_line" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.0dip" />
-            <RelativeLayout android:id="@+id/rl_order" android:background="@drawable/selector_publish_together1" android:layout_width="fill_parent" android:layout_height="44.0dip">>
-<ImageView android:id="@+id/iv_like" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="12.0dip" android:src="@drawable/icon_mineorder" android:scaleType="fitCenter" android:layout_centerVertical="true" />
-                <TextView android:textSize="14.0sp" android:textColor="#ff646464" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:text="我的订单" android:layout_toRightOf="@id/iv_like" android:layout_centerVertical="true" />
-                <ImageView android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginRight="10.0dip" android:src="@drawable/icon_go" android:scaleType="fitCenter" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
-            </RelativeLayout>
-            <View android:id="@+id/line_red" android:background="@drawable/bg_line" android:layout_width="fill_parent" android:layout_height="1.0dip" />
-            <RelativeLayout android:id="@+id/rl_hongbao" android:background="@drawable/selector_publish_together1" android:layout_width="fill_parent" android:layout_height="44.0dip">>
-<ImageView android:id="@+id/iv_hongbao" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="12.0dip" android:src="@drawable/icon_mine_coupon" android:scaleType="fitCenter" android:layout_centerVertical="true" />
-                <TextView android:textSize="14.0sp" android:textColor="#ff646464" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:text="优惠券" android:layout_toRightOf="@id/iv_hongbao" android:layout_centerVertical="true" />
-                <ImageView android:id="@+id/iv_ticket_next" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginRight="10.0dip" android:src="@drawable/icon_go" android:scaleType="fitCenter" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
-                <TextView android:textSize="16.0sp" android:textColor="#ffff8000" android:id="@+id/tv_ticket_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="6张" android:layout_toLeftOf="@id/iv_ticket_next" android:layout_centerVertical="true" />
-            </RelativeLayout>
-            <View android:background="@drawable/bg_line" android:layout_width="fill_parent" android:layout_height="1.0dip" />
-            <View android:background="@drawable/bg_line" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="10.0dip" />
-            <RelativeLayout android:id="@+id/rl_recommend" android:background="@android:color/white" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="40.0dip">
-                <ImageView android:id="@+id/iv_recommend" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="10.0dip" android:src="@drawable/mine_tuijian" android:scaleType="fitCenter" android:layout_centerVertical="true" />
-                <TextView android:textSize="14.0sp" android:textColor="#ff646464" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="应用推荐" android:layout_toRightOf="@id/iv_recommend" android:layout_centerVertical="true" />
-                <ImageView android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginRight="10.0dip" android:src="@drawable/icon_go" android:scaleType="fitCenter" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
-            </RelativeLayout>
-            <View android:background="@drawable/bg_line" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.0dip" />
-            <RelativeLayout android:id="@+id/rl_setting" android:background="@drawable/selector_publish_together1" android:layout_width="fill_parent" android:layout_height="44.0dip">>
-<ImageView android:id="@+id/iv_setting" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="12.0dip" android:src="@drawable/mine_setting" android:scaleType="fitCenter" android:layout_centerVertical="true" />
-                <TextView android:textSize="14.0sp" android:textColor="#ff646464" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:text="设置" android:layout_toRightOf="@id/iv_setting" android:layout_centerVertical="true" />
-                <ImageView android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginRight="10.0dip" android:src="@drawable/icon_go" android:scaleType="fitCenter" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
-            </RelativeLayout>
-            <View android:background="@drawable/bg_line" android:layout_width="fill_parent" android:layout_height="1.0dip" />
-        </LinearLayout>
-    </ScrollView>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:layout_marginTop="10.0dip"
+        android:background="@drawable/bg_line"
+        android:visibility="visible" />
+
+    <RelativeLayout
+        android:id="@+id/rl_userinfo"
+        android:layout_width="fill_parent"
+        android:layout_height="100.0dip"
+        android:background="@drawable/selector_publish_together1" >
+
+        <ImageView
+            android:id="@+id/iv_userhead"
+            android:layout_width="20.0dip"
+            android:layout_height="20.0dip"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10.0dip"
+            android:layout_marginTop="10.0dip"
+            android:scaleType="fitCenter"
+            android:src="@drawable/mine_edit" />
+
+        <TextView
+            android:id="@+id/tv_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_userhead"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12.0dip"
+            android:text="未命名"
+            android:textColor="#ff505050"
+            android:textSize="16.0sp" />
+
+        <TextView
+            android:id="@+id/tv_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_nickname"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5.0dip"
+            android:text="米兰"
+            android:textColor="#ffb4b4b4"
+            android:textSize="12.0sp" />
+
+        <ImageView
+            android:id="@+id/iv_gouserinfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="18.0dip"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icon_edit_info" />
+
+        <TextView
+            android:id="@+id/tv_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10.0dip"
+            android:layout_marginTop="10.0dip"
+            android:layout_toLeftOf="@id/iv_gouserinfo"
+            android:text="编辑资料"
+            android:textColor="#ff666666"
+            android:textSize="12.0sp" />
+    </RelativeLayout>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:layout_marginTop="10.0dip"
+        android:background="@drawable/bg_line"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/btn_exit"
+        android:layout_width="fill_parent"
+        android:layout_height="40.0dip"
+        android:layout_marginLeft="10.0dip"
+        android:layout_marginRight="10.0dip"
+        android:layout_marginTop="30.0dip"
+        android:background="@drawable/bg_btn_exit"
+        android:text="退出登录"
+        android:textColor="@color/white"
+        android:visibility="visible" />
+
 </LinearLayout>

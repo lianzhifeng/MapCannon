@@ -1,17 +1,19 @@
+
 package com.empty.mapcannon.activity;
 
 import android.annotation.TargetApi;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.empty.mapcannon.R;
-
 
 public class MyActivity extends BaseActivity implements View.OnClickListener {
 
@@ -87,9 +89,14 @@ public class MyActivity extends BaseActivity implements View.OnClickListener {
                 mImageMessage.setImageResource(R.drawable.icon_tab_message_selected);
                 break;
             case R.id.btn_mine:
-                setFragment(mMineFragment);
-                resetImageView();
-                mImageMine.setImageResource(R.drawable.icon_tab_mine_selected);
+                String login = readPreference("login");
+                if (TextUtils.isEmpty(login) || !login.equals("true")) {
+                    startActivity(new Intent(this, LoginActivity.class));
+                } else {
+                    setFragment(mMineFragment);
+                    resetImageView();
+                    mImageMine.setImageResource(R.drawable.icon_tab_mine_selected);
+                }
                 break;
             default:
                 break;

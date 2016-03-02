@@ -58,8 +58,10 @@
         <activity
             android:name=".activity.PostActivity"
             android:launchMode="singleTop" >
-
         </activity>
+        <activity
+            android:name="com.empty.mapcannon.activity.LoginActivity"
+            android:launchMode="singleTop"></activity>
     </application>
 
 </manifest>
