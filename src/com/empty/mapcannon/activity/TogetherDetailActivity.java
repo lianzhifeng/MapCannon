@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -123,39 +124,34 @@ public class TogetherDetailActivity extends Activity implements View.OnClickList
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            Holder holder = null;
-            if (convertView == null) {
-                convertView = View.inflate(mContext, R.layout.item_topic_comment, null);
-                holder = new Holder();
-                holder.position = position;
-                if (mIsBtnTogether) {
-                    holder.commentInfo = mTogetherList.get(position);
-                    convertView.findViewById(R.id.tv_content).setVisibility(View.GONE);
-                } else {
-                    holder.commentInfo = mCommentList.get(position);
-                }
-                convertView.setTag(holder);
-            } else {
-                holder = (Holder) convertView.getTag();
+            if (position >= getCount()) {
+                Log.i("lzftest", "error of listview");
+                return null;
             }
-            holder.updateView(convertView);
+            Log.i("lzftest", "position " + position);
+//            if (convertView == null) {
+                convertView = View.inflate(mContext, R.layout.item_topic_comment, null);
+//            }
+            Log.i("lzftest", "" + mIsBtnTogether);
+            updateView(convertView, position);
             return convertView;
         }
 
-        class Holder {
-            int position;
-            CommentInfo commentInfo;
-            void updateView(View root) {
+        void updateView(View root, int position) {
                 TextView tvName = (TextView) root.findViewById(R.id.tv_nickname);
                 TextView tvDate = (TextView) root.findViewById(R.id.tv_date);
                 TextView tvContent = (TextView) root.findViewById(R.id.tv_content);
+                Log.i("lzftest", "together size " + mTogetherList.size());
+                Log.i("lzftest", "position" + position);
+                CommentInfo commentInfo = mIsBtnTogether ? mTogetherList.get(position) : mCommentList.get(position);
                 tvName.setText(commentInfo.getCommentName());
                 tvDate.setText(commentInfo.getTime());
-                tvContent.setText(commentInfo.getContent());
+                tvContent.setVisibility(mIsBtnTogether ? View.GONE : View.VISIBLE);
+                tvContent.setText(mIsBtnTogether ? "" : commentInfo.getContent() + sTest++);
             }
-        }
     }
 
+    static int sTest = 0;
     @TargetApi(Build.VERSION_CODES.GINGERBREAD)
     @Override
     public void onClick(View v) {
@@ -167,7 +163,7 @@ public class TogetherDetailActivity extends Activity implements View.OnClickList
                 mCommentCount.setText(mCommentList.size() + "");
                 mBtnComment.setBackgroundColor(0xffffffff);
                 mIsBtnTogether = false;
-                mAdapter.notifyDataSetChanged();
+                mAdapter.notifyDataSetInvalidated();
                 break;
             case R.id.layout_joined:
                 mCommentList = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_COMMENT + "'");
@@ -176,7 +172,7 @@ public class TogetherDetailActivity extends Activity implements View.OnClickList
                 mCommentCount.setText(mCommentList.size() + "");
                 mBtnTogether.setBackgroundColor(0xffffffff);
                 mIsBtnTogether = true;
-                mAdapter.notifyDataSetChanged();
+                mAdapter.notifyDataSetInvalidated();
                 break;
             case R.id.tv_left:
                 finish();
@@ -233,7 +229,9 @@ public class TogetherDetailActivity extends Activity implements View.OnClickList
         mCommentList = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_COMMENT + "'");
         mTogetherList = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_JOINED + "'");
         mCommentCount.setText(mCommentList.size() + "");
-        mAdapter.notifyDataSetChanged();
+        Log.i("lzftest", "is togetherlist" + mIsBtnTogether);
+        Log.i("lzftest", "list size" + mTogetherList.size());
+        mAdapter.notifyDataSetInvalidated();
     }
 
     private String getCurrentTime() {
