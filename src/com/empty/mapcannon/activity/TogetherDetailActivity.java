@@ -124,34 +124,23 @@ public class TogetherDetailActivity extends Activity implements View.OnClickList
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            if (position >= getCount()) {
-                Log.i("lzftest", "error of listview");
-                return null;
-            }
-            Log.i("lzftest", "position " + position);
-//            if (convertView == null) {
-                convertView = View.inflate(mContext, R.layout.item_topic_comment, null);
-//            }
-            Log.i("lzftest", "" + mIsBtnTogether);
+            convertView = View.inflate(mContext, R.layout.item_topic_comment, null);
             updateView(convertView, position);
             return convertView;
         }
 
         void updateView(View root, int position) {
-                TextView tvName = (TextView) root.findViewById(R.id.tv_nickname);
-                TextView tvDate = (TextView) root.findViewById(R.id.tv_date);
-                TextView tvContent = (TextView) root.findViewById(R.id.tv_content);
-                Log.i("lzftest", "together size " + mTogetherList.size());
-                Log.i("lzftest", "position" + position);
-                CommentInfo commentInfo = mIsBtnTogether ? mTogetherList.get(position) : mCommentList.get(position);
-                tvName.setText(commentInfo.getCommentName());
-                tvDate.setText(commentInfo.getTime());
-                tvContent.setVisibility(mIsBtnTogether ? View.GONE : View.VISIBLE);
-                tvContent.setText(mIsBtnTogether ? "" : commentInfo.getContent() + sTest++);
-            }
+            TextView tvName = (TextView) root.findViewById(R.id.tv_nickname);
+            TextView tvDate = (TextView) root.findViewById(R.id.tv_date);
+            TextView tvContent = (TextView) root.findViewById(R.id.tv_content);
+            CommentInfo commentInfo = mIsBtnTogether ? mTogetherList.get(position) : mCommentList.get(position);
+            tvName.setText(commentInfo.getCommentName());
+            tvDate.setText(commentInfo.getTime());
+            tvContent.setText(commentInfo.getContent());
+            tvContent.setVisibility(mIsBtnTogether ? View.GONE : View.VISIBLE);
+        }
     }
 
-    static int sTest = 0;
     @TargetApi(Build.VERSION_CODES.GINGERBREAD)
     @Override
     public void onClick(View v) {
@@ -229,8 +218,6 @@ public class TogetherDetailActivity extends Activity implements View.OnClickList
         mCommentList = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_COMMENT + "'");
         mTogetherList = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_JOINED + "'");
         mCommentCount.setText(mCommentList.size() + "");
-        Log.i("lzftest", "is togetherlist" + mIsBtnTogether);
-        Log.i("lzftest", "list size" + mTogetherList.size());
         mAdapter.notifyDataSetInvalidated();
     }
 
