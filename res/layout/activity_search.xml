@@ -1,21 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="@color/index_pop_hot_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <include layout="@layout/search_bar" />
-    <View android:background="#ffdcdcdc" android:layout_width="fill_parent" android:layout_height="1.0px" />
-    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
-        <ImageView android:id="@+id/iv_init" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="90.0dip" android:src="@drawable/icon_search_init" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" />
-        <include android:id="@+id/layout_empty" android:visibility="gone" layout="@layout/layout_empty_search_tour" />
-        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@+id/ll_hot_destination" android:layout_width="fill_parent" android:layout_height="wrap_content">
-            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="25.0dip">
-                <View android:background="#ff666666" android:layout_width="10.0dip" android:layout_height="1.0dip" />
-                <TextView android:textSize="14.0sp" android:textColor="#ff666666" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:text="热门目的地" />
-                <View android:background="#ff666666" android:layout_width="10.0dip" android:layout_height="1.0dip" />
+<LinearLayout
+        android:orientation="vertical"
+        android:background="@color/index_pop_hot_bg"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include layout="@layout/search_bar"/>
+
+    <View
+            android:background="#ffdcdcdc"
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px"/>
+
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+        <ImageView
+                android:id="@+id/iv_init"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="90.0dip"
+                android:src="@drawable/icon_search_init"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"/>
+
+        <include
+                android:id="@+id/layout_empty"
+                android:visibility="gone"
+                layout="@layout/layout_empty_search_tour"/>
+
+        <LinearLayout
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:id="@+id/ll_hot_destination"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+            <LinearLayout
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25.0dip">
+
+                <View
+                        android:background="#ff666666"
+                        android:layout_width="10.0dip"
+                        android:layout_height="1.0dip"/>
+
+                <TextView
+                        android:textSize="14.0sp"
+                        android:textColor="#ff666666"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5.0dip"
+                        android:layout_marginRight="5.0dip"
+                        android:text="热门目的地"/>
+
+                <View
+                        android:background="#ff666666"
+                        android:layout_width="10.0dip"
+                        android:layout_height="1.0dip"/>
             </LinearLayout>
-            <GridView android:id="@+id/gv_hot_dest" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:listSelector="@android:color/transparent" android:numColumns="4" />
+
+            <GridView
+                    android:id="@+id/gv_hot_dest"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_marginTop="10.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:listSelector="@android:color/transparent"
+                    android:numColumns="4"/>
         </LinearLayout>
-        <LinearLayout android:orientation="vertical" android:id="@+id/layout_content" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
-            <android.support.v7.widget.RecyclerView android:id="@+id/rv_content" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/layout_content"
+                android:visibility="gone"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+            <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_content"
+                    android:visibility="visible"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"/>
         </LinearLayout>
     </RelativeLayout>
 </LinearLayout>
