@@ -59,8 +59,7 @@ public class TogetherDetailActivity extends Activity implements View.OnClickList
     @Override
     protected void onResume() {
         super.onResume();
-        mCommentList = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_COMMENT + "'");
-        mTogetherList = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_JOINED + "'");
+        updateDataList();
         mCommentCount.setText(mCommentList.size() + "");
         mAdapter.notifyDataSetChanged();
     }
@@ -78,8 +77,7 @@ public class TogetherDetailActivity extends Activity implements View.OnClickList
         mBack = findViewById(R.id.tv_left);
         mPostId = getIntent().getIntExtra("POSTID", 0);
 
-        mCommentList = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_COMMENT + "'");
-        mTogetherList = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_JOINED + "'");
+        updateDataList();
         mCommentCount.setText(mCommentList.size() + "");
 
         mListView = (ListView) findViewById(R.id.listview);
@@ -146,8 +144,7 @@ public class TogetherDetailActivity extends Activity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.layout_comment_count:
-                mCommentList = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_COMMENT + "'");
-                mTogetherList = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_JOINED + "'");
+                updateDataList();
                 resetBtnColor();
                 mCommentCount.setText(mCommentList.size() + "");
                 mBtnComment.setBackgroundColor(0xffffffff);
@@ -155,8 +152,7 @@ public class TogetherDetailActivity extends Activity implements View.OnClickList
                 mAdapter.notifyDataSetInvalidated();
                 break;
             case R.id.layout_joined:
-                mCommentList = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_COMMENT + "'");
-                mTogetherList = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_JOINED + "'");
+                updateDataList();
                 resetBtnColor();
                 mCommentCount.setText(mCommentList.size() + "");
                 mBtnTogether.setBackgroundColor(0xffffffff);
@@ -193,6 +189,11 @@ public class TogetherDetailActivity extends Activity implements View.OnClickList
                 " AND " + CommentDBHandler.Key.POSTID + "=" + mPostId;
     }
 
+    private void updateDataList() {
+        mCommentList = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_COMMENT + "' AND " + CommentDBHandler.Key.POSTID + "=" + mPostId);
+        mTogetherList = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_JOINED + "' AND " + CommentDBHandler.Key.POSTID + "=" + mPostId);
+    }
+
     private boolean isJoined() {
         return CommentDBHandler.getInstance().getCommentInfo(selectIsJoinString()).size() > 0;
     }
@@ -215,8 +216,7 @@ public class TogetherDetailActivity extends Activity implements View.OnClickList
             CommentDBHandler.getInstance().comment(commentInfo);
             Toast.makeText(TogetherDetailActivity.this, "成功入伙", Toast.LENGTH_SHORT).show();
         }
-        mCommentList = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_COMMENT + "'");
-        mTogetherList = CommentDBHandler.getInstance().getCommentInfo(CommentDBHandler.Key.TYPE + "='" + CommentInfo.TYPE_JOINED + "'");
+        updateDataList();
         mCommentCount.setText(mCommentList.size() + "");
         mAdapter.notifyDataSetInvalidated();
     }
